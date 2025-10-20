@@ -1,0 +1,203 @@
+current_path,new_path,rename_to,category,dependencies,priority,notes
+.claude/commands/agents/agent-capabilities.md,src/cli/commands/definitions/agents/capabilities.md,capabilities,agents,none,medium,Documentation of agent capabilities
+.claude/commands/agents/agent-coordination.md,src/cli/commands/definitions/agents/coordination.md,coordination,agents,none,medium,Agent coordination patterns
+.claude/commands/agents/agent-spawning.md,src/cli/commands/definitions/agents/spawning.md,spawning,agents,none,medium,Agent spawning documentation
+.claude/commands/agents/agent-types.md,src/cli/commands/definitions/agents/types.md,types,agents,none,medium,Agent type definitions
+.claude/commands/agents/README.md,src/cli/commands/definitions/agents/README.md,README,agents,none,low,Category documentation
+.claude/commands/analysis/bottleneck-detect.md,src/cli/commands/definitions/analysis/bottleneck-detect.md,bottleneck-detect,analysis,none,medium,Performance bottleneck detection
+.claude/commands/analysis/COMMAND_COMPLIANCE_REPORT.md,docs/reports/command-compliance-report.md,command-compliance-report,documentation,none,low,Move to docs - not a command
+.claude/commands/analysis/performance-bottlenecks.md,src/cli/commands/definitions/analysis/performance-bottlenecks.md,performance-bottlenecks,analysis,bottleneck-detect,medium,Duplicate? Check relationship
+.claude/commands/analysis/performance-report.md,src/cli/commands/definitions/analysis/performance-report.md,performance-report,analysis,performance-bottlenecks,medium,Performance reporting
+.claude/commands/analysis/README.md,src/cli/commands/definitions/analysis/README.md,README,analysis,none,low,Category documentation
+.claude/commands/analysis/token-efficiency.md,src/cli/commands/definitions/analysis/token-efficiency.md,token-efficiency,analysis,none,medium,Token usage efficiency analysis
+.claude/commands/analysis/token-usage.md,src/cli/commands/definitions/analysis/token-usage.md,token-usage,analysis,token-efficiency,medium,Token usage tracking
+.claude/commands/automation/auto-agent.md,src/cli/commands/definitions/automation/auto-agent.md,auto-agent,automation,none,high,Automatic agent spawning
+.claude/commands/automation/README.md,src/cli/commands/definitions/automation/README.md,README,automation,none,low,Category documentation
+.claude/commands/automation/self-healing.md,src/cli/commands/definitions/automation/self-healing.md,self-healing,automation,none,medium,Self-healing workflows
+.claude/commands/automation/session-memory.md,src/cli/commands/definitions/automation/session-memory.md,session-memory,automation,none,medium,Session memory management
+.claude/commands/automation/smart-agents.md,src/cli/commands/definitions/automation/smart-agents.md,smart-agents,automation,auto-agent,medium,Smart agent behaviors
+.claude/commands/automation/smart-spawn.md,src/cli/commands/definitions/automation/smart-spawn.md,smart-spawn,automation,auto-agent,medium,Smart spawning strategies
+.claude/commands/automation/workflow-select.md,src/cli/commands/definitions/automation/workflow-select.md,workflow-select,automation,none,medium,Automatic workflow selection
+.claude/commands/context/create.md,src/cli/commands/definitions/context/create.md,create,context,none,high,Context creation
+.claude/commands/context/prime.md,src/cli/commands/definitions/context/prime.md,prime,context,create,high,Context priming
+.claude/commands/context/update.md,src/cli/commands/definitions/context/update.md,update,context,create,high,Context updates
+.claude/commands/coordination/agent-spawn.md,src/cli/commands/definitions/coordination/agent-spawn.md,agent-spawn,coordination,none,high,Agent spawning - check duplicate
+.claude/commands/coordination/init.md,src/cli/commands/definitions/coordination/init.md,init,coordination,none,critical,Coordination initialization
+.claude/commands/coordination/orchestrate.md,src/cli/commands/definitions/coordination/orchestrate.md,orchestrate,coordination,init,high,Task orchestration
+.claude/commands/coordination/README.md,src/cli/commands/definitions/coordination/README.md,README,coordination,none,low,Category documentation
+.claude/commands/coordination/spawn.md,src/cli/commands/definitions/coordination/spawn.md,spawn,coordination,none,high,Duplicate of agent-spawn?
+.claude/commands/coordination/swarm-init.md,src/cli/commands/definitions/coordination/swarm-init.md,swarm-init,coordination,init,critical,Swarm initialization
+.claude/commands/coordination/task-orchestrate.md,src/cli/commands/definitions/coordination/task-orchestrate.md,task-orchestrate,coordination,orchestrate,high,Duplicate of orchestrate?
+.claude/commands/flow-nexus/app-store.md,src/cli/commands/definitions/integrations/flow-nexus-app-store.md,flow-nexus-app-store,integrations,none,medium,Flow Nexus app store integration
+.claude/commands/flow-nexus/challenges.md,src/cli/commands/definitions/integrations/flow-nexus-challenges.md,flow-nexus-challenges,integrations,none,low,Flow Nexus challenges
+.claude/commands/flow-nexus/login-registration.md,src/cli/commands/definitions/integrations/flow-nexus-auth.md,flow-nexus-auth,integrations,none,medium,Flow Nexus authentication
+.claude/commands/flow-nexus/neural-network.md,src/cli/commands/definitions/integrations/flow-nexus-neural.md,flow-nexus-neural,integrations,none,medium,Flow Nexus neural features
+.claude/commands/flow-nexus/payments.md,src/cli/commands/definitions/integrations/flow-nexus-payments.md,flow-nexus-payments,integrations,none,low,Flow Nexus payment features
+.claude/commands/flow-nexus/sandbox.md,src/cli/commands/definitions/integrations/flow-nexus-sandbox.md,flow-nexus-sandbox,integrations,none,high,Flow Nexus sandbox management
+.claude/commands/flow-nexus/swarm.md,src/cli/commands/definitions/integrations/flow-nexus-swarm.md,flow-nexus-swarm,integrations,swarm-init,medium,Flow Nexus swarm features
+.claude/commands/flow-nexus/user-tools.md,src/cli/commands/definitions/integrations/flow-nexus-user-tools.md,flow-nexus-user-tools,integrations,none,low,Flow Nexus user tools
+.claude/commands/flow-nexus/workflow.md,src/cli/commands/definitions/integrations/flow-nexus-workflow.md,flow-nexus-workflow,integrations,none,medium,Flow Nexus workflow features
+.claude/commands/github/code-review.md,src/cli/commands/definitions/github/code-review.md,code-review,github,none,high,GitHub code review
+.claude/commands/github/code-review-swarm.md,src/cli/commands/definitions/github/code-review-swarm.md,code-review-swarm,github,code-review|swarm-init,high,Swarm-based code review
+.claude/commands/github/github-modes.md,src/cli/commands/definitions/github/modes.md,modes,github,none,medium,GitHub operation modes
+.claude/commands/github/github-swarm.md,src/cli/commands/definitions/github/swarm.md,swarm,github,swarm-init,medium,GitHub swarm operations
+.claude/commands/github/issue-tracker.md,src/cli/commands/definitions/github/issue-tracker.md,issue-tracker,github,none,high,GitHub issue tracking
+.claude/commands/github/issue-triage.md,src/cli/commands/definitions/github/issue-triage.md,issue-triage,github,issue-tracker,medium,Issue triage automation
+.claude/commands/github/multi-repo-swarm.md,src/cli/commands/definitions/github/multi-repo-swarm.md,multi-repo-swarm,github,swarm-init,medium,Multi-repository swarm
+.claude/commands/github/pr-enhance.md,src/cli/commands/definitions/github/pr-enhance.md,pr-enhance,github,none,medium,PR enhancement automation
+.claude/commands/github/pr-manager.md,src/cli/commands/definitions/github/pr-manager.md,pr-manager,github,pr-enhance,high,PR management workflows
+.claude/commands/github/project-board-sync.md,src/cli/commands/definitions/github/project-board-sync.md,project-board-sync,github,issue-tracker,medium,Project board synchronization
+.claude/commands/github/README.md,src/cli/commands/definitions/github/README.md,README,github,none,low,Category documentation
+.claude/commands/github/release-manager.md,src/cli/commands/definitions/github/release-manager.md,release-manager,github,none,medium,Release management
+.claude/commands/github/release-swarm.md,src/cli/commands/definitions/github/release-swarm.md,release-swarm,github,release-manager|swarm-init,medium,Swarm-based release management
+.claude/commands/github/repo-analyze.md,src/cli/commands/definitions/github/repo-analyze.md,repo-analyze,github,none,high,Repository analysis
+.claude/commands/github/repo-architect.md,src/cli/commands/definitions/github/repo-architect.md,repo-architect,github,repo-analyze,medium,Repository architecture
+.claude/commands/github/swarm-issue.md,src/cli/commands/definitions/github/swarm-issue.md,swarm-issue,github,issue-tracker|swarm-init,medium,Swarm-based issue management
+.claude/commands/github/swarm-pr.md,src/cli/commands/definitions/github/swarm-pr.md,swarm-pr,github,pr-manager|swarm-init,medium,Swarm-based PR management
+.claude/commands/github/sync-coordinator.md,src/cli/commands/definitions/github/sync-coordinator.md,sync-coordinator,github,none,high,GitHub sync coordination
+.claude/commands/github/workflow-automation.md,src/cli/commands/definitions/github/workflow-automation.md,workflow-automation,github,none,medium,GitHub Actions automation
+.claude/commands/hive-mind/hive-mind-consensus.md,src/cli/commands/definitions/hive-mind/consensus.md,consensus,hive-mind,hive-mind-init,high,Hive Mind consensus mechanisms
+.claude/commands/hive-mind/hive-mind-init.md,src/cli/commands/definitions/hive-mind/init.md,init,hive-mind,none,critical,Hive Mind initialization
+.claude/commands/hive-mind/hive-mind.md,src/cli/commands/definitions/hive-mind/overview.md,overview,hive-mind,none,medium,Hive Mind overview
+.claude/commands/hive-mind/hive-mind-memory.md,src/cli/commands/definitions/hive-mind/memory.md,memory,hive-mind,hive-mind-init,high,Hive Mind memory management
+.claude/commands/hive-mind/hive-mind-metrics.md,src/cli/commands/definitions/hive-mind/metrics.md,metrics,hive-mind,hive-mind-init,medium,Hive Mind metrics tracking
+.claude/commands/hive-mind/hive-mind-resume.md,src/cli/commands/definitions/hive-mind/resume.md,resume,hive-mind,hive-mind-init,high,Hive Mind session resume
+.claude/commands/hive-mind/hive-mind-sessions.md,src/cli/commands/definitions/hive-mind/sessions.md,sessions,hive-mind,hive-mind-init,high,Hive Mind session management
+.claude/commands/hive-mind/hive-mind-spawn.md,src/cli/commands/definitions/hive-mind/spawn.md,spawn,hive-mind,hive-mind-init,high,Hive Mind agent spawning
+.claude/commands/hive-mind/hive-mind-status.md,src/cli/commands/definitions/hive-mind/status.md,status,hive-mind,hive-mind-init,medium,Hive Mind status reporting
+.claude/commands/hive-mind/hive-mind-stop.md,src/cli/commands/definitions/hive-mind/stop.md,stop,hive-mind,hive-mind-init,medium,Hive Mind shutdown
+.claude/commands/hive-mind/hive-mind-wizard.md,src/cli/commands/definitions/hive-mind/wizard.md,wizard,hive-mind,hive-mind-init,medium,Hive Mind setup wizard
+.claude/commands/hive-mind/README.md,src/cli/commands/definitions/hive-mind/README.md,README,hive-mind,none,low,Category documentation
+.claude/commands/hooks/overview.md,src/cli/commands/definitions/hooks/overview.md,overview,hooks,none,medium,Hooks system overview
+.claude/commands/hooks/post-edit.md,src/cli/commands/definitions/hooks/post-edit.md,post-edit,hooks,none,high,Post-edit hook
+.claude/commands/hooks/post-task.md,src/cli/commands/definitions/hooks/post-task.md,post-task,hooks,none,high,Post-task hook
+.claude/commands/hooks/pre-edit.md,src/cli/commands/definitions/hooks/pre-edit.md,pre-edit,hooks,none,high,Pre-edit hook
+.claude/commands/hooks/pre-task.md,src/cli/commands/definitions/hooks/pre-task.md,pre-task,hooks,none,high,Pre-task hook
+.claude/commands/hooks/README.md,src/cli/commands/definitions/hooks/README.md,README,hooks,none,low,Category documentation
+.claude/commands/hooks/session-end.md,src/cli/commands/definitions/hooks/session-end.md,session-end,hooks,none,high,Session end hook
+.claude/commands/hooks/setup.md,src/cli/commands/definitions/hooks/setup.md,setup,hooks,none,critical,Hooks setup and configuration
+.claude/commands/learn-curriculum.md,src/cli/commands/definitions/learning/curriculum.md,curriculum,learning,none,low,Learning curriculum
+.claude/commands/learn-skill.md,src/cli/commands/definitions/learning/skill.md,skill,learning,none,low,Skill learning
+.claude/commands/memory/memory-persist.md,src/cli/commands/definitions/memory/persist.md,persist,memory,none,high,Memory persistence
+.claude/commands/memory/memory-search.md,src/cli/commands/definitions/memory/search.md,search,memory,none,high,Memory search functionality
+.claude/commands/memory/memory-usage.md,src/cli/commands/definitions/memory/usage.md,usage,memory,none,medium,Memory usage tracking
+.claude/commands/memory/neural.md,src/cli/commands/definitions/memory/neural.md,neural,memory,none,medium,Neural memory features
+.claude/commands/memory/README.md,src/cli/commands/definitions/memory/README.md,README,memory,none,low,Category documentation
+.claude/commands/memory/usage.md,src/cli/commands/definitions/memory/usage-alt.md,usage-alt,memory,none,low,Duplicate usage file?
+.claude/commands/monitoring/agent-metrics.md,src/cli/commands/definitions/monitoring/agent-metrics.md,agent-metrics,monitoring,none,medium,Agent performance metrics
+.claude/commands/monitoring/agents.md,src/cli/commands/definitions/monitoring/agents.md,agents,monitoring,none,medium,Agent monitoring
+.claude/commands/monitoring/README.md,src/cli/commands/definitions/monitoring/README.md,README,monitoring,none,low,Category documentation
+.claude/commands/monitoring/real-time-view.md,src/cli/commands/definitions/monitoring/real-time-view.md,real-time-view,monitoring,none,medium,Real-time monitoring view
+.claude/commands/monitoring/status.md,src/cli/commands/definitions/monitoring/status.md,status,monitoring,none,high,Status monitoring
+.claude/commands/monitoring/swarm-monitor.md,src/cli/commands/definitions/monitoring/swarm-monitor.md,swarm-monitor,monitoring,swarm-init,medium,Swarm monitoring
+.claude/commands/optimization/auto-topology.md,src/cli/commands/definitions/optimization/auto-topology.md,auto-topology,optimization,none,medium,Automatic topology optimization
+.claude/commands/optimization/cache-manage.md,src/cli/commands/definitions/optimization/cache-manage.md,cache-manage,optimization,none,medium,Cache management
+.claude/commands/optimization/parallel-execute.md,src/cli/commands/definitions/optimization/parallel-execute.md,parallel-execute,optimization,none,high,Parallel execution
+.claude/commands/optimization/parallel-execution.md,src/cli/commands/definitions/optimization/parallel-execution-alt.md,parallel-execution-alt,optimization,parallel-execute,low,Duplicate parallel execution?
+.claude/commands/optimization/README.md,src/cli/commands/definitions/optimization/README.md,README,optimization,none,low,Category documentation
+.claude/commands/optimization/topology-optimize.md,src/cli/commands/definitions/optimization/topology-optimize.md,topology-optimize,optimization,auto-topology,medium,Topology optimization
+.claude/commands/pair/commands.md,src/cli/commands/definitions/pair/commands.md,commands,pair,none,low,Pair programming commands
+.claude/commands/pair/config.md,src/cli/commands/definitions/pair/config.md,config,pair,none,low,Pair programming config
+.claude/commands/pair/examples.md,src/cli/commands/definitions/pair/examples.md,examples,pair,none,low,Pair programming examples
+.claude/commands/pair/modes.md,src/cli/commands/definitions/pair/modes.md,modes,pair,none,low,Pair programming modes
+.claude/commands/pair/session.md,src/cli/commands/definitions/pair/session.md,session,pair,none,low,Pair programming session
+.claude/commands/pair/start.md,src/cli/commands/definitions/pair/start.md,start,pair,none,low,Start pair programming
+.claude/commands/pm/blocked.md,src/cli/commands/definitions/pm/blocked.md,blocked,pm,pm-status,high,CCPM blocked issues
+.claude/commands/pm/clean.md,src/cli/commands/definitions/pm/clean.md,clean,pm,none,medium,CCPM cleanup
+.claude/commands/pm/epic-close.md,src/cli/commands/definitions/pm/epic-close.md,epic-close,pm,epic-start,high,CCPM epic closure
+.claude/commands/pm/epic-decompose.md,src/cli/commands/definitions/pm/epic-decompose.md,epic-decompose,pm,epic-start,critical,CCPM epic decomposition
+.claude/commands/pm/epic-edit.md,src/cli/commands/definitions/pm/epic-edit.md,epic-edit,pm,epic-start,medium,CCPM epic editing
+.claude/commands/pm/epic-list.md,src/cli/commands/definitions/pm/epic-list.md,epic-list,pm,none,medium,CCPM epic listing
+.claude/commands/pm/epic-merge.md,src/cli/commands/definitions/pm/epic-merge.md,epic-merge,pm,epic-close,medium,CCPM epic merging
+.claude/commands/pm/epic-oneshot.md,src/cli/commands/definitions/pm/epic-oneshot.md,epic-oneshot,pm,epic-decompose|epic-sync,high,CCPM epic oneshot workflow
+.claude/commands/pm/epic-refresh.md,src/cli/commands/definitions/pm/epic-refresh.md,epic-refresh,pm,epic-sync,medium,CCPM epic refresh
+.claude/commands/pm/epic-show.md,src/cli/commands/definitions/pm/epic-show.md,epic-show,pm,epic-list,medium,CCPM epic display
+.claude/commands/pm/epic-start.md,src/cli/commands/definitions/pm/epic-start.md,epic-start,pm,prd-new,critical,CCPM epic start
+.claude/commands/pm/epic-start-worktree.md,src/cli/commands/definitions/pm/epic-start-worktree.md,epic-start-worktree,pm,epic-start,high,CCPM epic worktree
+.claude/commands/pm/epic-status.md,src/cli/commands/definitions/pm/epic-status.md,epic-status,pm,epic-start,high,CCPM epic status
+.claude/commands/pm/epic-sync.md,src/cli/commands/definitions/pm/epic-sync.md,epic-sync,pm,epic-decompose,critical,CCPM epic GitHub sync
+.claude/commands/pm/help.md,src/cli/commands/definitions/pm/help.md,help,pm,none,high,CCPM help documentation
+.claude/commands/pm/import.md,src/cli/commands/definitions/pm/import.md,import,pm,prd-new,medium,CCPM import functionality
+.claude/commands/pm/init.md,src/cli/commands/definitions/pm/init.md,init,pm,none,critical,CCPM initialization
+.claude/commands/pm/in-progress.md,src/cli/commands/definitions/pm/in-progress.md,in-progress,pm,pm-status,high,CCPM in-progress issues
+.claude/commands/pm/issue-analyze.md,src/cli/commands/definitions/pm/issue-analyze.md,issue-analyze,pm,issue-start,high,CCPM issue analysis
+.claude/commands/pm/issue-close.md,src/cli/commands/definitions/pm/issue-close.md,issue-close,pm,issue-start,high,CCPM issue closure
+.claude/commands/pm/issue-edit.md,src/cli/commands/definitions/pm/issue-edit.md,issue-edit,pm,issue-start,medium,CCPM issue editing
+.claude/commands/pm/issue-reopen.md,src/cli/commands/definitions/pm/issue-reopen.md,issue-reopen,pm,issue-close,medium,CCPM issue reopening
+.claude/commands/pm/issue-show.md,src/cli/commands/definitions/pm/issue-show.md,issue-show,pm,issue-start,medium,CCPM issue display
+.claude/commands/pm/issue-start.md,src/cli/commands/definitions/pm/issue-start.md,issue-start,pm,epic-sync,critical,CCPM issue start
+.claude/commands/pm/issue-status.md,src/cli/commands/definitions/pm/issue-status.md,issue-status,pm,issue-start,high,CCPM issue status
+.claude/commands/pm/issue-sync.md,src/cli/commands/definitions/pm/issue-sync.md,issue-sync,pm,issue-start,high,CCPM issue sync
+.claude/commands/pm/next.md,src/cli/commands/definitions/pm/next.md,next,pm,pm-status,high,CCPM next task
+.claude/commands/pm/prd-edit.md,src/cli/commands/definitions/pm/prd-edit.md,prd-edit,pm,prd-new,medium,CCPM PRD editing
+.claude/commands/pm/prd-list.md,src/cli/commands/definitions/pm/prd-list.md,prd-list,pm,prd-new,medium,CCPM PRD listing
+.claude/commands/pm/prd-new.md,src/cli/commands/definitions/pm/prd-new.md,prd-new,pm,pm-init,critical,CCPM PRD creation
+.claude/commands/pm/prd-parse.md,src/cli/commands/definitions/pm/prd-parse.md,prd-parse,pm,prd-new,high,CCPM PRD parsing
+.claude/commands/pm/prd-status.md,src/cli/commands/definitions/pm/prd-status.md,prd-status,pm,prd-new,medium,CCPM PRD status
+.claude/commands/pm/search.md,src/cli/commands/definitions/pm/search.md,search,pm,none,medium,CCPM search functionality
+.claude/commands/pm/standup.md,src/cli/commands/definitions/pm/standup.md,standup,pm,pm-status,medium,CCPM standup report
+.claude/commands/pm/status.md,src/cli/commands/definitions/pm/status.md,status,pm,pm-init,high,CCPM status overview
+.claude/commands/pm/sync.md,src/cli/commands/definitions/pm/sync.md,sync,pm,epic-sync|issue-sync,high,CCPM sync operations
+.claude/commands/pm/test-reference-update.md,src/cli/commands/definitions/pm/test-reference-update.md,test-reference-update,pm,none,low,CCPM test reference update
+.claude/commands/pm/validate.md,src/cli/commands/definitions/pm/validate.md,validate,pm,none,medium,CCPM validation
+.claude/commands/research-plan-only.md,src/cli/commands/definitions/research/plan-only.md,plan-only,research,none,medium,Research planning mode
+.claude/commands/safety-check.md,src/cli/commands/definitions/system/safety-check.md,safety-check,system,none,critical,System safety checks
+.claude/commands/sparc/analyzer.md,src/cli/commands/definitions/sparc/analyzer.md,analyzer,sparc,none,high,SPARC analyzer agent
+.claude/commands/sparc/architect.md,src/cli/commands/definitions/sparc/architect.md,architect,sparc,none,high,SPARC architect agent
+.claude/commands/sparc/batch-executor.md,src/cli/commands/definitions/sparc/batch-executor.md,batch-executor,sparc,none,medium,SPARC batch execution
+.claude/commands/sparc/coder.md,src/cli/commands/definitions/sparc/coder.md,coder,sparc,none,critical,SPARC coder agent
+.claude/commands/sparc/debugger.md,src/cli/commands/definitions/sparc/debugger.md,debugger,sparc,coder,high,SPARC debugger agent
+.claude/commands/sparc/designer.md,src/cli/commands/definitions/sparc/designer.md,designer,sparc,architect,medium,SPARC designer agent
+.claude/commands/sparc/documenter.md,src/cli/commands/definitions/sparc/documenter.md,documenter,sparc,none,medium,SPARC documenter agent
+.claude/commands/sparc/innovator.md,src/cli/commands/definitions/sparc/innovator.md,innovator,sparc,none,low,SPARC innovator agent
+.claude/commands/sparc/memory-manager.md,src/cli/commands/definitions/sparc/memory-manager.md,memory-manager,sparc,none,medium,SPARC memory manager
+.claude/commands/sparc/optimizer.md,src/cli/commands/definitions/sparc/optimizer.md,optimizer,sparc,analyzer,high,SPARC optimizer agent
+.claude/commands/sparc/orchestrator.md,src/cli/commands/definitions/sparc/orchestrator.md,orchestrator,sparc,none,critical,SPARC orchestrator
+.claude/commands/sparc/researcher.md,src/cli/commands/definitions/sparc/researcher.md,researcher,sparc,none,high,SPARC researcher agent
+.claude/commands/sparc/reviewer.md,src/cli/commands/definitions/sparc/reviewer.md,reviewer,sparc,coder,high,SPARC reviewer agent
+.claude/commands/sparc/sparc-modes.md,src/cli/commands/definitions/sparc/modes.md,modes,sparc,none,high,SPARC modes documentation
+.claude/commands/sparc/swarm-coordinator.md,src/cli/commands/definitions/sparc/swarm-coordinator.md,swarm-coordinator,sparc,orchestrator|swarm-init,high,SPARC swarm coordination
+.claude/commands/sparc/tdd.md,src/cli/commands/definitions/sparc/tdd.md,tdd,sparc,coder|tester,critical,SPARC TDD mode
+.claude/commands/sparc/tester.md,src/cli/commands/definitions/sparc/tester.md,tester,sparc,coder,critical,SPARC tester agent
+.claude/commands/sparc/workflow-manager.md,src/cli/commands/definitions/sparc/workflow-manager.md,workflow-manager,sparc,orchestrator,medium,SPARC workflow management
+.claude/commands/statusline/config.md,src/cli/commands/definitions/statusline/config.md,config,statusline,none,low,Statusline configuration
+.claude/commands/statusline/get-agents.md,src/cli/commands/definitions/statusline/get-agents.md,get-agents,statusline,none,low,Statusline agent display
+.claude/commands/statusline/refresh.md,src/cli/commands/definitions/statusline/refresh.md,refresh,statusline,none,low,Statusline refresh
+.claude/commands/statusline/scroll-left.md,src/cli/commands/definitions/statusline/scroll-left.md,scroll-left,statusline,none,low,Statusline scroll left
+.claude/commands/statusline/scroll-right.md,src/cli/commands/definitions/statusline/scroll-right.md,scroll-right,statusline,none,low,Statusline scroll right
+.claude/commands/statusline/switch-workspace.md,src/cli/commands/definitions/statusline/switch-workspace.md,switch-workspace,statusline,none,low,Statusline workspace switch
+.claude/commands/stream-chain/pipeline.md,src/cli/commands/definitions/stream-chain/pipeline.md,pipeline,stream-chain,none,medium,Stream chain pipeline
+.claude/commands/stream-chain/run.md,src/cli/commands/definitions/stream-chain/run.md,run,stream-chain,pipeline,medium,Stream chain execution
+.claude/commands/swarm/analysis.md,src/cli/commands/definitions/swarm/analysis.md,analysis,swarm,swarm-init,medium,Swarm analysis workflows
+.claude/commands/swarm/development.md,src/cli/commands/definitions/swarm/development.md,development,swarm,swarm-init,high,Swarm development workflows
+.claude/commands/swarm/examples.md,src/cli/commands/definitions/swarm/examples.md,examples,swarm,none,low,Swarm usage examples
+.claude/commands/swarm/maintenance.md,src/cli/commands/definitions/swarm/maintenance.md,maintenance,swarm,swarm-init,medium,Swarm maintenance workflows
+.claude/commands/swarm/optimization.md,src/cli/commands/definitions/swarm/optimization.md,optimization,swarm,swarm-init,medium,Swarm optimization workflows
+.claude/commands/swarm/README.md,src/cli/commands/definitions/swarm/README.md,README,swarm,none,low,Category documentation
+.claude/commands/swarm/research.md,src/cli/commands/definitions/swarm/research.md,research,swarm,swarm-init,medium,Swarm research workflows
+.claude/commands/swarm/swarm-analysis.md,src/cli/commands/definitions/swarm/swarm-analysis.md,swarm-analysis,swarm,swarm-init,medium,Duplicate of analysis?
+.claude/commands/swarm/swarm-background.md,src/cli/commands/definitions/swarm/background.md,background,swarm,swarm-init,medium,Swarm background processing
+.claude/commands/swarm/swarm-init.md,src/cli/commands/definitions/swarm/init.md,init,swarm,none,critical,Swarm initialization (core)
+.claude/commands/swarm/swarm.md,src/cli/commands/definitions/swarm/overview.md,overview,swarm,none,high,Swarm overview
+.claude/commands/swarm/swarm-modes.md,src/cli/commands/definitions/swarm/modes.md,modes,swarm,swarm-init,high,Swarm modes
+.claude/commands/swarm/swarm-monitor.md,src/cli/commands/definitions/swarm/monitor.md,monitor,swarm,swarm-init,medium,Swarm monitoring (duplicate?)
+.claude/commands/swarm/swarm-spawn.md,src/cli/commands/definitions/swarm/spawn.md,spawn,swarm,swarm-init,high,Swarm agent spawning
+.claude/commands/swarm/swarm-status.md,src/cli/commands/definitions/swarm/status.md,status,swarm,swarm-init,high,Swarm status
+.claude/commands/swarm/swarm-strategies.md,src/cli/commands/definitions/swarm/strategies.md,strategies,swarm,swarm-init,high,Swarm strategies
+.claude/commands/swarm/testing.md,src/cli/commands/definitions/swarm/testing.md,testing,swarm,swarm-init,medium,Swarm testing workflows
+.claude/commands/system/agents-list.md,src/cli/commands/definitions/system/agents-list.md,agents-list,system,none,high,System agent listing
+.claude/commands/training/model-update.md,src/cli/commands/definitions/training/model-update.md,model-update,training,none,medium,Neural model updates
+.claude/commands/training/neural-patterns.md,src/cli/commands/definitions/training/neural-patterns.md,neural-patterns,training,none,medium,Neural pattern learning
+.claude/commands/training/neural-train.md,src/cli/commands/definitions/training/neural-train.md,neural-train,training,none,high,Neural training
+.claude/commands/training/pattern-learn.md,src/cli/commands/definitions/training/pattern-learn.md,pattern-learn,training,neural-patterns,medium,Pattern learning
+.claude/commands/training/README.md,src/cli/commands/definitions/training/README.md,README,training,none,low,Category documentation
+.claude/commands/training/specialization.md,src/cli/commands/definitions/training/specialization.md,specialization,training,neural-train,medium,Agent specialization
+.claude/commands/truth/start.md,src/cli/commands/definitions/truth/start.md,start,truth,none,low,Truth verification start
+.claude/commands/verify/check.md,src/cli/commands/definitions/verify/check.md,check,verify,none,medium,Verification check
+.claude/commands/verify/start.md,src/cli/commands/definitions/verify/start.md,start,verify,none,medium,Verification start
+.claude/commands/workflows/development.md,src/cli/commands/definitions/workflows/development.md,development,workflows,none,high,Development workflow
+.claude/commands/workflows/README.md,src/cli/commands/definitions/workflows/README.md,README,workflows,none,low,Category documentation
+.claude/commands/workflows/research.md,src/cli/commands/definitions/workflows/research.md,research,workflows,none,medium,Research workflow
+.claude/commands/workflows/workflow-create.md,src/cli/commands/definitions/workflows/create.md,create,workflows,none,high,Workflow creation
+.claude/commands/workflows/workflow-execute.md,src/cli/commands/definitions/workflows/execute.md,execute,workflows,create,high,Workflow execution
+.claude/commands/workflows/workflow-export.md,src/cli/commands/definitions/workflows/export.md,export,workflows,create,medium,Workflow export

@@ -350,3 +350,25 @@ NEVER create files unless they're absolutely necessary for achieving your goal.
 ALWAYS prefer editing an existing file to creating a new one.
 NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested by the User.
 Never save working files, text/mds and tests to the root folder.
+
+
+# CCPM (Claude Code PM) Integration
+# Spec-driven development with GitHub Issues and Git worktrees
+
+## PM System Overview
+- PRDs stored in: .claude/prds/
+- Epics managed in: .claude/epics/ (gitignored)
+- Context files in: .claude/context/
+
+## Key Commands
+- /pm:prd-new - Create new product requirement
+- /pm:epic-oneshot - Decompose and sync to GitHub
+- /pm:issue-start - Begin work with specialized agent
+- /pm:next - Get next priority task
+
+## Rules
+@.claude/rules/agent-coordination.md
+@.claude/rules/path-standards.md
+@.claude/rules/github-operations.md
+
+

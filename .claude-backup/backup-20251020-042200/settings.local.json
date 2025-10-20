@@ -1,0 +1,52 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__ruv-swarm",
+      "mcp__claude-flow@alpha",
+      "mcp__flow-nexus",
+      "Bash(npx claude-flow@alpha hooks post-task --task-id \"roadmap-review\")",
+      "Bash(npx claude-flow@alpha hooks post-task --task-id \"security-analysis\")",
+      "Bash(npx claude-flow@alpha hooks notify --message \"Security and safety analysis complete - comprehensive report generated\")",
+      "Bash(npx claude-flow@alpha hooks post-task --task-id \"task-1760950327888-m48bhl99g\")",
+      "Bash(npx claude-flow@alpha hooks post-task --task-id \"architecture-analysis\")",
+      "Bash(npx claude-flow@alpha hooks notify --message \"Roadmap review complete\")",
+      "Read(//tmp/ccpm-install/ccpm/**)",
+      "Read(//tmp/ccpm-install/**)",
+      "Bash(npx claude-flow@alpha hooks post-task --task-id \"research-synthesis\")",
+      "Bash(npx claude-flow@alpha hooks notify --message \"Research synthesis complete: 7 patterns identified, 20 findings analyzed, 10 recommendations with confidence scores 8.7/10\")",
+      "Bash(npx claude-flow@alpha hooks session-end --export-metrics true)",
+      "Bash(npx claude-flow@alpha hooks notify --message \"Performance analysis complete: 35% memory improvement, 99.9% storage reduction, 5-7x target speedup, $0.70-1.40 cost target identified. Analysis saved to research/findings/performance-analysis.md\")",
+      "Bash(cat /tmp/ccpm-install/README.md)",
+      "Bash(npx claude-flow@alpha hooks notify --message \"Architecture analysis complete: 12 sections, 54 agents analyzed, MIRIX 6-tier memory validated, SPARC methodology documented\")",
+      "Bash(chmod +x /home/kvn/workspace/evolve/.claude-flow/hooks/research-autosave.js)",
+      "Bash(gh --version)",
+      "Bash(gh auth status)",
+      "Bash(gh extension install yahsan2/gh-sub-issue)",
+      "Bash(gh extension list)",
+      "Bash(npx claude-flow@alpha hooks memory-list)",
+      "Bash(source .claude/ccpm.config)",
+      "Bash(echo \"GitHub Repo: $GITHUB_REPO\")",
+      "Bash(echo \"Owner: $GITHUB_OWNER\")",
+      "Bash(echo \"Repo Name: $GITHUB_REPO_NAME\")",
+      "Bash(npx claude-flow@alpha hooks memory-get research/architecture/latest)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(cat package.json)",
+      "Bash(npx claude-flow@alpha hooks --help)",
+      "Bash(sqlite3 .swarm/memory.db \"SELECT name FROM sqlite_master WHERE type=''table'';\")",
+      "Bash(cat .claude/settings.json)",
+      "Read(//tmp/**)",
+      "Bash(cat /tmp/wshobson-agents/README.md)",
+      "Bash(cat .swarm/research/architecture/latest.json)",
+      "Read(//home/kvn/.claude/**)",
+      "Bash(claude --version)"
+    ],
+    "deny": []
+  },
+  "enabledMcpjsonServers": [
+    "claude-flow",
+    "ruv-swarm",
+    "claude-flow@alpha",
+    "flow-nexus",
+    "agentic-payments"
+  ]
+}
