@@ -1,0 +1,55 @@
+name: Auto Checkpoint
+
+# Automatically create checkpoint commits during development
+on:
+  schedule:
+    # Every 30 minutes during work hours (8 AM - 6 PM UTC)
+    - cron: '*/30 8-18 * * 1-5'
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  checkpoint:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if [[ -n $(git status --porcelain) ]]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create checkpoint commit
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          timestamp=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          git add -A
+          git commit -m "🔖 Checkpoint: $timestamp
+
+          Automated checkpoint created by GitHub Actions
+
+          Changes preserved:
+          $(git status --short)
+
+          Co-Authored-By: Claude <noreply@anthropic.com>"
+          git push origin ${{ github.ref_name }}
+
+      - name: Notify on checkpoint
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          echo "✅ Checkpoint created successfully at $(date -u)"
