@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "workspace": 1,
+    "instance": "backend-api-dev",
+    "assignedAt": "2025-10-21T16:13:39Z"
+  },
+  {
+    "workspace": 2,
+    "instance": "frontend-ui-coder",
+    "assignedAt": "2025-10-21T16:13:46Z"
+  }
+]

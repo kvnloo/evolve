@@ -1,0 +1,47 @@
+{
+  "autoRefreshInterval": 5000,
+  "enableAutoRefresh": true,
+  "showScrollIndicators": true,
+  "maxInstancesPerWorkspace": 10,
+  "dataSources": {
+    "claudeFlow": true,
+    "superClaude": true,
+    "ccpm": true,
+    "git": true
+  },
+  "workspaceNames": {
+    "0": "Overview",
+    "1": "Backend",
+    "2": "Frontend",
+    "3": "Database",
+    "4": "Testing",
+    "5": "DevOps",
+    "6": "Documentation",
+    "7": "Research",
+    "8": "Integration",
+    "9": "Deployment"
+  },
+  "display": {
+    "format": "[WS:{workspace}] {icon} {name} ({progress}%) {status} │ ◀ {current}/{total} ▶",
+    "icons": {
+      "backend": "🎯",
+      "frontend": "🎨",
+      "database": "🗄️",
+      "testing": "🧪",
+      "docs": "📝",
+      "devops": "🔧",
+      "security": "🔒",
+      "api": "🌐",
+      "research": "🔬",
+      "integration": "🔗",
+      "deployment": "🚀"
+    },
+    "statusIndicators": {
+      "running": "▶️",
+      "waiting": "⏸️",
+      "completed": "✅",
+      "error": "❌",
+      "idle": "○"
+    }
+  }
+}

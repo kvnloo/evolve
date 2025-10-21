@@ -8,7 +8,9 @@ STATE_FILE=".claude/statusline/state.json"
 # Get current workspace
 CURRENT_WS=0
 if [ -f "$STATE_FILE" ]; then
-  CURRENT_WS=$(jq -r '.workspace // 0' "$STATE_FILE")
+  CURRENT_WS=$(jq -r '.workspace // 0' "$STATE_FILE" 2>/dev/null)
+  # Ensure CURRENT_WS is a valid number
+  CURRENT_WS=${CURRENT_WS:-0}
 fi
 
 echo "╔══════════════════════════════════════════════════════════╗"
@@ -39,7 +41,9 @@ for i in {0..9}; do
     # Overview shows all
     COUNT="ALL"
   elif [ -f "$ASSIGN_FILE" ]; then
-    COUNT=$(jq -r --arg ws "$i" '[.[] | select(.workspace == ($ws | tonumber))] | length' "$ASSIGN_FILE")
+    COUNT=$(jq -r --arg ws "$i" '[.[] | select(.workspace == ($ws | tonumber))] | length' "$ASSIGN_FILE" 2>/dev/null)
+    # Ensure COUNT is set to 0 if empty
+    COUNT=${COUNT:-0}
   else
     COUNT=0
   fi
@@ -47,8 +51,8 @@ for i in {0..9}; do
   printf "%s [%d] %-20s (%s instances)\n" "$CURRENT" "$i" "$WS_NAME" "$COUNT"
 
   # Show instances if not overview and has assignments
-  if [ "$i" -ne 0 ] && [ -f "$ASSIGN_FILE" ] && [ -n "$COUNT" ] && [ "$COUNT" != "0" ]; then
-    jq -r --arg ws "$i" '.[] | select(.workspace == ($ws | tonumber)) | "      • \(.instance)"' "$ASSIGN_FILE"
+  if [ "$i" -ne 0 ] && [ -f "$ASSIGN_FILE" ] && [ "$COUNT" != "0" ] && [ "$COUNT" != "ALL" ]; then
+    jq -r --arg ws "$i" '.[] | select(.workspace == ($ws | tonumber)) | "      • \(.instance)"' "$ASSIGN_FILE" 2>/dev/null
   fi
 done
 
