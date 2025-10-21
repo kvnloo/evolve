@@ -1,0 +1,43 @@
+# These are supported funding model platforms
+
+# GitHub Sponsors
+github: # [YOUR_GITHUB_USERNAME]  # Uncomment and add your GitHub username
+
+# Open Collective
+open_collective: # your-project  # Uncomment and add your project name
+
+# Patreon
+patreon: # your-patreon  # Uncomment and add your Patreon username
+
+# Ko-fi
+ko_fi: # your-kofi  # Uncomment and add your Ko-fi username
+
+# Tidelift
+# tidelift: npm/package-name
+
+# Community Bridge
+# community_bridge: project-name
+
+# Liberapay
+# liberapay: your-liberapay
+
+# IssueHunt
+# issuehunt: your-username
+
+# Buy Me a Coffee
+# custom: ['https://www.buymeacoffee.com/your-username']
+
+# Custom URLs
+# custom: ['https://yourwebsite.com/donate', 'https://anothersite.com/support']
+
+# Instructions:
+# 1. Uncomment the platform(s) you want to use
+# 2. Add your username or project name
+# 3. Remove unused platforms or leave them commented
+# 4. Commit and push changes
+#
+# Note: At least one funding platform must be configured for the
+# "Sponsor" button to appear on your repository.
+#
+# For more information, see:
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository

@@ -1,0 +1,81 @@
+name: Close Stale Issues and PRs
+
+on:
+  schedule:
+    # Run daily at 1:00 AM UTC
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+
+jobs:
+  stale:
+    name: Mark and Close Stale Items
+    runs-on: ubuntu-latest
+
+    permissions:
+      issues: write
+      pull-requests: write
+
+    steps:
+      - name: Mark Stale Issues and PRs
+        uses: actions/stale@v9
+        with:
+          # General settings
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          days-before-stale: 60
+          days-before-close: 14
+
+          # Issue settings
+          stale-issue-label: 'stale'
+          exempt-issue-labels: 'pinned,security,roadmap,in-progress'
+          stale-issue-message: |
+            This issue has been automatically marked as stale because it has not had recent activity.
+            It will be closed in 14 days if no further activity occurs.
+
+            If this issue is still relevant, please:
+            - Add a comment to keep it open
+            - Add the 'pinned' label to prevent it from becoming stale again
+
+            Thank you for your contributions!
+          close-issue-message: |
+            This issue has been automatically closed due to inactivity.
+
+            If you believe this issue is still relevant, please reopen it or create a new issue
+            with updated information and reference this one.
+
+            Thank you for your understanding!
+          close-issue-reason: 'not_planned'
+
+          # Pull request settings
+          stale-pr-label: 'stale'
+          exempt-pr-labels: 'pinned,security,in-progress,work-in-progress'
+          stale-pr-message: |
+            This pull request has been automatically marked as stale because it has not had recent activity.
+            It will be closed in 14 days if no further activity occurs.
+
+            If this PR is still being worked on, please:
+            - Rebase with the latest main branch
+            - Add a comment with your progress
+            - Add the 'work-in-progress' or 'pinned' label
+
+            Thank you for your contributions!
+          close-pr-message: |
+            This pull request has been automatically closed due to inactivity.
+
+            If you would like to continue this work, please:
+            - Reopen this PR if it's still relevant
+            - Create a new PR with rebased changes
+            - Reference this PR in the new one
+
+            Thank you for your understanding!
+
+          # Additional settings
+          exempt-draft-pr: true
+          exempt-all-milestones: true
+          operations-per-run: 100
+          remove-stale-when-updated: true
+
+          # Labels to apply when closing
+          labels-to-add-when-close: 'auto-closed'
+
+          # Debugging (set to true for testing)
+          debug-only: false

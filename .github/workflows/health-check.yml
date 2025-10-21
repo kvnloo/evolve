@@ -1,0 +1,120 @@
+name: Community Health Check
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'README.md'
+      - 'CONTRIBUTING.md'
+      - 'CODE_OF_CONDUCT.md'
+      - 'SECURITY.md'
+      - 'LICENSE'
+      - '.github/workflows/health-check.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'README.md'
+      - 'CONTRIBUTING.md'
+      - 'CODE_OF_CONDUCT.md'
+      - 'SECURITY.md'
+      - 'LICENSE'
+  schedule:
+    # Run weekly on Monday at 9:00 AM UTC
+    - cron: '0 9 * * 1'
+
+jobs:
+  health-check:
+    name: Validate Community Health Files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check Required Files
+        run: |
+          echo "Checking for required community health files..."
+
+          required_files=(
+            "README.md"
+            "CONTRIBUTING.md"
+            "CODE_OF_CONDUCT.md"
+            "SECURITY.md"
+            "LICENSE"
+          )
+
+          missing_files=()
+
+          for file in "${required_files[@]}"; do
+            if [ ! -f "$file" ]; then
+              missing_files+=("$file")
+              echo "::error file=$file::Required file missing: $file"
+            else
+              echo "✅ Found: $file"
+            fi
+          done
+
+          if [ ${#missing_files[@]} -ne 0 ]; then
+            echo "::error::Missing required files: ${missing_files[*]}"
+            exit 1
+          fi
+
+      - name: Check for Placeholders in README
+        run: |
+          echo "Checking for placeholders in README.md..."
+
+          if grep -q "YOUR_USERNAME/YOUR_REPO" README.md; then
+            echo "::warning file=README.md::Found placeholder 'YOUR_USERNAME/YOUR_REPO' in README.md"
+            echo "Please update repository URLs with actual values"
+          fi
+
+          if grep -q "\[INSERT" README.md CONTRIBUTING.md CODE_OF_CONDUCT.md SECURITY.md 2>/dev/null; then
+            echo "::warning::Found '[INSERT' placeholder markers in community files"
+            echo "Please update placeholder values with actual information"
+          fi
+
+      - name: Check README Structure
+        run: |
+          echo "Validating README.md structure..."
+
+          required_sections=(
+            "Features"
+            "Quick Start"
+            "Documentation"
+            "Contributing"
+            "License"
+          )
+
+          for section in "${required_sections[@]}"; do
+            if ! grep -qi "$section" README.md; then
+              echo "::warning file=README.md::Missing or renamed section: $section"
+            else
+              echo "✅ Found section: $section"
+            fi
+          done
+
+      - name: Validate Markdown Links
+        uses: gaurav-nelson/github-action-markdown-link-check@v1
+        with:
+          config-file: '.github/markdown-link-check-config.json'
+          use-quiet-mode: 'yes'
+          use-verbose-mode: 'no'
+        continue-on-error: true
+
+      - name: Check License Type
+        run: |
+          echo "Checking license type..."
+
+          if grep -q "MIT License" LICENSE; then
+            echo "✅ License type: MIT"
+          else
+            echo "::warning file=LICENSE::License type unclear or not MIT"
+          fi
+
+      - name: Report Health Status
+        if: always()
+        run: |
+          echo "---"
+          echo "Community Health Check Complete"
+          echo "Review any warnings or errors above"
+          echo "See docs/github-setup-plan.md for improvement roadmap"
