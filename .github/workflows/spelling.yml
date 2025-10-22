@@ -1,0 +1,36 @@
+name: Spelling Check
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '**.md'
+      - 'docs/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - '**.md'
+      - 'docs/**'
+
+jobs:
+  spelling:
+    name: Check Spelling
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check Spelling
+        uses: crate-ci/typos@master
+        with:
+          files: '*.md docs/'
+          config: .github/typos.toml
+
+      - name: Report Typos
+        if: failure()
+        run: |
+          echo "::warning::Potential typos found in documentation"
+          echo "Review the errors above and either:"
+          echo "- Fix the typos"
+          echo "- Add technical terms to .github/typos.toml if they're correct"
