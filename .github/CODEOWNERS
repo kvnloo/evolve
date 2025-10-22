@@ -1,0 +1,64 @@
+# Code Owners for Claude Code Extended Framework
+#
+# This file defines individuals or teams responsible for code in this repository.
+# Code owners are automatically requested for review when someone opens a pull request
+# that modifies code that they own.
+#
+# Documentation: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owners for everything in the repo
+# These owners will be requested for review unless a later match takes precedence
+*       @YOUR_USERNAME
+
+# Documentation
+*.md    @YOUR_USERNAME
+/docs/  @YOUR_USERNAME
+
+# Community health files
+/CODE_OF_CONDUCT.md   @YOUR_USERNAME
+/CONTRIBUTING.md      @YOUR_USERNAME
+/SECURITY.md          @YOUR_USERNAME
+
+# GitHub configuration
+/.github/             @YOUR_USERNAME
+
+# Claude configuration
+/.claude/             @YOUR_USERNAME
+/CLAUDE.md            @YOUR_USERNAME
+
+# Specific .claude subdirectories (if you have specialized owners)
+/.claude/commands/    @YOUR_USERNAME
+/.claude/rules/       @YOUR_USERNAME
+/.claude/helpers/     @YOUR_USERNAME
+
+# Scripts (require careful review for security)
+/scripts/             @YOUR_USERNAME
+*.sh                  @YOUR_USERNAME
+
+# PM System
+/.claude/prds/        @YOUR_USERNAME
+# Note: .claude/epics/ is gitignored
+
+# Research and analysis
+/research/            @YOUR_USERNAME
+
+# Examples
+# /examples/          @YOUR_USERNAME @CONTRIBUTOR_USERNAME
+
+# Instructions:
+# 1. Replace @YOUR_USERNAME with your actual GitHub username
+# 2. Add additional owners as needed (e.g., @username or @org/team-name)
+# 3. Add more specific patterns if certain files/directories need different owners
+# 4. Team names require organization membership (e.g., @my-org/core-team)
+#
+# Pattern matching:
+# - * matches any string except /
+# - ** matches any string including /
+# - ? matches any one character except /
+# - [abc] matches any one character in the set
+# - [0-9] matches any digit
+#
+# Examples:
+# /scripts/**/*.sh        @security-team @devops-team
+# /docs/api-*.md          @api-team
+# /.github/workflows/     @devops-team
