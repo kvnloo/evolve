@@ -89,6 +89,57 @@
     },
     {
       "pattern": "COMMANDS_ZH\\.md$"
+    },
+    {
+      "pattern": "CONTRIBUTING\\.md$"
+    },
+    {
+      "pattern": "SECURITY\\.md$"
+    },
+    {
+      "pattern": "LICENSE$"
+    },
+    {
+      "pattern": "troubleshooting\\.md$"
+    },
+    {
+      "pattern": "installation\\.md$"
+    },
+    {
+      "pattern": "your-first-project\\.md$"
+    },
+    {
+      "pattern": "common-workflows\\.md$"
+    },
+    {
+      "pattern": "AGENT-MIGRATION-"
+    },
+    {
+      "pattern": "agent-dependency-graph\\.md$"
+    },
+    {
+      "pattern": "migrate-agents\\.sh$"
+    },
+    {
+      "pattern": "PROJECT-INDEX\\.md$"
+    },
+    {
+      "pattern": "IMPLEMENTATION-SUMMARY\\.md$"
+    },
+    {
+      "pattern": "ENHANCED-CAPABILITIES\\.md$"
+    },
+    {
+      "pattern": "SUPERCLAUDE-INSTALLATION\\.md$"
+    },
+    {
+      "pattern": "^https://mcp\\.so"
+    },
+    {
+      "pattern": "^http://127\\.0\\.0\\.1"
+    },
+    {
+      "pattern": "^https://mcpmarket\\.com"
     }
   ],
   "replacementPatterns": [],
