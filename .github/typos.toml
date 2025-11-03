@@ -1,0 +1,62 @@
+# Typos configuration for spell checking
+# Documentation: https://github.com/crate-ci/typos
+
+[default]
+extend-ignore-re = [
+  # Ignore hex colors
+  "#[0-9a-fA-F]{6}",
+  # Ignore version numbers
+  "v?[0-9]+\\.[0-9]+\\.[0-9]+",
+]
+
+[default.extend-words]
+# Technical terms and project-specific vocabulary
+SPARC = "SPARC"
+sparc = "sparc"
+pecification = "pecification"  # Part of "Specification" in SPARC
+CCPM = "CCPM"
+ccpm = "ccpm"
+MCP = "MCP"
+mcp = "mcp"
+PRD = "PRD"
+prd = "prd"
+epics = "epics"
+worktree = "worktree"
+worktrees = "worktrees"
+shellcheck = "shellcheck"
+dependabot = "dependabot"
+CODEOWNERS = "CODEOWNERS"
+HashiCorp = "HashiCorp"
+Hashi = "Hashi"  # Short for HashiCorp
+RTO = "RTO"  # Recovery Time Objective
+RPO = "RPO"  # Recovery Point Objective
+
+# Common abbreviations
+dirs = "dirs"
+mkdir = "mkdir"
+cp = "cp"
+mv = "mv"
+grep = "grep"
+sed = "sed"
+awk = "awk"
+
+# Git terms
+gitignored = "gitignored"
+uncommitted = "uncommitted"
+
+# Framework-specific
+claude-flow = "claude-flow"
+ruv-swarm = "ruv-swarm"
+flow-nexus = "flow-nexus"
+
+[files]
+extend-exclude = [
+  "*.svg",
+  "*.png",
+  "*.jpg",
+  "*.gif",
+  "CHANGELOG.md",
+  "package-lock.json",
+  "node_modules/",
+  ".git/",
+]

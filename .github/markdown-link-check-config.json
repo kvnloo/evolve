@@ -1,0 +1,168 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^http://localhost"
+    },
+    {
+      "pattern": "^https://github.com/YOUR_USERNAME"
+    },
+    {
+      "pattern": "^https://github.com/\\{org\\}/\\{repo\\}"
+    },
+    {
+      "pattern": "^https://claude\\.ai/claude-code"
+    },
+    {
+      "pattern": "^https://github.com/superclaude/framework"
+    },
+    {
+      "pattern": "^https://github.com/kvnloo/evolve/discussions"
+    },
+    {
+      "pattern": "^https://docs\\.npmjs\\.com/security-and-safeguards"
+    },
+    {
+      "pattern": "^https://www\\.npmjs\\.com/package/@bifrost_inc/superclaude"
+    },
+    {
+      "pattern": "^link$"
+    },
+    {
+      "pattern": "\\$ARGUMENTS"
+    },
+    {
+      "pattern": "research/.*\\.(md|pdf)$"
+    },
+    {
+      "pattern": "docs/.*\\.md$"
+    },
+    {
+      "pattern": "CLAUDE\\.md$"
+    },
+    {
+      "pattern": "/memory/memory-usage\\.md$"
+    },
+    {
+      "pattern": "agent-migration"
+    },
+    {
+      "pattern": "\\.(webp|png|jpg|pdf)$"
+    },
+    {
+      "pattern": "zh-docs/"
+    },
+    {
+      "pattern": "README\\.md#"
+    },
+    {
+      "pattern": "CONFIGURATION\\.md$"
+    },
+    {
+      "pattern": "KEYBOARD-SHORTCUTS\\.md$"
+    },
+    {
+      "pattern": "FAQ\\.md$"
+    },
+    {
+      "pattern": "AGENT-COORDINATION\\.md$"
+    },
+    {
+      "pattern": "MULTI-WORKSPACE-DEV\\.md$"
+    },
+    {
+      "pattern": "PERFORMANCE\\.md$"
+    },
+    {
+      "pattern": "getting-started\\.md$"
+    },
+    {
+      "pattern": "architecture\\.md$"
+    },
+    {
+      "pattern": "script-reference\\.md$"
+    },
+    {
+      "pattern": "configuration-reference\\.md$"
+    },
+    {
+      "pattern": "AGENTS_ZH\\.md$"
+    },
+    {
+      "pattern": "COMMANDS_ZH\\.md$"
+    },
+    {
+      "pattern": "CONTRIBUTING\\.md$"
+    },
+    {
+      "pattern": "SECURITY\\.md$"
+    },
+    {
+      "pattern": "LICENSE$"
+    },
+    {
+      "pattern": "troubleshooting\\.md$"
+    },
+    {
+      "pattern": "installation\\.md$"
+    },
+    {
+      "pattern": "your-first-project\\.md$"
+    },
+    {
+      "pattern": "common-workflows\\.md$"
+    },
+    {
+      "pattern": "AGENT-MIGRATION-"
+    },
+    {
+      "pattern": "agent-dependency-graph\\.md$"
+    },
+    {
+      "pattern": "migrate-agents\\.sh$"
+    },
+    {
+      "pattern": "PROJECT-INDEX\\.md$"
+    },
+    {
+      "pattern": "IMPLEMENTATION-SUMMARY\\.md$"
+    },
+    {
+      "pattern": "ENHANCED-CAPABILITIES\\.md$"
+    },
+    {
+      "pattern": "SUPERCLAUDE-INSTALLATION\\.md$"
+    },
+    {
+      "pattern": "^https://mcp\\.so"
+    },
+    {
+      "pattern": "^http://127\\.0\\.0\\.1"
+    },
+    {
+      "pattern": "^https://mcpmarket\\.com"
+    },
+    {
+      "pattern": "^https://ovidiueftimie\\.substack\\.com"
+    },
+    {
+      "pattern": "^https://scottspence\\.com"
+    },
+    {
+      "pattern": "^https://skywork\\.ai"
+    }
+  ],
+  "replacementPatterns": [],
+  "httpHeaders": [
+    {
+      "urls": ["https://github.com"],
+      "headers": {
+        "Accept-Encoding": "zstd, br, gzip, deflate"
+      }
+    }
+  ],
+  "timeout": "20s",
+  "retryOn429": true,
+  "retryCount": 3,
+  "fallbackRetryDelay": "30s",
+  "aliveStatusCodes": [200, 206]
+}

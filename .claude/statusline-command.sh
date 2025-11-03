@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 # Read JSON input from stdin

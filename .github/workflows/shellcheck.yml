@@ -1,0 +1,42 @@
+name: Shell Script Linting
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - '**.sh'
+      - '.github/workflows/shellcheck.yml'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - '**.sh'
+      - '.github/workflows/shellcheck.yml'
+
+jobs:
+  shellcheck:
+    name: Shellcheck
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run ShellCheck
+        uses: ludeeus/action-shellcheck@master
+        with:
+          severity: error
+          scandir: '.'
+          format: tty
+          ignore_paths: |
+            node_modules
+            .git
+        env:
+          SHELLCHECK_OPTS: -e SC1091 -e SC2034 -e SC2155 -e SC2046 -e SC2044
+
+      - name: Report Results
+        if: failure()
+        run: |
+          echo "::error::ShellCheck found issues in shell scripts"
+          echo "Please fix the issues reported above"
+          echo "See CONTRIBUTING.md for shell script style guidelines"
+          exit 1
