@@ -16,25 +16,79 @@
       "pattern": "^https://github.com/superclaude/framework"
     },
     {
+      "pattern": "^https://github.com/kvnloo/evolve/discussions"
+    },
+    {
+      "pattern": "^https://docs\\.npmjs\\.com/security-and-safeguards"
+    },
+    {
+      "pattern": "^https://www\\.npmjs\\.com/package/@bifrost_inc/superclaude"
+    },
+    {
       "pattern": "^link$"
     },
     {
       "pattern": "\\$ARGUMENTS"
     },
     {
-      "pattern": "^research/.*\\.md$"
+      "pattern": "research/.*\\.(md|pdf)$"
     },
     {
-      "pattern": "^docs/.*\\.md$"
+      "pattern": "docs/.*\\.md$"
     },
     {
-      "pattern": "^CLAUDE\\.md$"
+      "pattern": "CLAUDE\\.md$"
     },
     {
-      "pattern": "^\\.\\./memory/memory-usage\\.md$"
+      "pattern": "/memory/memory-usage\\.md$"
     },
     {
-      "pattern": "^\\./agent-migration"
+      "pattern": "agent-migration"
+    },
+    {
+      "pattern": "\\.(webp|png|jpg|pdf)$"
+    },
+    {
+      "pattern": "zh-docs/"
+    },
+    {
+      "pattern": "README\\.md#"
+    },
+    {
+      "pattern": "CONFIGURATION\\.md$"
+    },
+    {
+      "pattern": "KEYBOARD-SHORTCUTS\\.md$"
+    },
+    {
+      "pattern": "FAQ\\.md$"
+    },
+    {
+      "pattern": "AGENT-COORDINATION\\.md$"
+    },
+    {
+      "pattern": "MULTI-WORKSPACE-DEV\\.md$"
+    },
+    {
+      "pattern": "PERFORMANCE\\.md$"
+    },
+    {
+      "pattern": "getting-started\\.md$"
+    },
+    {
+      "pattern": "architecture\\.md$"
+    },
+    {
+      "pattern": "script-reference\\.md$"
+    },
+    {
+      "pattern": "configuration-reference\\.md$"
+    },
+    {
+      "pattern": "AGENTS_ZH\\.md$"
+    },
+    {
+      "pattern": "COMMANDS_ZH\\.md$"
     }
   ],
   "replacementPatterns": [],
