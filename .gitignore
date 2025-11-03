@@ -32,3 +32,10 @@ repos/
 .claude/epics/
 .claude/context/project-context.md
 .claude/settings.local.json
+
+# projects
+repos/
+
+# UI workspace (screenshots and extracted CSS are temporary/generated)
+.ui/screenshots/
+.ui/extracted-css/
