@@ -74,7 +74,7 @@ mkdir -p .claude/scripts/pm
 echo "  ✅ Directories created"
 
 # Copy scripts if in main repo
-if [ -d "scripts/pm" ] && [ ! "$(pwd)" = *"/.claude"* ]; then
+if [ -d "scripts/pm" ] && [[ ! "$(pwd)" = *"/.claude"* ]]; then
   echo ""
   echo "📝 Copying PM scripts..."
   cp -r scripts/pm/* .claude/scripts/pm/

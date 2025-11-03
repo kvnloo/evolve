@@ -13,6 +13,7 @@ extend-ignore-re = [
 # Technical terms and project-specific vocabulary
 SPARC = "SPARC"
 sparc = "sparc"
+pecification = "pecification"  # Part of "Specification" in SPARC
 CCPM = "CCPM"
 ccpm = "ccpm"
 MCP = "MCP"
@@ -25,6 +26,10 @@ worktrees = "worktrees"
 shellcheck = "shellcheck"
 dependabot = "dependabot"
 CODEOWNERS = "CODEOWNERS"
+HashiCorp = "HashiCorp"
+Hashi = "Hashi"  # Short for HashiCorp
+RTO = "RTO"  # Recovery Time Objective
+RPO = "RPO"  # Recovery Point Objective
 
 # Common abbreviations
 dirs = "dirs"

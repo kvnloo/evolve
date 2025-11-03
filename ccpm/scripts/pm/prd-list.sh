@@ -1,4 +1,4 @@
-# !/bin/bash
+#!/bin/bash
 # Check if PRD directory exists
 if [ ! -d ".claude/prds" ]; then
   echo "📁 No PRD directory found. Create your first PRD with: /pm:prd-new <feature-name>"
