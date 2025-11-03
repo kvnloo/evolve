@@ -2189,13 +2189,13 @@ npm run dev
 
 ## Documentation
 
-- [Architecture](docs/architecture/)
-- [API Reference](docs/api/)
-- [User Guides](docs/guides/)
+- [Architecture](../../../docs/architecture.md)
+- [System Architecture](../../../docs/system-architecture.md)
+- [User Guides](../../../docs/guides/ccpm-readme.md)
 
 ## Safety
 
-- See [Safety Framework](docs/architecture/safety-framework.md)
+- See [Security Analysis Report](../../../docs/security-analysis-report.md)
 - Constitutional AI principles: `.claude/CONSTITUTION.md`
 - Circuit breakers: `src/safety/circuit-breakers.js`
 EOF

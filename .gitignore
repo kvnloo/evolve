@@ -25,6 +25,8 @@ coordination/orchestration/*
 claude-flow
 # Removed Windows wrapper files per user request
 hive-mind-prompt-*.txt
+# project files
+repos/
 
 # CCPM (Claude Code PM)
 .claude/epics/
