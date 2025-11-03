@@ -140,6 +140,15 @@
     },
     {
       "pattern": "^https://mcpmarket\\.com"
+    },
+    {
+      "pattern": "^https://ovidiueftimie\\.substack\\.com"
+    },
+    {
+      "pattern": "^https://scottspence\\.com"
+    },
+    {
+      "pattern": "^https://skywork\\.ai"
     }
   ],
   "replacementPatterns": [],
