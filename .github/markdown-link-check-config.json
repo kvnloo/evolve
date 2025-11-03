@@ -5,6 +5,36 @@
     },
     {
       "pattern": "^https://github.com/YOUR_USERNAME"
+    },
+    {
+      "pattern": "^https://github.com/\\{org\\}/\\{repo\\}"
+    },
+    {
+      "pattern": "^https://claude\\.ai/claude-code"
+    },
+    {
+      "pattern": "^https://github.com/superclaude/framework"
+    },
+    {
+      "pattern": "^link$"
+    },
+    {
+      "pattern": "\\$ARGUMENTS"
+    },
+    {
+      "pattern": "^research/.*\\.md$"
+    },
+    {
+      "pattern": "^docs/.*\\.md$"
+    },
+    {
+      "pattern": "^CLAUDE\\.md$"
+    },
+    {
+      "pattern": "^\\.\\./memory/memory-usage\\.md$"
+    },
+    {
+      "pattern": "^\\./agent-migration"
     }
   ],
   "replacementPatterns": [],
