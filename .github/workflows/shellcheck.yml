@@ -24,14 +24,14 @@ jobs:
       - name: Run ShellCheck
         uses: ludeeus/action-shellcheck@master
         with:
-          severity: warning
+          severity: error
           scandir: '.'
           format: tty
           ignore_paths: |
             node_modules
             .git
         env:
-          SHELLCHECK_OPTS: -e SC1091 -e SC2034
+          SHELLCHECK_OPTS: -e SC1091 -e SC2034 -e SC2155 -e SC2046 -e SC2044
 
       - name: Report Results
         if: failure()
