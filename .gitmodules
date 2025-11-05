@@ -1,0 +1,3 @@
+[submodule ".claude/tools/UIED"]
+	path = .claude/tools/UIED
+	url = https://github.com/MulongXie/UIED.git
