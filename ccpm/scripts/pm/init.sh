@@ -102,7 +102,7 @@ if git rev-parse --git-dir > /dev/null 2>&1; then
       echo "  To fix this:"
       echo "  1. Fork the repository or create your own on GitHub"
       echo "  2. Update your remote:"
-      echo "     git remote set-url origin https://github.com/YOUR_USERNAME/YOUR_REPO.git"
+      echo "     git remote set-url origin https://github.com/kvnloo/evolve.git"
       echo ""
     else
       # Create GitHub labels if this is a GitHub repository

@@ -6,6 +6,36 @@
 
 ---
 
+## Framework Foundations
+
+This architecture builds on proven open-source frameworks:
+
+### Claude Flow
+**Source**: [github.com/ruvnet/claude-flow](https://github.com/ruvnet/claude-flow)
+- SPARC methodology (Specification → Pseudocode → Architecture → Refinement → Completion)
+- 54+ specialized agent types across 9 categories
+- Hooks system for pre/post operation automation
+- Memory management and neural pattern training
+- Multi-agent coordination with adaptive topology
+
+### CCPM (Claude Code PM)
+**Source**: [github.com/automazeio/ccpm](https://github.com/automazeio/ccpm)
+- PRD → Epic → Issue workflow
+- Git worktree integration for parallel development
+- Spec-driven development with GitHub synchronization
+- Issue-based task management
+
+### Integration Layer (This Project)
+This document focuses on:
+- **Technology selections** (PostgreSQL, Redis, Neo4j, etc.)
+- **Layer architecture** (4-layer implementation with 6-tier memory)
+- **Production deployment** (staging, production, monitoring)
+- **Security implementation** (Constitutional AI, audit logging)
+
+> For framework overview and integration patterns, see [architecture.md](architecture.md).
+
+---
+
 ## Executive Summary
 
 The Evolve project is a **production-grade autonomous AI development platform** implementing a sophisticated 4-layer architecture with 6-tier memory system, 54 specialized agents, and comprehensive orchestration capabilities. The system achieves **84.8% SWE-Bench solve rate**, **2.8-4.4x speed improvements**, and **32.3% token reduction** through evidence-based SPARC methodology (Specification → Pseudocode → Architecture → Refinement → Completion).

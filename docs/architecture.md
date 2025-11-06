@@ -1,6 +1,34 @@
-# Architecture Overview
+# Framework Architecture Overview
 
 This document describes the architecture of the Claude Code Extended Framework, explaining how components work together to enable AI-powered software development.
+
+## Framework Attribution
+
+This architecture integrates capabilities from multiple proven frameworks:
+
+### Claude Flow Architecture
+**Source**: [github.com/ruvnet/claude-flow](https://github.com/ruvnet/claude-flow)
+- SPARC methodology implementation (Specification → Pseudocode → Architecture → Refinement → Completion)
+- 54+ specialized agents across 9 categories
+- Hooks system for pre/post operation automation
+- Multi-agent coordination with adaptive topology selection
+- Neural pattern training and memory management
+
+### CCPM (Claude Code PM) Architecture
+**Source**: [github.com/automazeio/ccpm](https://github.com/automazeio/ccpm)
+- Spec-driven development workflow (PRD → Epic → Issue)
+- Epic decomposition with GitHub synchronization
+- Git worktree management for parallel development
+- Issue-driven development with specialized agent assignment
+
+### Integration Architecture (This Project's Contribution)
+- MCP server orchestration patterns
+- Parallel execution standards ("1 MESSAGE = ALL OPERATIONS")
+- Memory coordination protocols across agents
+- Cross-framework workflow automation
+- Production deployment patterns
+
+> For production implementation details, technology selections, and deployment architecture, see [evolve-architecture.md](evolve-architecture.md).
 
 ## Table of Contents
 

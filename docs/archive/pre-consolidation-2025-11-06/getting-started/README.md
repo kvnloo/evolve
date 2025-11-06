@@ -38,8 +38,8 @@ The Claude Code Extended Framework transforms Claude Code from a coding assistan
 ### 2. Installation
 ```bash
 # Clone repository
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-cd YOUR_REPO
+git clone https://github.com/kvnloo/evolve.git
+cd evolve
 
 # Install MCP servers (recommended)
 claude mcp add claude-flow npx claude-flow@alpha mcp start
