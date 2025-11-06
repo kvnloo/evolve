@@ -48,8 +48,8 @@ No! Only `claude-flow` is required:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-cd YOUR_REPO
+git clone https://github.com/kvnloo/evolve.git
+cd evolve
 
 # 2. Install required MCP server
 claude mcp add claude-flow npx claude-flow@alpha mcp start
@@ -294,8 +294,8 @@ See [Troubleshooting Guide](troubleshooting.md) for more.
 ### Where can I get help?
 
 1. **Documentation**: Check `docs/` directory
-2. **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/YOUR_REPO/issues)
-3. **Discussions**: [GitHub Discussions](https://github.com/YOUR_USERNAME/YOUR_REPO/discussions)
+2. **Issues**: [GitHub Issues](https://github.com/kvnloo/evolve/issues)
+3. **Discussions**: [GitHub Discussions](https://github.com/kvnloo/evolve/discussions)
 4. **Security**: [SECURITY.md](../SECURITY.md)
 
 ## Contributing
@@ -409,4 +409,4 @@ Yes! MIT license allows commercial use. Just:
 
 ---
 
-**Didn't find your answer?** [Ask in Discussions](https://github.com/YOUR_USERNAME/YOUR_REPO/discussions) or [open an issue](https://github.com/YOUR_USERNAME/YOUR_REPO/issues)!
+**Didn't find your answer?** [Ask in Discussions](https://github.com/kvnloo/evolve/discussions) or [open an issue](https://github.com/kvnloo/evolve/issues)!

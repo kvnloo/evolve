@@ -414,7 +414,7 @@ git config --list
 **Solution**:
 ```bash
 # Update remote to your own repository
-git remote set-url origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+git remote set-url origin https://github.com/kvnloo/evolve.git
 
 # Verify
 git remote get-url origin
@@ -464,7 +464,7 @@ If issues persist:
    - [FAQ](faq.md)
 
 2. **Search existing issues**:
-   - [GitHub Issues](https://github.com/YOUR_USERNAME/YOUR_REPO/issues)
+   - [GitHub Issues](https://github.com/kvnloo/evolve/issues)
 
 3. **Create new issue**:
    ```bash
@@ -472,7 +472,7 @@ If issues persist:
    ```
 
 4. **Join discussions**:
-   - [GitHub Discussions](https://github.com/YOUR_USERNAME/YOUR_REPO/discussions)
+   - [GitHub Discussions](https://github.com/kvnloo/evolve/discussions)
 
 ## Debug Mode
 
@@ -523,4 +523,4 @@ claude mcp logs claude-flow | tail -50
 
 ---
 
-Still stuck? [Open an issue](https://github.com/YOUR_USERNAME/YOUR_REPO/issues/new) with diagnostic information!
+Still stuck? [Open an issue](https://github.com/kvnloo/evolve/issues/new) with diagnostic information!

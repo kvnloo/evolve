@@ -136,7 +136,7 @@ All contributors will be acknowledged! 🎉
 
 ## Future Roadmap
 
-See [GitHub Projects](https://github.com/YOUR_USERNAME/YOUR_REPO/projects) for planned features and milestones.
+See [GitHub Projects](https://github.com/kvnloo/evolve/projects) for planned features and milestones.
 
 **Upcoming Features**:
 - Enhanced agent capabilities
@@ -147,7 +147,7 @@ See [GitHub Projects](https://github.com/YOUR_USERNAME/YOUR_REPO/projects) for p
 
 ---
 
-For detailed commit history, see [GitHub Commits](https://github.com/YOUR_USERNAME/YOUR_REPO/commits).
+For detailed commit history, see [GitHub Commits](https://github.com/kvnloo/evolve/commits).
 
-[Unreleased]: https://github.com/YOUR_USERNAME/YOUR_REPO/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/YOUR_USERNAME/YOUR_REPO/releases/tag/v0.1.0
+[Unreleased]: https://github.com/kvnloo/evolve/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/kvnloo/evolve/releases/tag/v0.1.0

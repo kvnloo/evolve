@@ -32,9 +32,9 @@ This project adheres to a [Code of Conduct](CODE_OF_CONDUCT.md). By participatin
 
 1. **Fork and clone the repository:**
 ```bash
-git fork https://github.com/YOUR_USERNAME/YOUR_REPO.git
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-cd YOUR_REPO
+git fork https://github.com/kvnloo/evolve.git
+git clone https://github.com/kvnloo/evolve.git
+cd evolve
 ```
 
 2. **Create a feature branch:**
@@ -385,9 +385,9 @@ main "$@"
 
 ## Questions?
 
-- **General questions**: Open a [Discussion](https://github.com/YOUR_USERNAME/YOUR_REPO/discussions)
-- **Bug reports**: Open an [Issue](https://github.com/YOUR_USERNAME/YOUR_REPO/issues)
-- **Feature requests**: Open an [Issue](https://github.com/YOUR_USERNAME/YOUR_REPO/issues) with `[FEATURE]` prefix
+- **General questions**: Open a [Discussion](https://github.com/kvnloo/evolve/discussions)
+- **Bug reports**: Open an [Issue](https://github.com/kvnloo/evolve/issues)
+- **Feature requests**: Open an [Issue](https://github.com/kvnloo/evolve/issues) with `[FEATURE]` prefix
 - **Security issues**: See [SECURITY.md](SECURITY.md)
 
 ## Recognition

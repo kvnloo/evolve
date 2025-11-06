@@ -17,12 +17,12 @@ Before you begin, ensure you have:
 
 ```bash
 # Clone to your local machine
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-cd YOUR_REPO
+git clone https://github.com/kvnloo/evolve.git
+cd evolve
 
 # Or if you're contributing, fork first
-gh repo fork YOUR_USERNAME/YOUR_REPO --clone
-cd YOUR_REPO
+gh repo fork kvnloo/evolve --clone
+cd evolve
 ```
 
 ### 2. Explore the Configuration
@@ -316,7 +316,7 @@ chmod +x script.sh
 
 3. **Contribute**:
    - Read [CONTRIBUTING.md](../CONTRIBUTING.md)
-   - Join [GitHub Discussions](https://github.com/YOUR_USERNAME/YOUR_REPO/discussions)
+   - Join [GitHub Discussions](https://github.com/kvnloo/evolve/discussions)
    - Report issues or request features
 
 4. **Advanced Topics**:
@@ -328,8 +328,8 @@ chmod +x script.sh
 ## Getting Help
 
 - **Documentation**: Check `docs/` directory
-- **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/YOUR_REPO/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/YOUR_USERNAME/YOUR_REPO/discussions)
+- **Issues**: [GitHub Issues](https://github.com/kvnloo/evolve/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/kvnloo/evolve/discussions)
 - **Security**: See [SECURITY.md](../SECURITY.md)
 
 ## Quick Reference Card
