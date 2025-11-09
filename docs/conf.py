@@ -79,8 +79,9 @@ html_theme_options = {
     'github_banner': True,
 }
 
-# Landing page configuration
+# Landing page configuration and theme context
 html_context = {
+    'style': 'default',  # Required by revitron theme
     'landing_page': {
         'menu': [
             {'title': 'Quick Start', 'url': 'quick-start.html'},
