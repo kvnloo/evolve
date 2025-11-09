@@ -39,3 +39,12 @@ repos/
 # UI workspace (screenshots and extracted CSS are temporary/generated)
 .ui/screenshots/
 .ui/extracted-css/
+
+# Sphinx documentation build artifacts
+docs/_build/
+docs/_static/
+docs/_templates/
+docs/.doctrees/
+Pipfile.lock
+*.pyc
+__pycache__/
