@@ -6,11 +6,11 @@ name = "pypi"
 [packages]
 sphinx = "*"
 myst-parser = "*"
-revitron-sphinx-theme = {git = "https://github.com/revitron/revitron-sphinx-theme.git"}
+revitron-sphinx-theme = {git = "https://github.com/revitron/revitron-sphinx-theme.git", ref = "master"}
 linkify-it-py = "*"
 
 [dev-packages]
 sphinx-autobuild = "*"
 
 [requires]
-python_version = "3.11"
+python_version = "3.12"
