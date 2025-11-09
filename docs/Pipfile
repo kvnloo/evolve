@@ -7,6 +7,7 @@ name = "pypi"
 sphinx = ">=6.0.0"
 myst-parser = ">=4.0.0"
 revitron-sphinx-theme = {file = "https://github.com/revitron/revitron-sphinx-theme/archive/master.zip"}
+linkify-it-py = "*"
 
 [dev-packages]
 sphinx-autobuild = "*"
