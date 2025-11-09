@@ -4,9 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-sphinx = "~=5.3.0"
+sphinx = ">=6.0.0"
 myst-parser = ">=4.0.0"
-revitron-sphinx-theme = {file = "https://github.com/revitron/revitron-sphinx-theme/archive/master.zip"}
+sphinx-rtd-theme = "*"
 linkify-it-py = "*"
 
 [dev-packages]
