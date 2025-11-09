@@ -475,14 +475,14 @@ updates:
 
 ```
 # Default owners
-*       @YOUR_USERNAME
+*       @kvnloo
 
 # Documentation
-*.md    @YOUR_USERNAME
-/docs/  @YOUR_USERNAME
+*.md    @kvnloo
+/docs/  @kvnloo
 
 # Scripts (security-sensitive)
-*.sh    @YOUR_USERNAME @security-team
+*.sh    @kvnloo @security-team
 ```
 
 ## Customization Examples

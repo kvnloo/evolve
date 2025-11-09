@@ -21,7 +21,7 @@
   - Usage examples for SPARC workflow, custom commands, PM system
   - Architecture diagram and project structure
   - Links to documentation
-- **Remaining**: Update placeholders (`YOUR_USERNAME/YOUR_REPO`)
+- **Remaining**: Update placeholders (`kvnloo/evolve`)
 
 #### Task: Create CONTRIBUTING.md
 - **Status**: ✅ Completed
@@ -185,7 +185,7 @@
 
 ### Before Moving to Phase 2
 1. **Update Placeholders**:
-   - [ ] Replace `YOUR_USERNAME/YOUR_REPO` in README.md
+   - [ ] Replace `kvnloo/evolve` in README.md
    - [ ] Add contact email in CODE_OF_CONDUCT.md
    - [ ] Add security email in SECURITY.md
 
