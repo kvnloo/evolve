@@ -2,160 +2,78 @@ name: Documentation
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - dev
     paths:
       - 'docs/**'
-      - 'README.md'
-      - '.claude/context/**'
-      - 'research/docs/**'
+      - '.github/workflows/docs.yml'
   workflow_dispatch:
 
+# Sets permissions for GitHub Pages deployment
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Allow one concurrent deployment
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
-  build-docs:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v5
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          node-version: '20'
+          python-version: '3.11'
 
-      - name: Install docsify-cli
-        run: npm install -g docsify-cli
-
-      - name: Create docs structure
+      - name: Install Pipenv
         run: |
-          mkdir -p _site
+          python -m pip install --upgrade pip
+          pip install pipenv
 
-          # Copy main documentation
-          cp README.md _site/README.md
-          cp -r docs _site/docs
+      - name: Cache Pipenv dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.local/share/virtualenvs
+          key: ${{ runner.os }}-pipenv-${{ hashFiles('docs/Pipfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pipenv-
 
-          # Copy context documentation
-          mkdir -p _site/context
-          cp .claude/context/*.md _site/context/
+      - name: Install dependencies
+        working-directory: ./docs
+        run: |
+          pipenv install --deploy --ignore-pipfile || pipenv install
 
-          # Copy research documentation
-          mkdir -p _site/research
-          cp research/docs/*.md _site/research/
+      - name: Build Sphinx documentation
+        working-directory: ./docs
+        run: |
+          pipenv run sphinx-build -b html . _build/html -W --keep-going
 
-          # Create index.html for GitHub Pages
-          cat > _site/index.html << 'EOF'
-          <!DOCTYPE html>
-          <html lang="en">
-          <head>
-            <meta charset="UTF-8">
-            <title>Evolve - AI-Driven Autonomous Development Framework</title>
-            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-            <meta name="description" content="Systematic, coordinated, and automated software development through SPARC methodology and multi-agent orchestration">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-            <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-            <style>
-              :root {
-                --theme-color: #0066cc;
-                --sidebar-width: 280px;
-              }
-              .sidebar {
-                background-color: #f8f9fa;
-              }
-              .sidebar-toggle {
-                background-color: #0066cc;
-              }
-            </style>
-          </head>
-          <body>
-            <div id="app"></div>
-            <script>
-              window.$docsify = {
-                name: 'Evolve Framework',
-                repo: 'kvnloo/evolve',
-                loadSidebar: true,
-                subMaxLevel: 3,
-                auto2top: true,
-                search: {
-                  maxAge: 86400000,
-                  paths: 'auto',
-                  placeholder: 'Search documentation...',
-                  noData: 'No results found.',
-                  depth: 4
-                },
-                pagination: {
-                  previousText: 'Previous',
-                  nextText: 'Next',
-                  crossChapter: true
-                },
-                plugins: [
-                  function(hook, vm) {
-                    hook.beforeEach(function(html) {
-                      return '> Last updated: ' + new Date().toISOString() + '\n\n' + html;
-                    });
-                  }
-                ]
-              }
-            </script>
-            <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-            <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-            <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
-            <script src="//cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
-            <script src="//cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
-            <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
-            <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-javascript.min.js"></script>
-            <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
-            <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-typescript.min.js"></script>
-            <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
-            <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
-          </body>
-          </html>
-          EOF
-
-          # Create sidebar navigation
-          cat > _site/_sidebar.md << 'EOF'
-          - Getting Started
-            - [Home](/)
-            - [Quick Start](docs/quick-start-epic-1.md)
-
-          - Documentation
-            - [Development Plan](docs/ccpm-development-plan.md)
-            - [Implementation Guide](docs/ccpm-implementation-guide.md)
-            - [System Architecture](docs/system-architecture.md)
-
-          - Context
-            - [Project Overview](context/project-overview.md)
-            - [Project Brief](context/project-brief.md)
-            - [Project Vision](context/project-vision.md)
-            - [Progress](context/progress.md)
-            - [Tech Context](context/tech-context.md)
-            - [System Patterns](context/system-patterns.md)
-            - [Style Guide](context/project-style-guide.md)
-
-          - Research
-            - [Research Catalog](research/research_catalog.md)
-            - [Priorities](research/research-priorities-FINAL.md)
-            - [Implementation Roadmap](research/implementation-roadmap-FINAL.md)
-            - [Hive Mind Analysis](research/HIVE-MIND-ANALYSIS-SUMMARY.md)
-
-          - [GitHub](https://github.com/kvnloo/evolve)
-          EOF
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      - name: Create .nojekyll file
+        run: touch docs/_build/html/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '_site'
+          path: docs/_build/html
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
