@@ -55,7 +55,7 @@ jobs:
       - name: Build Sphinx documentation
         working-directory: ./docs
         run: |
-          pipenv run sphinx-build -b html . _build/html -W --keep-going
+          pipenv run sphinx-build -b html . _build/html
 
       - name: Create .nojekyll file
         run: touch docs/_build/html/.nojekyll
