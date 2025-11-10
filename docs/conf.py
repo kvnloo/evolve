@@ -10,8 +10,8 @@ from datetime import datetime
 # -- Project information -----------------------------------------------------
 
 project = 'Evolve'
-copyright = f'{datetime.now().year}, Kevin Loo'
-author = 'Kevin Loo'
+copyright = f'{datetime.now().year}, Kevin Rajan'
+author = 'Kevin Rajan'
 release = '1.0.0'
 
 # -- General configuration ---------------------------------------------------

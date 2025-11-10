@@ -167,7 +167,7 @@ This project integrates and extends three exceptional frameworks:
 
 ## About This Portfolio Project
 
-**Developer**: [Kevin Loo](https://github.com/kvnloo)
+**Developer**: [Kevin Rajan](https://github.com/kvnloo)
 **Repository**: [github.com/kvnloo/evolve](https://github.com/kvnloo/evolve)
 
 This project demonstrates:
