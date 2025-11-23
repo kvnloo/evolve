@@ -1,0 +1,29 @@
+SuperClaude Framework v4.1.9
+Last Updated: 2025-11-22
+Source: https://github.com/SuperClaude-Org/SuperClaude_Framework
+
+This directory contains the SuperClaude framework files for the evolve project.
+
+Core Framework Files:
+- PRINCIPLES.md - Software engineering principles
+- RULES.md - Behavioral rules and standards
+- FLAGS.md - Mode activation flags
+- RESEARCH_CONFIG.md - Deep research configuration
+- BUSINESS_PANEL_EXAMPLES.md - Business analysis examples
+- BUSINESS_SYMBOLS.md - Symbol systems for efficient communication
+
+Behavioral Modes:
+- MODE_Brainstorming.md - Collaborative discovery
+- MODE_Business_Panel.md - Multi-expert business analysis
+- MODE_DeepResearch.md - Systematic investigation
+- MODE_Introspection.md - Meta-cognitive analysis
+- MODE_Orchestration.md - Intelligent tool selection
+- MODE_Task_Management.md - Hierarchical task organization
+- MODE_Token_Efficiency.md - Symbol-enhanced communication
+
+To update these files:
+1. Clone latest: git clone https://github.com/SuperClaude-Org/SuperClaude_Framework.git /tmp/sc
+2. Copy core: cp /tmp/sc/src/superclaude/core/*.md .claude/superclaude/core/
+3. Copy modes: cp /tmp/sc/src/superclaude/modes/*.md .claude/superclaude/modes/
+4. Update version in this file
+5. Clean up: rm -rf /tmp/sc
