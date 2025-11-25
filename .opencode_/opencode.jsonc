@@ -1,0 +1,894 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  // ============================================================================
+  // OpenCode Configuration for Claude Code PM Migration
+  // ============================================================================
+  // Version: 1.0.0
+  // Created: 2025-11-22
+  // Migration from: .claude → .opencode
+  // Total agents: 18 (consolidated from 78)
+  // Total commands migrated: 215
+  // ============================================================================
+
+  "version": "1.0.0",
+  "name": "evolve-project",
+  "description": "Migrated from Claude Code PM system to OpenCode agent-based model",
+
+  // ============================================================================
+  // GLOBAL PERMISSIONS (Baseline for all agents)
+  // ============================================================================
+  // Strategy: Start restrictive, expand as needed
+  // All agents inherit these, can override with additional permissions
+
+  "globalPermissions": {
+    "fs": ["read"],           // All agents can read files by default
+    "exec": [],               // No shell execution by default
+    "mcp": [],                // No MCP access by default
+    "github": [],             // No GitHub access by default
+    "network": []             // No network access by default
+  },
+
+  // ============================================================================
+  // AGENT DEFINITIONS (18 Consolidated Agents)
+  // ============================================================================
+
+  "agents": {
+
+    // ==========================================================================
+    // TIER 1: BUILD AGENTS (Core Development)
+    // ==========================================================================
+
+    "coder-agent": {
+      "type": "build",
+      "description": "Core code implementation, file operations, and refactoring. Handles all coding tasks including multi-file editing and pattern-based transformations.",
+
+      "permissions": {
+        "fs": ["read", "write", "delete"],
+        "exec": ["shell"],
+        "mcp": ["all"],
+        "github": ["read"],
+        "network": ["http"]
+      },
+
+      "instructions": "@.opencode/agents/build/coder-agent.md",
+
+      "specializations": [
+        "Code implementation and refactoring",
+        "Multi-file editing operations",
+        "Pattern-based transformations",
+        "File system operations",
+        "Automation script creation"
+      ],
+
+      "commandSources": [
+        ".claude/commands/automation/",
+        ".claude/commands/optimization/",
+        ".claude/agents/development/"
+      ]
+    },
+
+    "reviewer-agent": {
+      "type": "build",
+      "description": "Code review, quality analysis, and best practice enforcement. Read-only access with commenting capabilities.",
+
+      "permissions": {
+        "fs": ["read"],
+        "exec": ["shell:read-only"],
+        "mcp": ["sequential", "context7"],
+        "github": ["read", "comment"]
+      },
+
+      "instructions": "@.opencode/agents/build/reviewer-agent.md",
+
+      "specializations": [
+        "Code quality analysis",
+        "Security vulnerability scanning",
+        "Best practice enforcement",
+        "Technical debt assessment",
+        "Automated code review"
+      ],
+
+      "commandSources": [
+        ".claude/commands/analysis/",
+        ".claude/agents/analysis/code-review/"
+      ]
+    },
+
+    "tester-agent": {
+      "type": "build",
+      "description": "Test creation, execution, and quality assurance. Handles unit, integration, and E2E testing.",
+
+      "permissions": {
+        "fs": ["read", "write"],
+        "exec": ["shell"],
+        "mcp": ["playwright", "context7"],
+        "github": ["read"]
+      },
+
+      "instructions": "@.opencode/agents/build/tester-agent.md",
+
+      "specializations": [
+        "Unit test generation",
+        "Integration test creation",
+        "E2E test automation with Playwright",
+        "Test coverage analysis",
+        "CI/CD test integration"
+      ],
+
+      "commandSources": [
+        ".claude/agents/testing/",
+        ".claude/commands/verify/"
+      ],
+
+      "hooks": {
+        "pre-commit": "Run test suite before commit",
+        "post-implementation": "Generate tests for new code"
+      }
+    },
+
+    "architect-agent": {
+      "type": "build",
+      "description": "System design, architecture decisions, and technical planning. Read-only execution with documentation write access.",
+
+      "permissions": {
+        "fs": ["read", "write"],
+        "exec": ["shell:read-only"],
+        "mcp": ["sequential", "context7"],
+        "github": ["read"]
+      },
+
+      "instructions": "@.opencode/agents/build/architect-agent.md",
+
+      "specializations": [
+        "System architecture design",
+        "Component interaction design",
+        "Data flow analysis",
+        "Technology selection and evaluation",
+        "Scalability and performance planning"
+      ],
+
+      "commandSources": [
+        ".claude/agents/architecture/",
+        ".claude/commands/analysis/"
+      ]
+    },
+
+    // ==========================================================================
+    // TIER 2: PLAN AGENTS (Project Management)
+    // ==========================================================================
+
+    "pm-agent": {
+      "type": "plan",
+      "description": "PRD creation, epic management, and project orchestration. Handles GitHub issue sync and project tracking.",
+
+      "permissions": {
+        "fs": [
+          "read",
+          "write:*.md",
+          "write:.claude/prds/**",
+          "write:.claude/epics/**",
+          "write:.opencode/prds/**",
+          "write:.opencode/epics/**"
+        ],
+        "exec": ["shell:git"],
+        "github": ["issues", "labels", "projects"],
+        "mcp": ["sequential"]
+      },
+
+      "instructions": "@.opencode/agents/plan/pm-agent.md",
+
+      "specializations": [
+        "PRD generation and management",
+        "Epic decomposition and planning",
+        "GitHub issue synchronization",
+        "Progress tracking and reporting",
+        "Milestone planning and coordination"
+      ],
+
+      "commandSources": [
+        ".claude/commands/pm/",
+        ".claude/agents/goal/",
+        ".claude/rules/github-operations.md",
+        ".claude/rules/path-standards.md"
+      ],
+
+      "hooks": {
+        "pre-sync": "Validate GitHub remote origin",
+        "post-prd": "Create epic from PRD",
+        "post-epic": "Sync with GitHub issues"
+      }
+    },
+
+    "planner-agent": {
+      "type": "plan",
+      "description": "Task breakdown, workflow orchestration, and execution planning. Memory-based coordination.",
+
+      "permissions": {
+        "fs": [
+          "read",
+          "write:.claude/checkpoints/**",
+          "write:.opencode/checkpoints/**"
+        ],
+        "exec": ["shell:read-only"],
+        "mcp": ["sequential", "serena"],
+        "github": ["read"]
+      },
+
+      "instructions": "@.opencode/agents/plan/planner-agent.md",
+
+      "specializations": [
+        "Task decomposition and breakdown",
+        "Dependency analysis",
+        "Resource allocation planning",
+        "Timeline estimation",
+        "Workflow optimization"
+      ],
+
+      "commandSources": [
+        ".claude/commands/workflows/",
+        ".claude/agents/reasoning/"
+      ]
+    },
+
+    "tracker-agent": {
+      "type": "plan",
+      "description": "Progress monitoring, metrics collection, and reporting. Session management and context persistence.",
+
+      "permissions": {
+        "fs": [
+          "read",
+          "write:.claude/context/**",
+          "write:.claude/sessions/**",
+          "write:.opencode/context/**",
+          "write:.opencode/sessions/**"
+        ],
+        "exec": ["shell:read-only"],
+        "mcp": ["serena"],
+        "github": ["read"]
+      },
+
+      "instructions": "@.opencode/agents/plan/tracker-agent.md",
+
+      "specializations": [
+        "Progress tracking and monitoring",
+        "Metrics collection and analysis",
+        "Status reporting",
+        "Session state management",
+        "Context persistence across sessions"
+      ],
+
+      "commandSources": [
+        ".claude/commands/monitoring/",
+        ".claude/commands/context/"
+      ]
+    },
+
+    // ==========================================================================
+    // TIER 3: CUSTOM AGENTS (GitHub & Integration)
+    // ==========================================================================
+
+    "github-agent": {
+      "type": "custom",
+      "description": "Complete GitHub operations: issues, PRs, releases, workflows. Primary GitHub integration agent.",
+
+      "permissions": {
+        "fs": ["read", "write:.github/**"],
+        "exec": ["shell:git", "shell:gh"],
+        "github": ["all"],
+        "mcp": ["sequential"]
+      },
+
+      "instructions": "@.opencode/agents/custom/github-agent.md",
+
+      "specializations": [
+        "Issue creation and management",
+        "Pull request operations",
+        "Release automation",
+        "Workflow management",
+        "Repository analytics and reporting"
+      ],
+
+      "commandSources": [
+        ".claude/commands/github/",
+        ".claude/agents/github/",
+        ".claude/rules/github-operations.md"
+      ],
+
+      "hooks": {
+        "pre-github-operation": "Validate remote origin (prevent CCPM template pollution)",
+        "post-issue-create": "Link to epic if applicable",
+        "pre-pr-create": "Run validation checks"
+      }
+    },
+
+    "release-agent": {
+      "type": "custom",
+      "description": "Release management, versioning, and changelog generation. Semantic versioning and distribution.",
+
+      "permissions": {
+        "fs": [
+          "read",
+          "write:CHANGELOG.md",
+          "write:package.json",
+          "write:version.txt"
+        ],
+        "exec": ["shell:git", "shell:npm"],
+        "github": ["releases", "tags"],
+        "mcp": ["sequential"]
+      },
+
+      "instructions": "@.opencode/agents/custom/release-agent.md",
+
+      "specializations": [
+        "Semantic versioning",
+        "Changelog generation",
+        "Release notes creation",
+        "Tag management",
+        "Distribution packaging"
+      ],
+
+      "commandSources": [
+        ".claude/commands/github/release*.md"
+      ]
+    },
+
+    // ==========================================================================
+    // TIER 4: DOMAIN SPECIALISTS
+    // ==========================================================================
+
+    "ui-agent": {
+      "type": "custom",
+      "description": "Frontend development, UI/UX, and design system operations. Component creation and visual testing.",
+
+      "permissions": {
+        "fs": [
+          "read",
+          "write:src/components/**",
+          "write:src/ui/**",
+          "write:.superdesign/**"
+        ],
+        "exec": ["shell:npm"],
+        "mcp": ["magic", "playwright", "chrome-devtools"],
+        "github": ["read"]
+      },
+
+      "instructions": "@.opencode/agents/custom/ui-agent.md",
+
+      "specializations": [
+        "UI component creation",
+        "UI cloning and iteration",
+        "Design system integration",
+        "Accessibility testing",
+        "Visual regression testing"
+      ],
+
+      "commandSources": [
+        ".claude/commands/ui/",
+        ".claude/tools/UIED/"
+      ]
+    },
+
+    "data-agent": {
+      "type": "custom",
+      "description": "Database operations, migrations, and data management. Schema design and query optimization.",
+
+      "permissions": {
+        "fs": [
+          "read",
+          "write:migrations/**",
+          "write:db/**"
+        ],
+        "exec": ["shell:psql", "shell:sqlite3"],
+        "mcp": ["sequential"],
+        "github": ["read"]
+      },
+
+      "instructions": "@.opencode/agents/custom/data-agent.md",
+
+      "specializations": [
+        "Database schema design",
+        "Migration generation and management",
+        "Data modeling",
+        "Query optimization",
+        "Data validation and integrity"
+      ],
+
+      "commandSources": [
+        ".claude/agents/data/"
+      ]
+    },
+
+    "devops-agent": {
+      "type": "custom",
+      "description": "CI/CD, infrastructure, deployment, and operations. Docker, workflows, and monitoring.",
+
+      "permissions": {
+        "fs": [
+          "read",
+          "write:.github/workflows/**",
+          "write:docker/**"
+        ],
+        "exec": ["shell"],
+        "mcp": ["sequential"],
+        "github": ["workflows", "actions"]
+      },
+
+      "instructions": "@.opencode/agents/custom/devops-agent.md",
+
+      "specializations": [
+        "CI/CD pipeline creation and management",
+        "Docker containerization",
+        "Infrastructure as code",
+        "Deployment automation",
+        "Monitoring and alerting setup"
+      ],
+
+      "commandSources": [
+        ".claude/agents/devops/"
+      ]
+    },
+
+    "security-agent": {
+      "type": "custom",
+      "description": "Security scanning, vulnerability assessment, and compliance checking. Read-only with audit tools.",
+
+      "permissions": {
+        "fs": ["read"],
+        "exec": ["shell:npm audit", "shell:trivy"],
+        "mcp": ["sequential"],
+        "github": ["security"]
+      },
+
+      "instructions": "@.opencode/agents/custom/security-agent.md",
+
+      "specializations": [
+        "Vulnerability scanning",
+        "Dependency auditing",
+        "Security best practices enforcement",
+        "Compliance checking",
+        "Threat modeling"
+      ],
+
+      "commandSources": [
+        ".claude/commands/analysis/security*.md"
+      ],
+
+      "hooks": {
+        "pre-commit": "Run security scans",
+        "post-dependency-change": "Audit new dependencies"
+      }
+    },
+
+    "docs-agent": {
+      "type": "custom",
+      "description": "Documentation generation, API docs, and technical writing. Comprehensive documentation automation.",
+
+      "permissions": {
+        "fs": [
+          "read",
+          "write:docs/**",
+          "write:README.md",
+          "write:*.md"
+        ],
+        "exec": ["shell:typedoc"],
+        "mcp": ["context7", "sequential"],
+        "github": ["read"]
+      },
+
+      "instructions": "@.opencode/agents/custom/docs-agent.md",
+
+      "specializations": [
+        "API documentation generation",
+        "README creation and maintenance",
+        "Tutorial and guide creation",
+        "Documentation site building",
+        "Code comment generation"
+      ],
+
+      "commandSources": [
+        ".claude/agents/documentation/"
+      ]
+    },
+
+    // ==========================================================================
+    // TIER 5: ADVANCED CAPABILITIES
+    // ==========================================================================
+
+    "research-agent": {
+      "type": "custom",
+      "description": "Deep research, web search, and knowledge synthesis. Multi-source investigation and analysis.",
+
+      "permissions": {
+        "fs": [
+          "read",
+          "write:claudedocs/research/**",
+          "write:.opencode/research/**"
+        ],
+        "exec": ["shell:read-only"],
+        "mcp": ["tavily", "sequential", "playwright"],
+        "network": ["http", "https"]
+      },
+
+      "instructions": "@.opencode/agents/custom/research-agent.md",
+
+      "specializations": [
+        "Web research and information gathering",
+        "Technical documentation lookup",
+        "Pattern and best practice discovery",
+        "Technology evaluation and comparison",
+        "Multi-source knowledge synthesis"
+      ],
+
+      "commandSources": [
+        ".claude/commands/truth/"
+      ]
+    },
+
+    "analyzer-agent": {
+      "type": "custom",
+      "description": "Code analysis, metrics, and pattern detection. Complexity analysis and technical debt measurement.",
+
+      "permissions": {
+        "fs": ["read"],
+        "exec": ["shell:read-only"],
+        "mcp": ["sequential", "context7"],
+        "github": ["read"]
+      },
+
+      "instructions": "@.opencode/agents/custom/analyzer-agent.md",
+
+      "specializations": [
+        "Code complexity analysis",
+        "Pattern detection and recognition",
+        "Dependency analysis",
+        "Performance profiling",
+        "Technical debt measurement"
+      ],
+
+      "commandSources": [
+        ".claude/agents/analysis/"
+      ]
+    },
+
+    "workflow-agent": {
+      "type": "custom",
+      "description": "Workflow automation and orchestration. Event-driven automation and agent coordination.",
+
+      "permissions": {
+        "fs": [
+          "read",
+          "write:.claude/workflows/**",
+          "write:.opencode/workflows/**"
+        ],
+        "exec": ["shell"],
+        "mcp": ["all"],
+        "github": ["workflows"]
+      },
+
+      "instructions": "@.opencode/agents/custom/workflow-agent.md",
+
+      "specializations": [
+        "Workflow creation and design",
+        "Task automation",
+        "Multi-agent coordination",
+        "Pipeline orchestration",
+        "Event-driven automation"
+      ],
+
+      "commandSources": [
+        ".claude/commands/workflows/",
+        ".claude/commands/coordination/"
+      ]
+    },
+
+    "memory-agent": {
+      "type": "custom",
+      "description": "Context management, session persistence, and knowledge storage. Cross-session state management.",
+
+      "permissions": {
+        "fs": [
+          "read",
+          "write:.claude/sessions/**",
+          "write:.claude/checkpoints/**",
+          "write:.opencode/sessions/**",
+          "write:.opencode/checkpoints/**"
+        ],
+        "exec": ["shell:git"],
+        "mcp": ["serena", "sequential"],
+        "github": ["read"]
+      },
+
+      "instructions": "@.opencode/agents/custom/memory-agent.md",
+
+      "specializations": [
+        "Session state management",
+        "Context persistence across sessions",
+        "Knowledge storage and retrieval",
+        "Checkpoint creation and restoration",
+        "Cross-session learning"
+      ],
+
+      "commandSources": [
+        ".claude/commands/memory/",
+        ".claude/commands/checkpoints/"
+      ]
+    },
+
+    // ==========================================================================
+    // TIER 6: SWARM & COORDINATION
+    // ==========================================================================
+
+    "swarm-coordinator": {
+      "type": "custom",
+      "description": "Multi-agent orchestration and swarm management. Distributed intelligence coordination.",
+
+      "permissions": {
+        "fs": [
+          "read",
+          "write:.claude/swarm/**",
+          "write:.opencode/swarm/**"
+        ],
+        "exec": ["shell"],
+        "mcp": ["claude-flow", "ruv-swarm", "flow-nexus"],
+        "github": ["read"]
+      },
+
+      "instructions": "@.opencode/agents/custom/swarm-coordinator.md",
+
+      "specializations": [
+        "Swarm initialization and topology setup",
+        "Multi-agent spawning and coordination",
+        "Task distribution and load balancing",
+        "Consensus mechanism management",
+        "Performance monitoring and optimization"
+      ],
+
+      "commandSources": [
+        ".claude/commands/swarm/",
+        ".claude/commands/coordination/",
+        ".claude/agents/swarm/",
+        ".claude/agents/consensus/",
+        ".claude/agents/hive-mind/"
+      ],
+
+      "hooks": {
+        "pre-swarm-init": "Setup coordination topology",
+        "post-agent-spawn": "Register agent in coordination system",
+        "pre-task-orchestrate": "Analyze task for parallelization opportunities"
+      }
+    }
+  },
+
+  // ============================================================================
+  // MCP SERVER CONFIGURATIONS
+  // ============================================================================
+
+  "mcpServers": {
+    "claude-flow": {
+      "command": "npx",
+      "args": ["claude-flow@alpha", "mcp", "start"],
+      "description": "Primary swarm coordination and multi-agent orchestration",
+      "required": true,
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+
+    "ruv-swarm": {
+      "command": "npx",
+      "args": ["ruv-swarm", "mcp", "start"],
+      "description": "Enhanced coordination and neural features",
+      "required": false,
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+
+    "flow-nexus": {
+      "command": "npx",
+      "args": ["flow-nexus@latest", "mcp", "start"],
+      "description": "Cloud-based orchestration and advanced features",
+      "required": false,
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+
+    "sequential": {
+      "description": "Complex reasoning and multi-step analysis",
+      "required": false
+    },
+
+    "context7": {
+      "description": "Documentation lookup and pattern guidance",
+      "required": false
+    },
+
+    "serena": {
+      "description": "Memory management and semantic understanding",
+      "required": false
+    },
+
+    "tavily": {
+      "description": "Web search and research capabilities",
+      "required": false
+    },
+
+    "playwright": {
+      "description": "Browser automation and E2E testing",
+      "required": false
+    },
+
+    "chrome-devtools": {
+      "description": "Browser inspection and performance analysis",
+      "required": false
+    },
+
+    "magic": {
+      "description": "UI component generation from 21st.dev patterns",
+      "required": false
+    },
+
+    "morphllm": {
+      "description": "Bulk code transformations and pattern-based edits",
+      "required": false
+    }
+  },
+
+  // ============================================================================
+  // GLOBAL HOOKS (Apply to all agents)
+  // ============================================================================
+
+  "hooks": {
+    "pre-task": {
+      "description": "Run before any task starts",
+      "commands": [
+        "npx claude-flow@alpha hooks pre-task --description \"${TASK_DESCRIPTION}\""
+      ]
+    },
+
+    "post-task": {
+      "description": "Run after task completes",
+      "commands": [
+        "npx claude-flow@alpha hooks post-task --task-id \"${TASK_ID}\""
+      ]
+    },
+
+    "pre-commit": {
+      "description": "Run before git commits",
+      "commands": [
+        "npx claude-flow@alpha hooks pre-commit --validate-safety"
+      ]
+    },
+
+    "post-edit": {
+      "description": "Run after file edits",
+      "commands": [
+        "npx claude-flow@alpha hooks post-edit --file \"${EDITED_FILE}\" --memory-key \"swarm/${AGENT_NAME}/edit\""
+      ]
+    },
+
+    "session-start": {
+      "description": "Run at session start",
+      "commands": [
+        "npx claude-flow@alpha hooks session-restore --session-id \"swarm-${SESSION_ID}\""
+      ]
+    },
+
+    "session-end": {
+      "description": "Run at session end",
+      "commands": [
+        "npx claude-flow@alpha hooks session-end --export-metrics true"
+      ]
+    },
+
+    "notify": {
+      "description": "Inter-agent communication",
+      "commands": [
+        "npx claude-flow@alpha hooks notify --message \"${MESSAGE}\""
+      ]
+    }
+  },
+
+  // ============================================================================
+  // SHARED RESOURCES (Available to all agents)
+  // ============================================================================
+
+  "sharedResources": [
+    ".opencode/shared/standard-checkpoint-hooks.sh",
+    ".opencode/shared/github-safe.sh",
+    ".opencode/shared/pm-helpers.sh",
+    ".opencode/shared/swarm-coordination.sh",
+    ".opencode/shared/validation-utils.sh",
+    ".opencode/shared/parallel-execution.sh"
+  ],
+
+  // ============================================================================
+  // ENVIRONMENT VARIABLES
+  // ============================================================================
+
+  "env": {
+    "CLAUDE_CODE_VERSION": "2.0.0",
+    "OPENCODE_MIGRATION": "true",
+    "MIGRATION_DATE": "2025-11-22",
+    "SOURCE_SYSTEM": "claude-code",
+    "TOTAL_AGENTS": "18",
+    "TOTAL_COMMANDS_MIGRATED": "215",
+
+    // GitHub Protection
+    "GITHUB_SAFE_MODE": "true",
+    "PREVENT_CCPM_POLLUTION": "true",
+
+    // Path Standards
+    "USE_RELATIVE_PATHS": "true",
+    "PRIVACY_PROTECTION": "enabled",
+
+    // Performance
+    "PARALLEL_EXECUTION_DEFAULT": "true",
+    "MAX_CONCURRENT_AGENTS": "5",
+
+    // Coordination
+    "SWARM_COORDINATION_ENABLED": "true",
+    "MEMORY_PERSISTENCE_ENABLED": "true",
+    "SESSION_RESTORE_ENABLED": "true"
+  },
+
+  // ============================================================================
+  // MIGRATION METADATA
+  // ============================================================================
+
+  "migrationMetadata": {
+    "migrationDate": "2025-11-22T02:03:01Z",
+    "sourceSystem": "claude-code",
+    "totalCommandsMigrated": 215,
+    "totalAgentsConsolidated": 78,
+    "finalAgentCount": 18,
+    "architectureDocument": "claudedocs/opencode_migration_architecture_20251122_020301.md",
+
+    "phases": {
+      "phase1": "Foundation - Structure creation",
+      "phase2": "Core Agents - Build tier migration",
+      "phase3": "PM System - Plan tier migration",
+      "phase4": "GitHub Integration - Custom tier (GitHub)",
+      "phase5": "Specialists - Domain-specific agents",
+      "phase6": "Advanced - Research, workflow, swarm",
+      "phase7": "Validation - Testing and cutover"
+    },
+
+    "estimatedDuration": "22 working days (4-5 weeks)",
+    "validationLevels": 4,
+    "rollbackStrategy": "dual-operation-period",
+
+    "qualityGates": [
+      "Syntax validation (100% pass)",
+      "Coverage validation (≥95%)",
+      "Functional validation (100% pass)",
+      "Integration validation (manual approval)",
+      "User acceptance (≥80% satisfaction)"
+    ]
+  },
+
+  // ============================================================================
+  // NOTES AND WARNINGS
+  // ============================================================================
+
+  "notes": {
+    "agentConsolidation": "18 agents consolidate 78 specialized agents from .claude system",
+    "permissionStrategy": "Start restrictive, expand incrementally with justification",
+    "dualOperation": "Keep .claude operational during .opencode testing (2-4 weeks)",
+    "rollbackSafety": "Complete backup created before migration, git stash available",
+    "validationRequired": "All 4 validation levels must pass before production cutover",
+    "githubProtection": "All GitHub operations validate remote origin to prevent template pollution",
+    "pathStandards": "All paths use relative format for portability and privacy",
+    "parallelExecution": "Default to parallel operations, sequential only when dependencies exist"
+  },
+
+  "warnings": {
+    "criticalPaths": "Do not modify .claude during migration testing period",
+    "permissionExpansion": "Document all permission grants with justification",
+    "githubOperations": "Always validate remote origin before any GitHub write operation",
+    "sessionPersistence": "Use memory-agent for cross-session state management",
+    "swarmCoordination": "Complex tasks should use swarm-coordinator for optimal resource allocation"
+  }
+}

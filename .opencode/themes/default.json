@@ -1,0 +1,65 @@
+{
+  "$schema": "https://opencode.ai/theme.json",
+  "theme": {
+    "primary": {
+      "dark": "#3b82f6",
+      "light": "#1d4ed8"
+    },
+    "secondary": {
+      "dark": "#6b7280",
+      "light": "#4b5563"
+    },
+    "accent": {
+      "dark": "#8b5cf6",
+      "light": "#7c3aed"
+    },
+    "error": {
+      "dark": "#ef4444",
+      "light": "#dc2626"
+    },
+    "warning": {
+      "dark": "#f59e0b",
+      "light": "#d97706"
+    },
+    "success": {
+      "dark": "#10b981",
+      "light": "#059669"
+    },
+    "info": {
+      "dark": "#0ea5e9",
+      "light": "#0284c7"
+    },
+    "text": {
+      "dark": "#f9fafb",
+      "light": "#111827"
+    },
+    "textMuted": {
+      "dark": "#9ca3af",
+      "light": "#6b7280"
+    },
+    "background": {
+      "dark": "#0f172a",
+      "light": "#ffffff"
+    },
+    "backgroundPanel": {
+      "dark": "#1e293b",
+      "light": "#f3f4f6"
+    },
+    "backgroundElement": {
+      "dark": "#334155",
+      "light": "#e5e7eb"
+    },
+    "border": {
+      "dark": "#334155",
+      "light": "#d1d5db"
+    },
+    "borderActive": {
+      "dark": "#6366f1",
+      "light": "#3b82f6"
+    },
+    "borderSubtle": {
+      "dark": "#1e293b",
+      "light": "#f9fafb"
+    }
+  }
+}
