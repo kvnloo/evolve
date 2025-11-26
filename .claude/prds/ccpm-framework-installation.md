@@ -272,5 +272,5 @@ project/
 
 - CCPM Repository: https://github.com/automazeio/ccpm
 - GitHub Repository: https://github.com/kvnloo/evolve
-- Installation Documentation: `docs/CCPM-INSTALLATION.md`
+- Installation Documentation: `docs/installation.md`
 - Command Reference: `docs/CCPM-COMMANDS.md`

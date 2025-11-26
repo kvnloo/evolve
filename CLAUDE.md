@@ -1,5 +1,26 @@
 # Claude Code Configuration - SPARC Development Environment
 
+## 🚨 CRITICAL: PRE-RESPONSE BEHAVIORAL GATES
+
+**MANDATORY: Before responding to ANY request, consult the command routing rules.**
+
+@.claude/rules/command-routing.md
+
+### Pre-Response Checklist (ALWAYS)
+1. **Classify** - Match request keywords to routing triggers
+2. **Consult** - Check the routing map for optimal command (214+ available)
+3. **Plan** - Use TodoWrite for tasks with >2 steps
+4. **Execute** - Use the selected command or direct tools
+5. **Verify** - Never assume completion without verification
+
+### Default Fallbacks
+- **Unclear request** → `/sc:pm` (meta-router handles all cases)
+- **SPARC methodology** → `/sparc:sparc-modes` (lists all modes)
+- **Swarm coordination** → `/swarm:swarm-modes` (lists all strategies)
+- **Command help** → `/sc:help` (lists all /sc commands)
+
+---
+
 ## 🚨 CRITICAL: CONCURRENT EXECUTION & FILE MANAGEMENT
 
 **ABSOLUTE RULES**:
@@ -7,6 +28,8 @@
 2. **NEVER save working files, text/mds and tests to the root folder**
 3. ALWAYS organize files in appropriate subdirectories
 4. **USE CLAUDE CODE'S TASK TOOL** for spawning agents concurrently, not just MCP
+5. **NEVER create markdown files unless explicitly requested**
+6. **NEVER assume a task is complete without verification**
 
 ### ⚡ GOLDEN RULE: "1 MESSAGE = ALL RELATED OPERATIONS"
 
@@ -367,6 +390,7 @@ Never save working files, text/mds and tests to the root folder.
 - /pm:next - Get next priority task
 
 ## Rules
+@.claude/rules/command-routing.md
 @.claude/rules/agent-coordination.md
 @.claude/rules/path-standards.md
 @.claude/rules/github-operations.md

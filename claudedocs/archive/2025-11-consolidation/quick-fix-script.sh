@@ -66,7 +66,7 @@ if [ ! -f "docs/README.md" ]; then
 New to Evolve? Follow this path:
 
 1. **[Quick Start Guide](../README.md#quick-start)** - Get up and running in 5 minutes
-2. **[Installation Guide](CCPM-INSTALLATION.md)** - Detailed setup instructions
+2. **[Installation Guide](docs/installation.md)** - Detailed setup instructions
 3. **[Quick Reference](QUICK-REFERENCE.md)** - Essential commands and metrics
 
 ## 📚 Core Documentation
