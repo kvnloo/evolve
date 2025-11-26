@@ -170,6 +170,30 @@
     },
     {
       "pattern": "^https://superclaude\\.org"
+    },
+    {
+      "pattern": "^https://medium\\.com"
+    },
+    {
+      "pattern": "^https://.*\\.medium\\.com"
+    },
+    {
+      "pattern": "^https://www\\.datacamp\\.com"
+    },
+    {
+      "pattern": "^https://codepen\\.io"
+    },
+    {
+      "pattern": "^https://spec\\.modelcontextprotocol\\.io"
+    },
+    {
+      "pattern": "^https://arxiv\\.org"
+    },
+    {
+      "pattern": "^https://cdn\\.openai\\.com"
+    },
+    {
+      "pattern": "faq\\.md$"
     }
   ],
   "replacementPatterns": [],
