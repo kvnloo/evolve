@@ -30,6 +30,8 @@ HashiCorp = "HashiCorp"
 Hashi = "Hashi"  # Short for HashiCorp
 RTO = "RTO"  # Recovery Time Objective
 RPO = "RPO"  # Recovery Point Objective
+daa = "daa"  # Decentralized Autonomous Agents
+DAA = "DAA"
 
 # Common abbreviations
 dirs = "dirs"

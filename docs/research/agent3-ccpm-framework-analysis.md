@@ -228,7 +228,7 @@ name: Database Schema
 status: open → in-progress → closed
 created: 2025-11-26T11:00:00Z
 updated: 2025-11-26T14:00:00Z
-github: https://github.com/owner/repo/issues/1234
+github: "#pending"  # Placeholder - link TBD
 depends_on: []
 parallel: true
 conflicts_with: []

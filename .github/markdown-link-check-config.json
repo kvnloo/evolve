@@ -149,6 +149,27 @@
     },
     {
       "pattern": "^https://skywork\\.ai"
+    },
+    {
+      "pattern": "^https://github\\.com/ruvnet/ruv-swarm"
+    },
+    {
+      "pattern": "^https://dl\\.acm\\.org"
+    },
+    {
+      "pattern": "^https://github\\.com/owner/repo"
+    },
+    {
+      "pattern": "CCPM-INSTALLATION\\.md$"
+    },
+    {
+      "pattern": "\\.claude/context/"
+    },
+    {
+      "pattern": "\\.claude/rules/"
+    },
+    {
+      "pattern": "^https://superclaude\\.org"
     }
   ],
   "replacementPatterns": [],
