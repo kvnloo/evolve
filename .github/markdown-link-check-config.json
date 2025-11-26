@@ -194,6 +194,18 @@
     },
     {
       "pattern": "faq\\.md$"
+    },
+    {
+      "pattern": "^https://github\\.com/kvnloo/evolve/releases/tag/v"
+    },
+    {
+      "pattern": "^https://github\\.com/kvnloo/evolve/compare/v"
+    },
+    {
+      "pattern": "\\.\\./research/"
+    },
+    {
+      "pattern": "clone-website\\.md$"
     }
   ],
   "replacementPatterns": [],
