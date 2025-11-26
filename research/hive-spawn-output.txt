@@ -1,5 +1,0 @@
-
-⚠️  Running 'hive-mind spawn' in non-interactive mode (non-tty-stdin)
-Some features may be limited. For full functionality, use an interactive terminal.
-
-- Spawning Hive Mind swarm...
