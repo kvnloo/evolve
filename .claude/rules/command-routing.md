@@ -2,6 +2,21 @@
 
 This file defines intelligent routing logic for selecting optimal commands from **214+ commands across 25 categories**.
 
+## Smart Routing Configuration
+
+```yaml
+routing_config:
+  smart_features:
+    enabled: false  # Feature flag - start disabled for validation
+    confidence_threshold: 0.6
+    llm_fallback: haiku
+    parallel_threshold: 0.10  # Only suggest parallel if >10% speedup
+  learning:
+    enabled: true
+    memory_namespace: "router/patterns"
+    ttl_days: 90
+```
+
 ## Pre-Response Classification (MANDATORY)
 
 Before responding to ANY request, classify and route:
@@ -12,14 +27,29 @@ CLASSIFICATION_TRIGGERS:
   brainstorm:
     keywords: ["maybe", "thinking about", "not sure", "explore", "ideas", "brainstorm", "could we", "what if"]
     route_to: /sc:brainstorm OR /sparc:innovator
+    # NEW: Smart routing features (disabled by default)
+    features:
+      confidence_scoring: true
+      parallel_analysis: true
+      llm_fallback: true
 
   implementation:
     keywords: ["implement", "create", "build", "add", "make", "code", "develop", "write"]
     route_to: /sc:implement OR /sparc:coder OR /swarm:development
+    # NEW: Smart routing features (disabled by default)
+    features:
+      confidence_scoring: true
+      parallel_analysis: true
+      llm_fallback: true
 
   analysis:
     keywords: ["analyze", "review", "check", "audit", "examine", "assess"]
     route_to: /sc:analyze OR /sparc:analyzer OR /swarm:analysis
+    # NEW: Smart routing features (disabled by default)
+    features:
+      confidence_scoring: true
+      parallel_analysis: true
+      llm_fallback: true
 
   research:
     keywords: ["investigate", "explore", "find", "discover", "learn", "research"]
@@ -64,6 +94,16 @@ CLASSIFICATION_TRIGGERS:
   memory:
     keywords: ["remember", "context", "session", "persist", "memory"]
     route_to: /memory:usage OR /automation:session-memory
+
+  ai_ml_pipeline:
+    keywords: ["youtube video", "research paper", "implement concept", "ai research", "ml implementation", "autonomous pipeline", "concept to code"]
+    route_to: /automation:ai-pipeline
+    # NEW: Autonomous AI/ML research-to-implementation pipeline
+    features:
+      auto_extraction: true
+      prd_generation: true
+      parallel_implementation: true
+      quality_validation: true
 ```
 
 ---
