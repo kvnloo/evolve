@@ -48,3 +48,10 @@ docs/.doctrees/
 Pipfile.lock
 *.pyc
 __pycache__/
+
+# Cleanup 2025-11-28
+*.backup
+.opencode_/
+uied-output/
+*.tmp
+*.cache
