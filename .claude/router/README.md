@@ -21,12 +21,12 @@ routing_config:
 - **outcome-tracker.ts** - Continuous learning system with 90-day TTL
 - **skill-library.ts** - Voyager-style skill extraction (95%+ success over 20 uses)
 
-### Hooks
+### Integration
 
-Located in `.claude-flow/hooks/router/`:
+The router integrates with existing Claude Flow hooks documented in `.claude/commands/hooks/`:
 
-- **pre-task-router.sh** - Analyzes requests, generates todos, stores decisions
-- **post-task-router.sh** - Records outcomes, updates statistics, learns from failures
+- Extends **pre-task** hook for request analysis and todo generation
+- Extends **post-task** hook for outcome tracking and learning
 
 ## Features
 
@@ -43,13 +43,13 @@ Located in `.claude-flow/hooks/router/`:
 node .claude/router/enhance.ts "/sc:implement" "create user auth" ".claude/rules/command-routing.md"
 ```
 
-### Via Hooks (Automatic)
+### Via Claude Flow Hooks (Automatic)
 ```bash
-# Pre-task (called by claude-flow)
-npx claude-flow@alpha hooks pre-task --description "implement login"
+# Pre-task analysis (called automatically by Claude Flow)
+npx claude-flow hook pre-task --description "implement login"
 
-# Post-task (called after work)
-npx claude-flow@alpha hooks post-task --success true --duration 120
+# Post-task learning (called automatically after task completion)
+npx claude-flow hook post-task --task-id "login-impl"
 ```
 
 ## Environment Variables
@@ -64,7 +64,7 @@ npx claude-flow@alpha hooks post-task --success true --duration 120
 
 ```
 .claude/router/
-├── enhance.ts                 # Main integration
+├── enhance.ts                 # Main integration (186 lines)
 ├── confidence-scorer.ts       # Bayesian confidence (451 lines)
 ├── parallel-analyzer.ts       # Dependency graphs (657 lines)
 ├── llm-fallback.ts           # LLM routing (336 lines)
@@ -72,10 +72,6 @@ npx claude-flow@alpha hooks post-task --success true --duration 120
 ├── skill-library.ts          # Skill extraction (476 lines)
 ├── test-integration.ts       # Integration tests (381 lines)
 └── README.md                 # This file
-
-.claude-flow/hooks/router/
-├── pre-task-router.sh        # Pre-task hook (121 lines)
-└── post-task-router.sh       # Post-task hook (120 lines)
 ```
 
 ## Expected Performance
