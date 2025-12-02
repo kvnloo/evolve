@@ -48,3 +48,4 @@ docs/.doctrees/
 Pipfile.lock
 *.pyc
 __pycache__/
+worktrees/

@@ -4,7 +4,7 @@ Generate the next appropriately-challenging task based on current skills and suc
 
 ## Usage
 ```
-/learn:curriculum
+/learn:automatic-curriculum
 ```
 
 ## What This Does
