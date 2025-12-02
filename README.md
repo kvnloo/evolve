@@ -10,6 +10,26 @@
 
 This project demonstrates advanced integration of five powerful frameworks to create a development environment where AI agents collaborate systematically, maintain perfect context across sessions, and deliver production-ready code through proven methodologies.
 
+## The C(RAID) Paradigm
+
+**Evolve operates on C(RAID)** - an evolution of CI/CD designed specifically for autonomous AI development:
+
+```
+Traditional CI/CD:  Code -> Build -> Test -> Deploy
+C(RAID):           Research -> Analysis -> Integration -> Deployment -> (feedback) -> Research
+```
+
+| Traditional CI/CD | C(RAID) Paradigm |
+|-------------------|------------------|
+| Starts with code (human wrote it) | Starts with research (AI must understand first) |
+| Human-driven development cycles | AI-driven autonomous cycles |
+| Integration happens AFTER development | Research and Analysis PRECEDE coding |
+| Deployment is the end goal | Deployment feeds back into Research |
+
+**C(RAID) + SPARC**: C(RAID) defines the continuous operational paradigm (outer loop), while SPARC provides the systematic execution methodology (inner loop). Together they enable truly autonomous development at scale.
+
+> **[Read the full C(RAID) Paradigm documentation](docs/paradigm/index.rst)**
+
 ## Why This Matters
 
 **Traditional AI development**: Ad-hoc prompts, lost context, inconsistent quality

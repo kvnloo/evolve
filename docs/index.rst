@@ -5,6 +5,12 @@ Evolve: Autonomous AI Development Framework
 
 .. toctree::
    :maxdepth: 2
+   :caption: The Paradigm
+
+   paradigm/index
+
+.. toctree::
+   :maxdepth: 2
    :caption: Getting Started
 
    README
