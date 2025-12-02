@@ -44,25 +44,6 @@ LLM-consumable research content for Claude and other AI assistants.
   - [Architectural Automation](topics/claude-code/workflows/architectural-automation.md)
   - [Overnight Deep Research](topics/claude-code/workflows/overnight-deep-research.md)
 
-### Digital Twins
-- [Digital Twins Overview](topics/digital-twins/README.md)
-- **Design Patterns**
-  - [Digital Twin Design](topics/digital-twins/design-patterns/digital-twin-design.md)
-- **Implementation**
-  - [Mesh Generation Strategy](topics/digital-twins/implementation/mesh-generation-strategy.md)
-  - [Autonomous Claude Code Digital Twin](topics/digital-twins/implementation/autonomous-claude-code-digital-twin.md)
-  - [Claude Digital Twin Management](topics/digital-twins/implementation/claude-digital-twin-management.md)
-  - [OS Research Management](topics/digital-twins/implementation/os-research-management.md)
-- **Use Cases**
-  - [CEA Digital Twin](topics/digital-twins/use-cases/cea-digital-twin.md)
-
-### Domain-Specific Research
-- [Domain-Specific Overview](topics/domain-specific/README.md)
-- **Agriculture**
-  - [5-Acre Farm Automation](topics/domain-specific/agriculture/5-acre_farm_automation.md)
-  - [Onsite Compute Farm](topics/domain-specific/agriculture/onsite-compute-farm.md)
-  - [LLMs + Digital Twins + PM Convergence](topics/domain-specific/agriculture/convergence-llms-digital-twins-pm.md)
-
 ### LLM Systems
 - [LLM Systems Overview](topics/llm-systems/README.md)
 - **Fine-Tuning**
@@ -100,7 +81,6 @@ active_research/
     ├── architecture/     # System design patterns
     ├── benchmarks/       # Evaluation methods
     ├── claude-code/      # Claude integration research
-    ├── digital-twins/    # Digital twin systems
-    ├── domain-specific/  # Agriculture, CEA, etc.
+    ├── domain-specific/  # Domain-specific applications
     └── llm-systems/      # Fine-tuning, training
 ```

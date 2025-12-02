@@ -5,7 +5,6 @@
 ## Contents
 
 - **PROJECT_VISION.md** - Overall project vision and strategic direction
-- **portfolio-redesign-proposal.md** - Portfolio redesign vision and proposals
 
 ## What Belongs Here
 - ✅ Strategic vision documents

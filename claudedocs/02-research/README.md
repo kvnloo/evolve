@@ -5,12 +5,11 @@
 ## Contents
 
 ### Active Research
-- **topics/** - 87 active research documents organized by domain
+- **topics/** - Active research documents organized by domain
   - `ai-agents/` - AI agent architecture and patterns
   - `architecture/` - Software architecture research
   - `benchmarks/` - Performance benchmarking studies
   - `claude-code/` - Claude Code integration research
-  - `digital-twins/` - Digital twin implementations
   - `domain-specific/` - Domain-specific applications
   - `llm-systems/` - LLM system design
 
