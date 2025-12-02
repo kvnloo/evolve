@@ -18,12 +18,15 @@ release = '1.0.0'
 
 extensions = [
     'myst_parser',  # Markdown support
+    'sphinxcontrib.mermaid',  # Mermaid diagram support
     'sphinx.ext.githubpages',  # Create .nojekyll file for GitHub Pages
     'sphinx.ext.intersphinx',  # Link to other projects' documentation
     'sphinx.ext.todo',  # Support for todo items
 ]
 
 # MyST-Parser configuration - enable all features
+myst_fence_as_directive = ["mermaid"]  # Render ```mermaid blocks as Mermaid diagrams
+
 myst_enable_extensions = [
     "amsmath",
     "colon_fence",
