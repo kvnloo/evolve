@@ -9,16 +9,22 @@ This folder contains documentation optimized for AI assistants and automated pro
 ```
 claudedocs/
 ├── README.md                    # This file
-├── active_research/             # Current research topics
-│   └── INDEX.md                 # Navigation index
-├── archive/                     # Historical documentation
+├── 00-index/                    # Navigation hub
+├── 01-architecture/             # System architecture
+├── 02-research/                 # Research findings
+│   ├── topics/                  # Research topics
+│   └── synthesis/               # Synthesis documents
+├── 03-vision/                   # Strategic vision
+├── 04-planning/                 # Features, roadmaps
+├── 05-implementation/           # Implementation guides
+├── 06-testing/                  # Testing documentation
+├── 07-operations/               # Operational procedures
+├── 08-workflows/                # Development workflows
+├── 99-archive/                  # Historical documentation
 │   ├── 2025-10-deep-research/   # Deep research archives
 │   ├── 2025-11-consolidation/   # Consolidation work
-│   └── 2025-11-migrations/      # Migration archives
-├── migration/                   # Migration documentation
-│   └── opencode-migration-master.md
-└── tooling/                     # Documentation tooling
-    └── sphinx-documentation-guide.md
+│   └── abandoned-plans/         # Unexecuted migration plans
+└── archive/                     # Legacy archives
 ```
 
 ---
@@ -26,14 +32,14 @@ claudedocs/
 ## Quick Access
 
 ### Active Research
-- [Research Index](active_research/INDEX.md) - Full navigation
+- [Research Index](02-research/README.md) - Full research navigation
 - Topics: AI agents, architecture, benchmarks, Claude Code, digital twins, LLM systems
 
-### Documentation Tooling
-- [Sphinx Setup Guide](tooling/sphinx-documentation-guide.md) - Complete Sphinx + GitHub Pages setup
+### Navigation & Index
+- [Index Overview](00-index/README.md) - Complete navigation hub
 
-### Migration Resources
-- [OpenCode Migration Master](migration/opencode-migration-master.md) - .claude → .opencode migration
+### Implementation Guides
+- [Implementation Index](05-implementation/README.md) - Implementation documentation
 
 ---
 

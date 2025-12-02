@@ -86,7 +86,7 @@ Organized by domain and capability:
 ## 📖 Technical Guides
 
 ### Research Documentation
-- **[Research Index](../research/)** - Deep technical research and analysis
+- **[Research Index](../claudedocs/02-research/)** - Deep technical research and analysis
 - Topics: Autonomous systems, agent coordination, workflow optimization
 
 ### Setup & Configuration
