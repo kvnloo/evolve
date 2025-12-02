@@ -43,50 +43,46 @@ This architecture integrates capabilities from multiple proven frameworks:
 
 ### High-Level Architecture
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                        User / Developer                      │
-└────────────────────┬────────────────────────────────────────┘
-                     │
-                     ▼
-┌─────────────────────────────────────────────────────────────┐
-│                    Claude Code CLI                           │
-└────────────────────┬────────────────────────────────────────┘
-                     │
-                     ▼
-┌─────────────────────────────────────────────────────────────┐
-│              Extended Framework Layer                        │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │
-│  │  CLAUDE.md   │  │   .claude/   │  │   Scripts    │      │
-│  │ Config File  │  │ Directory    │  │   Helpers    │      │
-│  └──────────────┘  └──────────────┘  └──────────────┘      │
-└────────────────────┬────────────────────────────────────────┘
-                     │
-         ┌───────────┼───────────┐
-         │           │           │
-         ▼           ▼           ▼
-┌──────────────┐ ┌──────────┐ ┌──────────────┐
-│ MCP Servers  │ │  SPARC   │ │   PM System  │
-│              │ │ Workflow │ │    (CCPM)    │
-│ - claude-flow│ │          │ │              │
-│ - ruv-swarm  │ │          │ │  - PRDs      │
-│ - flow-nexus │ │          │ │  - Epics     │
-└──────────────┘ └──────────┘ │  - Issues    │
-                               └──────────────┘
-         │           │           │
-         └───────────┼───────────┘
-                     │
-                     ▼
-┌─────────────────────────────────────────────────────────────┐
-│                   Multi-Agent System                         │
-│  54+ Specialized Agents with Coordination                    │
-└─────────────────────────────────────────────────────────────┘
-                     │
-                     ▼
-┌─────────────────────────────────────────────────────────────┐
-│              External Integrations                           │
-│   GitHub  │  Git  │  Shell  │  File System                  │
-└─────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart TB
+    User["👤 User / Developer"]
+
+    User --> CLI["Claude Code CLI"]
+
+    subgraph Framework["Extended Framework Layer"]
+        Config["📄 CLAUDE.md<br/>Config File"]
+        ClaudeDir["📁 .claude/<br/>Directory"]
+        Scripts["📜 Scripts<br/>Helpers"]
+    end
+
+    CLI --> Framework
+
+    subgraph Services["Core Services"]
+        MCP["🔌 MCP Servers<br/>• claude-flow<br/>• ruv-swarm<br/>• flow-nexus"]
+        SPARC["⚙️ SPARC<br/>Workflow"]
+        PM["📋 PM System<br/>(CCPM)<br/>• PRDs<br/>• Epics<br/>• Issues"]
+    end
+
+    Framework --> MCP
+    Framework --> SPARC
+    Framework --> PM
+
+    subgraph Agents["Multi-Agent System"]
+        AgentPool["🤖 54+ Specialized Agents with Coordination"]
+    end
+
+    MCP --> Agents
+    SPARC --> Agents
+    PM --> Agents
+
+    subgraph External["External Integrations"]
+        GitHub["GitHub"]
+        Git["Git"]
+        Shell["Shell"]
+        FS["File System"]
+    end
+
+    Agents --> External
 ```
 
 ## Component Overview
@@ -128,12 +124,15 @@ Main configuration file loaded by Claude Code CLI:
 
 The SPARC engine orchestrates systematic development:
 
-```
-Specification ──→ Pseudocode ──→ Architecture ──→ Refinement ──→ Completion
-     │                │               │               │              │
-     ▼                ▼               ▼               ▼              ▼
- Requirements     Algorithm        System          TDD:          Integration
-  Analysis         Design           Design      Test→Code        Validation
+```mermaid
+flowchart LR
+    S[Specification] --> P[Pseudocode] --> A[Architecture] --> R[Refinement] --> C[Completion]
+
+    S --- S1[Requirements<br/>Analysis]
+    P --- P1[Algorithm<br/>Design]
+    A --- A1[System<br/>Design]
+    R --- R1[TDD:<br/>Test→Code]
+    C --- C1[Integration<br/>Validation]
 ```
 
 **Implementation**:
@@ -146,31 +145,14 @@ Specification ──→ Pseudocode ──→ Architecture ──→ Refinement �
 
 Spec-driven development workflow:
 
-```
-┌─────────────┐
-│    PRD      │  Product Requirement Document
-│  (.claude/  │  Stored in .claude/prds/
-│   prds/)    │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│    Epic     │  Decomposed into tasks
-│  (.claude/  │  Managed in .claude/epics/ (gitignored)
-│   epics/)   │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│   GitHub    │  Synced to repository
-│   Issues    │  Tracked and managed
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│ Git Worktree│  Parallel development
-│ + Agent     │  Isolated work environment
-└─────────────┘
+```mermaid
+flowchart TB
+    PRD["📄 PRD<br/>.claude/prds/<br/>Product Requirement Document"]
+    Epic["📋 Epic<br/>.claude/epics/<br/>Decomposed into tasks"]
+    Issues["🎫 GitHub Issues<br/>Synced to repository<br/>Tracked and managed"]
+    Worktree["🌿 Git Worktree + Agent<br/>Parallel development<br/>Isolated work environment"]
+
+    PRD --> Epic --> Issues --> Worktree
 ```
 
 **Key Features**:
@@ -216,31 +198,36 @@ Spec-driven development workflow:
 #### Coordination Patterns
 
 **Hierarchical** (Queen-Worker):
-```
-     Queen Coordinator
-           │
-    ┌──────┼──────┐
-    │      │      │
-Worker  Worker  Worker
-  A       B       C
+```mermaid
+flowchart TB
+    Queen["👑 Queen Coordinator"]
+    A["Worker A"]
+    B["Worker B"]
+    C["Worker C"]
+
+    Queen --> A
+    Queen --> B
+    Queen --> C
 ```
 
 **Mesh** (Peer-to-Peer):
-```
-Agent ←→ Agent
-  ↕       ↕
-Agent ←→ Agent
+```mermaid
+flowchart LR
+    A1["Agent"] <--> A2["Agent"]
+    A3["Agent"] <--> A4["Agent"]
+    A1 <--> A3
+    A2 <--> A4
 ```
 
 **Adaptive** (Dynamic):
-```
-Starts: Hierarchical
-  │
-  ▼ (if conditions change)
-Switches to: Mesh
-  │
-  ▼ (if needed)
-Back to: Hierarchical
+```mermaid
+flowchart TB
+    Start["Starts: Hierarchical"]
+    Switch["Switches to: Mesh"]
+    Back["Back to: Hierarchical"]
+
+    Start -->|"conditions change"| Switch
+    Switch -->|"if needed"| Back
 ```
 
 ### 5. MCP Server Integration
@@ -267,121 +254,127 @@ Back to: Hierarchical
 
 Automated workflows and operations:
 
-```
-Developer Action
-     │
-     ▼
-GitHub Event
-     │
-     ├──→ Workflows (CI/CD)
-     │    ├─ shellcheck.yml
-     │    ├─ health-check.yml
-     │    ├─ auto-label.yml
-     │    └─ stale.yml
-     │
-     ├──→ Issue Templates
-     │    ├─ bug_report.md
-     │    └─ feature_request.md
-     │
-     └──→ PR Template
-          └─ PULL_REQUEST_TEMPLATE.md
+```mermaid
+flowchart TB
+    Dev["👤 Developer Action"]
+    Event["GitHub Event"]
+
+    subgraph Workflows["⚙️ Workflows (CI/CD)"]
+        W1["shellcheck.yml"]
+        W2["health-check.yml"]
+        W3["auto-label.yml"]
+        W4["stale.yml"]
+    end
+
+    subgraph Issues["📝 Issue Templates"]
+        I1["bug_report.md"]
+        I2["feature_request.md"]
+    end
+
+    subgraph PR["🔀 PR Template"]
+        P1["PULL_REQUEST_TEMPLATE.md"]
+    end
+
+    Dev --> Event
+    Event --> Workflows
+    Event --> Issues
+    Event --> PR
 ```
 
 ## Data Flow
 
 ### Typical Development Flow
 
-```
-1. User requests feature
-      │
-      ▼
-2. /pm:prd-new creates PRD
-      │
-      ▼
-3. /pm:epic-oneshot decomposes
-      │
-      ▼
-4. GitHub issues created
-      │
-      ▼
-5. /pm:issue-start begins work
-      │
-      ▼
-6. SPARC workflow executes
-      │
-      ├─→ Specification phase
-      ├─→ Pseudocode phase
-      ├─→ Architecture phase
-      ├─→ Refinement (TDD) phase
-      └─→ Completion phase
-      │
-      ▼
-7. Agent coordination
-      │
-      ├─→ Parallel execution
-      ├─→ Memory sharing
-      └─→ Hooks integration
-      │
-      ▼
-8. Code generation & testing
-      │
-      ▼
-9. PR creation & review
-      │
-      ▼
-10. Merge & deployment
+```mermaid
+flowchart TB
+    U["1. 👤 User requests feature"]
+    PRD["2. /pm:prd-new creates PRD"]
+    Epic["3. /pm:epic-oneshot decomposes"]
+    Issues["4. GitHub issues created"]
+    Start["5. /pm:issue-start begins work"]
+
+    subgraph SPARC["6. SPARC Workflow"]
+        S1["Specification"]
+        S2["Pseudocode"]
+        S3["Architecture"]
+        S4["Refinement (TDD)"]
+        S5["Completion"]
+    end
+
+    subgraph Coord["7. Agent Coordination"]
+        C1["Parallel execution"]
+        C2["Memory sharing"]
+        C3["Hooks integration"]
+    end
+
+    Code["8. Code generation & testing"]
+    PR["9. PR creation & review"]
+    Deploy["10. Merge & deployment"]
+
+    U --> PRD --> Epic --> Issues --> Start --> SPARC --> Coord --> Code --> PR --> Deploy
 ```
 
 ### Memory Flow
 
-```
-Agent A
-  │ writes
-  ▼
-Memory Store ←─── reads ──── Agent B
-  │
-  │ persists
-  ▼
-Session State
-  │
-  │ restores
-  ▼
-Next Session
+```mermaid
+flowchart TB
+    A["🤖 Agent A"]
+    B["🤖 Agent B"]
+    Mem["💾 Memory Store"]
+    State["📦 Session State"]
+    Next["🔄 Next Session"]
+
+    A -->|"writes"| Mem
+    B -->|"reads"| Mem
+    Mem -->|"persists"| State
+    State -->|"restores"| Next
 ```
 
 ## Integration Points
 
 ### File System Integration
 
-```
-.claude/
-  ├─ Read by: Claude Code CLI on startup
-  ├─ Modified by: PM commands, user edits
-  └─ Used by: All agents for configuration
+```mermaid
+flowchart LR
+    subgraph Claude[".claude/"]
+        C1["Read by: Claude Code CLI"]
+        C2["Modified by: PM commands"]
+        C3["Used by: All agents"]
+    end
 
-scripts/
-  ├─ Executed by: Users, workflows, agents
-  └─ Coordinated via: Hook system
+    subgraph Scripts["scripts/"]
+        S1["Executed by: Users, workflows"]
+        S2["Coordinated via: Hook system"]
+    end
 
-.github/
-  ├─ Processed by: GitHub Actions
-  └─ Triggered by: Git events
+    subgraph GitHub[".github/"]
+        G1["Processed by: GitHub Actions"]
+        G2["Triggered by: Git events"]
+    end
 ```
 
 ### Git Integration
 
-```
-Git Operations
-  │
-  ├─→ Branch management
-  │   └─ Worktrees for parallel work
-  │
-  ├─→ Commit hooks
-  │   └─ Pre-commit: validation
-  │   └─ Post-commit: notifications
-  │
-  └─→ Remote sync
-      └─ Push/Pull coordination
+```mermaid
+flowchart TB
+    Git["🔀 Git Operations"]
+
+    subgraph Branch["Branch Management"]
+        B1["Worktrees for parallel work"]
+    end
+
+    subgraph Hooks["Commit Hooks"]
+        H1["Pre-commit: validation"]
+        H2["Post-commit: notifications"]
+    end
+
+    subgraph Sync["Remote Sync"]
+        S1["Push/Pull coordination"]
+    end
+
+    Git --> Branch
+    Git --> Hooks
+    Git --> Sync
 ```
 
 ### GitHub API Integration
@@ -471,18 +464,23 @@ Through `gh` CLI and GitHub Actions:
 
 ### Bottleneck Mitigation
 
-```
-Bottleneck: Sequential operations
-Solution: Parallel-first execution
+```mermaid
+flowchart LR
+    subgraph B1["⚠️ Sequential operations"]
+        S1["✅ Parallel-first execution"]
+    end
 
-Bottleneck: Token limits
-Solution: Ultra-compressed mode
+    subgraph B2["⚠️ Token limits"]
+        S2["✅ Ultra-compressed mode"]
+    end
 
-Bottleneck: File conflicts
-Solution: Worktree isolation
+    subgraph B3["⚠️ File conflicts"]
+        S3["✅ Worktree isolation"]
+    end
 
-Bottleneck: API rate limits
-Solution: Batch operations
+    subgraph B4["⚠️ API rate limits"]
+        S4["✅ Batch operations"]
+    end
 ```
 
 ## Extension Points
