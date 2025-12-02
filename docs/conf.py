@@ -27,6 +27,30 @@ extensions = [
 # MyST-Parser configuration - enable all features
 myst_fence_as_directive = ["mermaid"]  # Render ```mermaid blocks as Mermaid diagrams
 
+# Mermaid configuration for dark theme compatibility
+mermaid_init_js = """
+mermaid.initialize({
+    startOnLoad: true,
+    theme: 'dark',
+    themeVariables: {
+        lineColor: '#8B949E',
+        primaryTextColor: '#C9D1D9',
+        primaryColor: '#238636',
+        primaryBorderColor: '#30363D',
+        secondaryColor: '#161B22',
+        tertiaryColor: '#21262D',
+        edgeLabelBackground: '#21262D',
+        clusterBkg: '#161B22',
+        clusterBorder: '#30363D',
+        nodeTextColor: '#C9D1D9'
+    },
+    flowchart: {
+        curve: 'basis',
+        useMaxWidth: true
+    }
+});
+"""
+
 myst_enable_extensions = [
     "amsmath",
     "colon_fence",
