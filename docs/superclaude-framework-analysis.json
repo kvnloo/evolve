@@ -1,0 +1,1100 @@
+{
+  "metadata": {
+    "analysis_date": "2025-11-26",
+    "analyst": "SuperClaude Framework Analyst (Agent 1)",
+    "scope": "Complete SuperClaude Framework Configuration",
+    "files_analyzed": 13,
+    "total_lines": 3446
+  },
+
+  "flags_inventory": {
+    "mode_activation_flags": {
+      "--brainstorm": {
+        "triggers": [
+          "Vague project requests",
+          "Keywords: maybe, thinking about, not sure",
+          "Exploration keywords: brainstorm, explore, discuss, figure out"
+        ],
+        "behavior": "Activate collaborative discovery mindset, Socratic dialogue, requirements elicitation",
+        "priority": "IMPORTANT"
+      },
+      "--introspect": {
+        "triggers": [
+          "Self-analysis requests",
+          "Error recovery",
+          "Complex problem solving requiring meta-cognition"
+        ],
+        "behavior": "Expose thinking with transparency markers (🤔, 🎯, ⚡, 📊, 💡)",
+        "priority": "IMPORTANT"
+      },
+      "--task-manage": {
+        "triggers": [
+          ">3 steps",
+          ">2 directories OR >3 files",
+          "Quality improvement: polish, refine, enhance"
+        ],
+        "behavior": "Orchestrate through delegation, progressive enhancement, memory management",
+        "priority": "CRITICAL"
+      },
+      "--orchestrate": {
+        "triggers": [
+          "Multi-tool operations",
+          "Performance constraints (>75% resource usage)",
+          "Parallel execution opportunities"
+        ],
+        "behavior": "Optimize tool selection, parallel thinking, resource adaptation",
+        "priority": "IMPORTANT"
+      },
+      "--token-efficient": {
+        "triggers": [
+          "Context usage >75%",
+          "Large-scale operations",
+          "--uc flag"
+        ],
+        "behavior": "Symbol-enhanced communication, 30-50% token reduction",
+        "priority": "RECOMMENDED"
+      }
+    },
+
+    "mcp_server_flags": {
+      "--c7/--context7": {
+        "triggers": ["Library imports", "Framework questions", "Official documentation needs"],
+        "behavior": "Enable Context7 for curated docs",
+        "priority": "RECOMMENDED"
+      },
+      "--seq/--sequential": {
+        "triggers": ["Complex debugging", "System design", "Multi-component analysis"],
+        "behavior": "Enable Sequential for structured reasoning",
+        "priority": "IMPORTANT"
+      },
+      "--magic": {
+        "triggers": ["UI components (/ui, /21)", "Design system queries", "Frontend development"],
+        "behavior": "Enable Magic for modern UI generation",
+        "priority": "RECOMMENDED"
+      },
+      "--morph/--morphllm": {
+        "triggers": ["Bulk code transformations", "Pattern-based edits", "Style enforcement"],
+        "behavior": "Enable Morphllm for multi-file patterns",
+        "priority": "RECOMMENDED"
+      },
+      "--serena": {
+        "triggers": ["Symbol operations", "Project memory needs", "Large codebase navigation"],
+        "behavior": "Enable Serena for semantic understanding",
+        "priority": "RECOMMENDED"
+      },
+      "--play/--playwright": {
+        "triggers": ["Browser testing", "E2E scenarios", "Visual validation", "Accessibility testing"],
+        "behavior": "Enable Playwright for browser automation",
+        "priority": "RECOMMENDED"
+      },
+      "--chrome/--devtools": {
+        "triggers": ["Performance auditing", "Debugging", "Layout issues", "Network analysis"],
+        "behavior": "Enable Chrome DevTools for real-time inspection",
+        "priority": "RECOMMENDED"
+      },
+      "--tavily": {
+        "triggers": ["Web search requests", "Real-time information", "Research queries", "Current events"],
+        "behavior": "Enable Tavily for web search",
+        "priority": "IMPORTANT"
+      },
+      "--frontend-verify": {
+        "triggers": ["UI testing", "Frontend debugging", "Layout validation", "Component verification"],
+        "behavior": "Enable Playwright + Chrome DevTools + Serena",
+        "priority": "RECOMMENDED"
+      },
+      "--all-mcp": {
+        "triggers": ["Maximum complexity", "Multi-domain problems"],
+        "behavior": "Enable all MCP servers",
+        "priority": "CRITICAL"
+      },
+      "--no-mcp": {
+        "triggers": ["Native-only execution", "Performance priority"],
+        "behavior": "Disable all MCP servers",
+        "priority": "IMPORTANT"
+      }
+    },
+
+    "analysis_depth_flags": {
+      "--think": {
+        "triggers": ["Multi-component analysis", "Moderate complexity"],
+        "behavior": "Standard analysis (~4K tokens), enables Sequential",
+        "priority": "RECOMMENDED"
+      },
+      "--think-hard": {
+        "triggers": ["Architectural analysis", "System-wide dependencies"],
+        "behavior": "Deep analysis (~10K tokens), enables Sequential + Context7",
+        "priority": "IMPORTANT"
+      },
+      "--ultrathink": {
+        "triggers": ["Critical system redesign", "Legacy modernization", "Complex debugging"],
+        "behavior": "Maximum depth (~32K tokens), enables all MCP servers",
+        "priority": "CRITICAL"
+      }
+    },
+
+    "execution_control_flags": {
+      "--delegate": {
+        "triggers": [">7 directories OR >50 files OR complexity >0.8"],
+        "behavior": "Enable sub-agent parallel processing",
+        "priority": "IMPORTANT",
+        "options": ["auto", "files", "folders"]
+      },
+      "--concurrency": {
+        "triggers": ["Resource optimization", "Parallel operation control"],
+        "behavior": "Control max concurrent operations (1-15)",
+        "priority": "RECOMMENDED"
+      },
+      "--loop": {
+        "triggers": ["Keywords: polish, refine, enhance, improve"],
+        "behavior": "Enable iterative improvement cycles",
+        "priority": "RECOMMENDED"
+      },
+      "--iterations": {
+        "triggers": ["Specific improvement cycle requirements"],
+        "behavior": "Set cycle count (1-10)",
+        "priority": "RECOMMENDED"
+      },
+      "--validate": {
+        "triggers": ["Risk score >0.7", "Resource usage >75%", "Production environment"],
+        "behavior": "Pre-execution risk assessment",
+        "priority": "CRITICAL"
+      },
+      "--safe-mode": {
+        "triggers": ["Resource usage >85%", "Production environment", "Critical operations"],
+        "behavior": "Maximum validation, conservative execution, auto-enable --uc",
+        "priority": "CRITICAL"
+      }
+    },
+
+    "output_optimization_flags": {
+      "--uc/--ultracompressed": {
+        "triggers": ["Context pressure", "Efficiency requirements", "Large operations"],
+        "behavior": "Symbol communication, 30-50% token reduction",
+        "priority": "RECOMMENDED"
+      },
+      "--scope": {
+        "triggers": ["Analysis boundary needs"],
+        "behavior": "Define scope: file|module|project|system",
+        "priority": "RECOMMENDED"
+      },
+      "--focus": {
+        "triggers": ["Domain-specific optimization"],
+        "behavior": "Target: performance|security|quality|architecture|accessibility|testing",
+        "priority": "RECOMMENDED"
+      }
+    },
+
+    "flag_priority_rules": {
+      "safety_first": "--safe-mode > --validate > optimization flags",
+      "explicit_override": "User flags > auto-detection",
+      "depth_hierarchy": "--ultrathink > --think-hard > --think",
+      "mcp_control": "--no-mcp overrides all individual MCP flags",
+      "scope_precedence": "system > project > module > file"
+    }
+  },
+
+  "rules_inventory": {
+    "agent_orchestration": {
+      "priority": "CRITICAL",
+      "triggers": ["Task execution", "Post-implementation"],
+      "task_execution_layer": {
+        "auto_selection": "Claude Code auto-selects specialist agents",
+        "keyword_triggers": "Security, performance, frontend, backend, architecture",
+        "file_type_triggers": ".py, .jsx, .ts trigger language specialists",
+        "manual_override": "@agent-[name] prefix"
+      },
+      "self_improvement_layer": {
+        "post_implementation": "PM Agent documents learnings",
+        "mistake_detection": "PM Agent root cause analysis",
+        "monthly_maintenance": "PM Agent documentation health reviews",
+        "knowledge_capture": "Transform experiences into patterns"
+      },
+      "enforcement_mechanism": "Auto-activation system with PM meta-layer",
+      "examples": {
+        "correct": "User request → backend-architect implements → PM Agent documents",
+        "wrong": "Skip documentation after implementation"
+      }
+    },
+
+    "workflow_rules": {
+      "priority": "IMPORTANT",
+      "triggers": ["All development tasks"],
+      "requirements": [
+        "Task Pattern: Understand → Plan → TodoWrite(3+) → Execute → Track → Validate",
+        "Batch Operations: ALWAYS parallel by default, sequential ONLY for dependencies",
+        "Validation Gates: Always validate before, verify after",
+        "Quality Checks: Run lint/typecheck before completion",
+        "Context Retention: Maintain ≥90% understanding",
+        "Evidence-Based: All claims verifiable",
+        "Discovery First: Complete project-wide analysis before systematic changes",
+        "Session Lifecycle: /sc:load → Work → Checkpoint (30min) → /sc:save"
+      ],
+      "enforcement_mechanism": "Process pattern validation",
+      "examples": {
+        "correct": "Plan → TodoWrite → Execute → Validate",
+        "wrong": "Jump directly to implementation"
+      }
+    },
+
+    "planning_efficiency": {
+      "priority": "CRITICAL",
+      "triggers": ["All planning phases", "TodoWrite operations", "Multi-step tasks"],
+      "requirements": [
+        "Parallelization Analysis: Identify concurrent operations during planning",
+        "Tool Optimization Planning: Plan optimal MCP combinations",
+        "Dependency Mapping: Separate sequential from parallelizable",
+        "Resource Estimation: Consider token usage and execution time",
+        "Efficiency Metrics: Specify parallelization gains"
+      ],
+      "enforcement_mechanism": "Planning phase analysis required",
+      "examples": {
+        "correct": "Plan: 1) Parallel: [Read 5 files] 2) Sequential: analyze → 3) Parallel: [Edit all]",
+        "wrong": "Plan: Read file1 → Read file2 → Read file3 → analyze → edit file1 → edit file2"
+      }
+    },
+
+    "implementation_completeness": {
+      "priority": "IMPORTANT",
+      "triggers": ["Creating features", "Writing functions", "Code generation"],
+      "requirements": [
+        "No Partial Features: Must complete to working state",
+        "No TODO Comments: Never leave TODO for core functionality",
+        "No Mock Objects: No placeholders or fake data",
+        "No Incomplete Functions: Every function must work",
+        "Completion Mindset: Start it = Finish it",
+        "Real Code Only: Production-ready, not scaffolding"
+      ],
+      "enforcement_mechanism": "Code review for completeness",
+      "examples": {
+        "correct": "function calculate() { return price * tax; }",
+        "wrong": "function calculate() { throw new Error('Not implemented'); }"
+      }
+    },
+
+    "scope_discipline": {
+      "priority": "IMPORTANT",
+      "triggers": ["Vague requirements", "Feature expansion", "Architecture decisions"],
+      "requirements": [
+        "Build ONLY What's Asked: No extra features",
+        "MVP First: Minimum viable, iterate based on feedback",
+        "No Enterprise Bloat: No auth/deployment/monitoring unless requested",
+        "Single Responsibility: Each component does ONE thing",
+        "Simple Solutions: Prefer simple evolving code",
+        "Think Before Build: Understand → Plan → Build",
+        "YAGNI Enforcement: You Aren't Gonna Need It"
+      ],
+      "enforcement_mechanism": "Scope validation during planning",
+      "examples": {
+        "correct": "Build login form → Just login form",
+        "wrong": "Build login form → Login + registration + password reset + 2FA"
+      }
+    },
+
+    "code_organization": {
+      "priority": "RECOMMENDED",
+      "triggers": ["Creating files", "Structuring projects", "Naming decisions"],
+      "requirements": [
+        "Naming Convention Consistency: Follow language standards (camelCase/snake_case)",
+        "Descriptive Names: Clearly describe purpose",
+        "Logical Directory Structure: Organize by feature/domain",
+        "Pattern Following: Match existing organization",
+        "Hierarchical Logic: Clear parent-child relationships",
+        "No Mixed Conventions: Don't mix naming styles",
+        "Elegant Organization: Clean, scalable structure"
+      ],
+      "enforcement_mechanism": "Naming and structure validation",
+      "examples": {
+        "correct": "getUserData(), user_data.py, components/auth/",
+        "wrong": "get_userData(), userdata.py, files/everything/"
+      }
+    },
+
+    "workspace_hygiene": {
+      "priority": "IMPORTANT",
+      "triggers": ["After operations", "Session end", "Temporary file creation"],
+      "requirements": [
+        "Clean After Operations: Remove temp files, scripts, directories",
+        "No Artifact Pollution: Delete build artifacts, logs, debug outputs",
+        "Temporary File Management: Clean all temps before completion",
+        "Professional Workspace: Maintain clean structure",
+        "Session End Cleanup: Remove temporary resources",
+        "Version Control Hygiene: Never leave committable temps",
+        "Resource Management: Delete unused directories/files"
+      ],
+      "enforcement_mechanism": "Session end cleanup validation",
+      "examples": {
+        "correct": "rm temp_script.py after use",
+        "wrong": "Leaving debug.sh, test.log, temp/ directories"
+      }
+    },
+
+    "failure_investigation": {
+      "priority": "CRITICAL",
+      "triggers": ["Errors", "Test failures", "Unexpected behavior", "Tool failures"],
+      "requirements": [
+        "Root Cause Analysis: Always investigate WHY",
+        "Never Skip Tests: Never disable/comment out tests",
+        "Never Skip Validation: Never bypass quality checks",
+        "Debug Systematically: Assess error messages thoroughly",
+        "Fix Don't Workaround: Address underlying issues",
+        "Tool Failure Investigation: Debug before switching approaches",
+        "Quality Integrity: Never compromise system integrity",
+        "Methodical Problem-Solving: Understand → Diagnose → Fix → Verify"
+      ],
+      "enforcement_mechanism": "Failure analysis protocol",
+      "detection": "grep -r 'skip|disable|TODO' tests/",
+      "examples": {
+        "correct": "Analyze stack trace → identify root cause → fix properly",
+        "wrong": "Comment out failing test to make build pass"
+      }
+    },
+
+    "professional_honesty": {
+      "priority": "IMPORTANT",
+      "triggers": ["Assessments", "Reviews", "Recommendations", "Technical claims"],
+      "requirements": [
+        "No Marketing Language: Never use blazingly fast, 100% secure, magnificent, excellent",
+        "No Fake Metrics: Never invent estimates/percentages without evidence",
+        "Critical Assessment: Provide honest trade-offs",
+        "Push Back When Needed: Point out problems respectfully",
+        "Evidence-Based Claims: All claims verifiable",
+        "No Sycophantic Behavior: Stop over-praising",
+        "Realistic Assessments: State untested, MVP, needs validation",
+        "Professional Language: Use technical terms"
+      ],
+      "enforcement_mechanism": "Language and claim validation",
+      "examples": {
+        "correct": "This approach has trade-offs: faster but uses more memory",
+        "wrong": "This magnificent solution is blazingly fast and 100% secure!"
+      }
+    },
+
+    "git_workflow": {
+      "priority": "CRITICAL",
+      "triggers": ["Session start", "Before changes", "Risky operations"],
+      "requirements": [
+        "Always Check Status First: git status && git branch",
+        "Feature Branches Only: NEVER work on main/master",
+        "Incremental Commits: Frequent meaningful commits",
+        "Verify Before Commit: git diff to review",
+        "Create Restore Points: Commit before risky ops",
+        "Branch for Experiments: Use branches to test",
+        "Clean History: Descriptive messages, avoid fix/update/changes",
+        "Non-Destructive Workflow: Always preserve rollback ability"
+      ],
+      "enforcement_mechanism": "Git status checks at session start",
+      "detection": "git branch should show feature branch",
+      "examples": {
+        "correct": "git checkout -b feature/auth → work → commit → PR",
+        "wrong": "Work directly on main/master branch"
+      }
+    },
+
+    "tool_optimization": {
+      "priority": "RECOMMENDED",
+      "triggers": ["Multi-step operations", "Performance needs", "Complex tasks"],
+      "requirements": [
+        "Best Tool Selection: MCP > Native > Basic",
+        "Parallel Everything: Execute independent ops in parallel",
+        "Agent Delegation: Use Task agents for >3 steps",
+        "MCP Server Usage: Leverage specialized servers",
+        "Batch Operations: Use MultiEdit over Edit, batch Reads",
+        "Powerful Search: Grep tool > bash grep, Glob > find",
+        "Efficiency First: Choose speed and power",
+        "Tool Specialization: Match tools to purpose"
+      ],
+      "enforcement_mechanism": "Tool selection optimization",
+      "examples": {
+        "correct": "Use MultiEdit for 3+ file changes, parallel Read calls",
+        "wrong": "Sequential Edit calls, bash grep instead of Grep tool"
+      }
+    },
+
+    "file_organization": {
+      "priority": "IMPORTANT",
+      "triggers": ["File creation", "Project structuring", "Documentation"],
+      "requirements": [
+        "Think Before Write: Consider WHERE before creating",
+        "Claude-Specific Documentation: Put in claudedocs/ directory",
+        "Test Organization: Place in tests/, __tests__/, test/",
+        "Script Organization: Place in scripts/, tools/, bin/",
+        "Check Existing Patterns: Look for existing directories",
+        "No Scattered Tests: Never create test_*.py next to source",
+        "No Random Scripts: Never create debug.sh in random locations",
+        "Separation of Concerns: Keep tests/scripts/docs/source separated",
+        "Purpose-Based Organization: Organize by function and audience"
+      ],
+      "enforcement_mechanism": "File placement validation",
+      "examples": {
+        "correct": "tests/auth.test.js, scripts/deploy.sh, claudedocs/analysis.md",
+        "wrong": "auth.test.js next to auth.js, debug.sh in project root"
+      }
+    },
+
+    "safety_rules": {
+      "priority": "CRITICAL",
+      "triggers": ["File operations", "Library usage", "Codebase changes"],
+      "requirements": [
+        "Framework Respect: Check package.json/deps before using libraries",
+        "Pattern Adherence: Follow existing conventions and import styles",
+        "Transaction-Safe: Prefer batch operations with rollback",
+        "Systematic Changes: Plan → Execute → Verify"
+      ],
+      "enforcement_mechanism": "Dependency and pattern validation",
+      "examples": {
+        "correct": "Check dependencies → follow patterns → execute safely",
+        "wrong": "Ignore existing conventions, make unplanned changes"
+      }
+    },
+
+    "temporal_awareness": {
+      "priority": "CRITICAL",
+      "triggers": ["Date/time references", "Version checks", "Deadline calculations", "'latest' keywords"],
+      "requirements": [
+        "Always Verify Current Date: Check <env> context for 'Today's date'",
+        "Never Assume From Knowledge Cutoff: Don't default to January 2025",
+        "Explicit Time References: Always state source of date/time",
+        "Version Context: Verify 'latest' against current date",
+        "Temporal Calculations: Base on verified current date"
+      ],
+      "enforcement_mechanism": "Date reference validation",
+      "detection": "Any date reference without prior env verification",
+      "examples": {
+        "correct": "Checking env: Today is 2025-08-15, so Q3 deadline is...",
+        "wrong": "Since it's January 2025... (without checking)"
+      }
+    }
+  },
+
+  "modes_analysis": {
+    "MODE_Brainstorming": {
+      "purpose": "Collaborative discovery for requirements exploration",
+      "activation_triggers": [
+        "Vague project requests: 'I want to build something...', 'Thinking about creating...'",
+        "Keywords: brainstorm, explore, discuss, figure out, not sure",
+        "Uncertainty indicators: maybe, possibly, thinking about, could we",
+        "PRD prerequisites",
+        "Manual flags: --brainstorm, --bs"
+      ],
+      "behavioral_changes": [
+        "Socratic Dialogue: Ask probing questions",
+        "Non-Presumptive: Avoid assumptions",
+        "Collaborative Exploration: Partner in discovery",
+        "Brief Generation: Synthesize into structured briefs",
+        "Cross-Session Persistence: Maintain discovery context"
+      ],
+      "outcomes": [
+        "Clear requirements from vague concepts",
+        "Comprehensive requirement briefs",
+        "Reduced scope creep",
+        "Better vision-to-implementation alignment",
+        "Smoother handoff to development"
+      ],
+      "integration": "Works with planner agents and documentation systems"
+    },
+
+    "MODE_Business_Panel": {
+      "purpose": "Multi-expert business analysis with adaptive strategies",
+      "activation_triggers": [
+        "/sc:business-panel command",
+        "Business document analysis",
+        "Strategic planning requests"
+      ],
+      "core_components": [
+        "9 specialized business thought leader personas",
+        "Three-phase adaptive methodology",
+        "Cross-framework pattern recognition",
+        "Symbol-based efficiency"
+      ],
+      "three_phases": {
+        "DISCUSSION": {
+          "purpose": "Comprehensive multi-perspective analysis",
+          "activation": "Default for strategic plans, market analysis, research reports",
+          "process": [
+            "Document ingestion",
+            "Expert selection (auto-select 3-5)",
+            "Framework application",
+            "Cross-pollination",
+            "Pattern recognition"
+          ]
+        },
+        "DEBATE": {
+          "purpose": "Stress-test through structured disagreement",
+          "activation": "Controversial decisions, high-risk, conflicting perspectives",
+          "process": [
+            "Conflict identification",
+            "Position articulation",
+            "Evidence marshaling",
+            "Structured rebuttal",
+            "Synthesis through tension"
+          ]
+        },
+        "SOCRATIC": {
+          "purpose": "Develop strategic thinking capability",
+          "activation": "Learning requests, complex problems, capability development",
+          "process": [
+            "Question generation",
+            "Question clustering",
+            "User interaction",
+            "Follow-up inquiry",
+            "Learning synthesis"
+          ]
+        }
+      },
+      "experts": [
+        "Christensen (Innovation/Jobs-to-be-Done)",
+        "Porter (Competitive Strategy/Five Forces)",
+        "Drucker (Management Fundamentals)",
+        "Godin (Purple Cow/Remarkable)",
+        "Kim/Mauborgne (Blue Ocean Strategy)",
+        "Collins (Good to Great/Flywheel)",
+        "Taleb (Antifragile/Risk)",
+        "Meadows (Systems Thinking)",
+        "Doumont (Clear Communication)"
+      ],
+      "integration": "Works with Analyzer, Architect, Mentor personas and Sequential/Context7/Magic/Playwright MCPs"
+    },
+
+    "MODE_DeepResearch": {
+      "purpose": "Systematic investigation and evidence-based reasoning",
+      "activation_triggers": [
+        "/sc:research command",
+        "Keywords: investigate, explore, discover, analyze",
+        "Questions requiring current information",
+        "Complex research requirements",
+        "Manual flag: --research"
+      ],
+      "behavioral_modifications": {
+        "thinking_style": [
+          "Systematic over casual",
+          "Evidence over assumption",
+          "Progressive depth",
+          "Critical evaluation"
+        ],
+        "communication_changes": [
+          "Lead with confidence levels",
+          "Provide inline citations",
+          "Acknowledge uncertainties",
+          "Present conflicting views fairly"
+        ],
+        "priority_shifts": [
+          "Completeness over speed",
+          "Accuracy over speculation",
+          "Evidence over speculation",
+          "Verification over assumption"
+        ],
+        "process_adaptations": [
+          "Always create investigation plans",
+          "Default to parallel operations",
+          "Track information genealogy",
+          "Maintain evidence chains"
+        ]
+      },
+      "integration_points": [
+        "Activates deep-research-agent",
+        "Enables Tavily search",
+        "Triggers Sequential for reasoning",
+        "Emphasizes TodoWrite"
+      ],
+      "quality_focus": [
+        "Source credibility paramount",
+        "Contradiction resolution required",
+        "Confidence scoring mandatory",
+        "Citation completeness essential"
+      ],
+      "research_configuration": {
+        "default_strategy": "unified",
+        "max_hops": 5,
+        "confidence_threshold": 0.7,
+        "parallel_first": true,
+        "planning_strategies": ["planning_only", "intent_planning", "unified"],
+        "depth_profiles": ["quick", "standard", "deep", "exhaustive"],
+        "hop_patterns": ["entity_expansion", "concept_deepening", "temporal_progression", "causal_chain"]
+      }
+    },
+
+    "MODE_Introspection": {
+      "purpose": "Meta-cognitive analysis for self-reflection and reasoning optimization",
+      "activation_triggers": [
+        "Self-analysis requests: 'analyze my reasoning', 'reflect on decision'",
+        "Error recovery: unexpected results",
+        "Complex problem solving requiring meta-cognition",
+        "Pattern recognition needs",
+        "Framework discussions",
+        "Manual flags: --introspect, --introspection"
+      ],
+      "behavioral_changes": [
+        "Self-Examination: Analyze decision logic and reasoning chains",
+        "Transparency: Expose thinking with markers (🤔, 🎯, ⚡, 📊, 💡)",
+        "Pattern Detection: Identify recurring cognitive patterns",
+        "Framework Compliance: Validate against SuperClaude standards",
+        "Learning Focus: Extract insights for improvement"
+      ],
+      "outcomes": [
+        "Improved decision-making",
+        "Pattern recognition for optimization",
+        "Enhanced framework compliance",
+        "Better self-awareness",
+        "Continuous learning"
+      ],
+      "integration": "Works with all modes for meta-analysis and quality improvement"
+    },
+
+    "MODE_Orchestration": {
+      "purpose": "Intelligent tool selection for optimal task routing",
+      "activation_triggers": [
+        "Multi-tool operations requiring coordination",
+        "Performance constraints (>75% resource usage)",
+        "Parallel execution opportunities (>3 files)",
+        "Complex routing decisions"
+      ],
+      "behavioral_changes": [
+        "Smart Tool Selection: Choose most powerful tool",
+        "Resource Awareness: Adapt based on constraints",
+        "Parallel Thinking: Identify concurrent operations",
+        "Efficiency Focus: Optimize tool usage"
+      ],
+      "tool_selection_matrix": {
+        "ui_components": {"best": "Magic MCP", "alternative": "Manual coding"},
+        "deep_analysis": {"best": "Sequential MCP", "alternative": "Native reasoning"},
+        "symbol_operations": {"best": "Serena MCP", "alternative": "Manual search"},
+        "pattern_edits": {"best": "Morphllm MCP", "alternative": "Individual edits"},
+        "documentation": {"best": "Context7 MCP", "alternative": "Web search"},
+        "browser_testing": {"best": "Playwright MCP", "alternative": "Unit tests"},
+        "multi_file_edits": {"best": "MultiEdit", "alternative": "Sequential Edits"},
+        "infrastructure_config": {"best": "WebFetch (official docs)", "forbidden": "Assumption-based"}
+      },
+      "resource_management": {
+        "green_zone": "0-75%: Full capabilities",
+        "yellow_zone": "75-85%: Efficiency mode, reduce verbosity",
+        "red_zone": "85%+: Essential only, minimal output"
+      },
+      "infrastructure_validation": {
+        "critical_rule": "MUST consult official documentation before infrastructure recommendations",
+        "auto_triggers": ["Traefik, nginx, Apache, HAProxy, Caddy, Envoy, Docker, Kubernetes, Terraform, Ansible"],
+        "file_patterns": ["*.toml", "*.conf", "traefik.yml", "nginx.conf", "*.tf", "Dockerfile"],
+        "required_actions": [
+          "WebFetch official documentation",
+          "Activate MODE_DeepResearch",
+          "BLOCK assumption-based changes"
+        ],
+        "rationale": "Infrastructure misconfiguration can cause production outages"
+      }
+    },
+
+    "MODE_Task_Management": {
+      "purpose": "Hierarchical task organization with persistent memory",
+      "activation_triggers": [
+        ">3 steps requiring coordination",
+        ">2 directories OR >3 files",
+        "Complex dependencies requiring phases",
+        "Manual flags: --task-manage, --delegate",
+        "Quality improvement: polish, refine, enhance"
+      ],
+      "task_hierarchy": {
+        "plan": "write_memory('plan', goal_statement)",
+        "phase": "write_memory('phase_X', milestone)",
+        "task": "write_memory('task_X.Y', deliverable)",
+        "todo": "TodoWrite + write_memory('todo_X.Y.Z', status)"
+      },
+      "memory_operations": {
+        "session_start": ["list_memories()", "read_memory('current_plan')", "think_about_collected_information()"],
+        "during_execution": ["write_memory('task_X.Y', status)", "think_about_task_adherence()", "Update TodoWrite", "write_memory('checkpoint', state) every 30min"],
+        "session_end": ["think_about_whether_you_are_done()", "write_memory('session_summary', outcomes)", "delete_memory() for completed temps"]
+      },
+      "execution_pattern": [
+        "Load: list_memories() → read_memory() → Resume state",
+        "Plan: Create hierarchy → write_memory() for each level",
+        "Track: TodoWrite + memory updates in parallel",
+        "Execute: Update memories as tasks complete",
+        "Checkpoint: Periodic write_memory()",
+        "Complete: Final memory update"
+      ],
+      "tool_selection": {
+        "analysis": {"tool": "Sequential MCP", "memory_key": "analysis_results"},
+        "implementation": {"tool": "MultiEdit/Morphllm", "memory_key": "code_changes"},
+        "ui_components": {"tool": "Magic MCP", "memory_key": "ui_components"},
+        "testing": {"tool": "Playwright MCP", "memory_key": "test_results"},
+        "documentation": {"tool": "Context7 MCP", "memory_key": "doc_patterns"}
+      },
+      "memory_schema": {
+        "plan_[timestamp]": "Overall goal statement",
+        "phase_[1-5]": "Major milestone descriptions",
+        "task_[phase].[number]": "Specific deliverable status",
+        "todo_[task].[number]": "Atomic action completion",
+        "checkpoint_[timestamp]": "Current state snapshot",
+        "blockers": "Active impediments",
+        "decisions": "Key architectural/design choices"
+      }
+    },
+
+    "MODE_Token_Efficiency": {
+      "purpose": "Symbol-enhanced communication for compressed clarity",
+      "activation_triggers": [
+        "Context usage >75%",
+        "Large-scale operations",
+        "User flags: --uc, --ultracompressed",
+        "Complex analysis workflows"
+      ],
+      "behavioral_changes": [
+        "Symbol Communication: Visual symbols for logic, status, domains",
+        "Abbreviation Systems: Context-aware compression",
+        "Compression: 30-50% token reduction with ≥95% information quality",
+        "Structure: Bullet points, tables, concise explanations"
+      ],
+      "symbol_systems": {
+        "core_logic_flow": {
+          "→": "leads to, implies",
+          "⇒": "transforms to",
+          "←": "rollback, reverse",
+          "⇄": "bidirectional",
+          "&": "and, combine",
+          "|": "separator, or",
+          ":": "define, specify",
+          "»": "sequence, then",
+          "∴": "therefore",
+          "∵": "because"
+        },
+        "status_progress": {
+          "✅": "completed, passed",
+          "❌": "failed, error",
+          "⚠️": "warning",
+          "🔄": "in progress",
+          "⏳": "waiting, pending",
+          "🚨": "critical, urgent"
+        },
+        "technical_domains": {
+          "⚡": "Performance",
+          "🔍": "Analysis",
+          "🔧": "Configuration",
+          "🛡️": "Security",
+          "📦": "Deployment",
+          "🎨": "Design",
+          "🏗️": "Architecture"
+        }
+      },
+      "abbreviation_systems": {
+        "system_architecture": "cfg, impl, arch, perf, ops, env",
+        "development_process": "req, deps, val, test, docs, std",
+        "quality_analysis": "qual, sec, err, rec, sev, opt"
+      },
+      "compression_targets": "30-50% token reduction while preserving ≥95% information quality"
+    }
+  },
+
+  "auto_activation_mapping": {
+    "keyword_to_mode": {
+      "brainstorm": ["--brainstorm", "MODE_Brainstorming"],
+      "explore": ["--brainstorm", "MODE_Brainstorming"],
+      "discuss": ["--brainstorm", "MODE_Brainstorming"],
+      "maybe": ["--brainstorm", "MODE_Brainstorming"],
+      "thinking_about": ["--brainstorm", "MODE_Brainstorming"],
+      "not_sure": ["--brainstorm", "MODE_Brainstorming"],
+
+      "research": ["--research", "MODE_DeepResearch", "--tavily"],
+      "investigate": ["--research", "MODE_DeepResearch"],
+      "discover": ["--research", "MODE_DeepResearch"],
+
+      "analyze_my_reasoning": ["--introspect", "MODE_Introspection"],
+      "reflect": ["--introspect", "MODE_Introspection"],
+      "error_recovery": ["--introspect", "MODE_Introspection"],
+
+      "polish": ["--task-manage", "MODE_Task_Management", "--loop"],
+      "refine": ["--task-manage", "MODE_Task_Management", "--loop"],
+      "enhance": ["--task-manage", "MODE_Task_Management", "--loop"],
+      "improve": ["--task-manage", "MODE_Task_Management", "--loop"],
+
+      "ui_component": ["--magic", "MODE_Orchestration"],
+      "frontend": ["--magic", "MODE_Orchestration"],
+      "design_system": ["--magic", "MODE_Orchestration"],
+
+      "traefik": ["--orchestrate", "MODE_Orchestration", "WebFetch official docs"],
+      "nginx": ["--orchestrate", "MODE_Orchestration", "WebFetch official docs"],
+      "docker": ["--orchestrate", "MODE_Orchestration", "WebFetch official docs"],
+      "kubernetes": ["--orchestrate", "MODE_Orchestration", "WebFetch official docs"],
+
+      "business_strategy": ["/sc:business-panel", "MODE_Business_Panel"],
+      "strategic_plan": ["/sc:business-panel", "MODE_Business_Panel"],
+      "market_analysis": ["/sc:business-panel", "MODE_Business_Panel"]
+    },
+
+    "file_type_to_specialist": {
+      ".py": "python-specialist",
+      ".js": "javascript-specialist",
+      ".jsx": "react-specialist",
+      ".ts": "typescript-specialist",
+      ".tsx": "react-typescript-specialist",
+      ".go": "golang-specialist",
+      ".rs": "rust-specialist",
+      ".toml": ["infrastructure-specialist", "MODE_Orchestration", "WebFetch"],
+      ".conf": ["infrastructure-specialist", "MODE_Orchestration", "WebFetch"],
+      "traefik.yml": ["infrastructure-specialist", "MODE_Orchestration", "WebFetch"],
+      "nginx.conf": ["infrastructure-specialist", "MODE_Orchestration", "WebFetch"],
+      "Dockerfile": ["infrastructure-specialist", "MODE_Orchestration", "WebFetch"]
+    },
+
+    "complexity_to_flags": {
+      "simple": [],
+      "moderate": ["--think"],
+      "complex": ["--think-hard", "--task-manage"],
+      "architectural": ["--ultrathink", "--task-manage", "--delegate"],
+      "critical_system": ["--ultrathink", "--safe-mode", "--validate"]
+    },
+
+    "resource_usage_to_mode": {
+      "0-75%": "normal operation",
+      "75-85%": ["--token-efficient", "MODE_Token_Efficiency"],
+      "85%+": ["--safe-mode", "--uc", "MODE_Token_Efficiency"]
+    },
+
+    "scope_to_flags": {
+      ">3_steps": ["--task-manage", "MODE_Task_Management", "TodoWrite required"],
+      ">3_files": ["--orchestrate", "MODE_Orchestration", "parallel operations"],
+      ">2_directories": ["--task-manage", "--delegate"],
+      ">7_directories": ["--delegate auto"],
+      ">50_files": ["--delegate auto"],
+      "complexity>0.8": ["--delegate auto"]
+    }
+  },
+
+  "gap_analysis": {
+    "rules_without_enforcement": [
+      {
+        "rule": "Professional Honesty - No Marketing Language",
+        "enforcement": "Language validation exists but needs NLP pattern detection",
+        "recommendation": "Add automated detection for marketing superlatives (blazingly fast, 100% secure, magnificent, excellent)"
+      },
+      {
+        "rule": "Implementation Completeness - No TODO Comments",
+        "enforcement": "Detection exists (grep) but not automated pre-commit",
+        "recommendation": "Add pre-commit hook to detect TODO in core functionality"
+      },
+      {
+        "rule": "Scope Discipline - Build ONLY What's Asked",
+        "enforcement": "Planning validation but no scope creep detection",
+        "recommendation": "Add scope drift detection by comparing implementation to original plan"
+      },
+      {
+        "rule": "Temporal Awareness - Always Verify Current Date",
+        "enforcement": "Rule stated but no automatic <env> check enforcement",
+        "recommendation": "Auto-inject current date check for any temporal references"
+      }
+    ],
+
+    "triggers_without_checking": [
+      {
+        "trigger": "Context usage >75%",
+        "flag": "--token-efficient",
+        "gap": "No automatic context usage monitoring",
+        "recommendation": "Add context usage tracker that auto-activates token efficiency mode"
+      },
+      {
+        "trigger": "Resource usage >85%",
+        "flag": "--safe-mode",
+        "gap": "No automatic resource monitoring",
+        "recommendation": "Add resource monitor that auto-activates safe mode"
+      },
+      {
+        "trigger": "Complexity >0.8",
+        "flag": "--delegate",
+        "gap": "No complexity scoring mechanism defined",
+        "recommendation": "Define complexity scoring algorithm (files, dependencies, cyclomatic complexity)"
+      },
+      {
+        "trigger": "Risk score >0.7",
+        "flag": "--validate",
+        "gap": "No risk scoring mechanism defined",
+        "recommendation": "Define risk scoring based on: production env, file types, operation types"
+      }
+    ],
+
+    "conflicts_between_rules": [
+      {
+        "conflict": "Parallel Everything vs Sequential Dependencies",
+        "rules": ["Workflow Rules: ALWAYS parallel", "Planning Efficiency: Clearly separate sequential from parallelizable"],
+        "resolution": "Planning phase must explicitly identify dependencies; parallel is default, sequential requires justification",
+        "status": "Resolved in RESEARCH_CONFIG.md with parallel_first: true and sequential_override_requires_justification: true"
+      },
+      {
+        "conflict": "Completeness vs Scope Discipline",
+        "rules": ["Implementation Completeness: Must complete to working state", "Scope Discipline: Build ONLY what's asked"],
+        "resolution": "Complete what you start, but don't start what wasn't asked",
+        "status": "Clarified but needs enforcement"
+      },
+      {
+        "conflict": "Token Efficiency vs Professional Honesty",
+        "rules": ["Token Efficiency: 30-50% reduction", "Professional Honesty: Provide honest trade-offs"],
+        "resolution": "Token efficiency must not sacrifice critical technical details or honest assessments",
+        "status": "Clarified: ≥95% information quality requirement"
+      }
+    ],
+
+    "missing_auto_activation_patterns": [
+      {
+        "pattern": "Session start without git check",
+        "should_trigger": "Git Workflow rule: Always Check Status First",
+        "gap": "No automatic git status check at session start",
+        "recommendation": "Add session initialization hook: git status && git branch"
+      },
+      {
+        "pattern": "File creation without directory structure check",
+        "should_trigger": "File Organization rule: Think Before Write",
+        "gap": "No automatic check for existing directory patterns",
+        "recommendation": "Add pre-write validation: check for tests/, scripts/, docs/ directories"
+      },
+      {
+        "pattern": "Infrastructure file modification",
+        "should_trigger": "Orchestration Mode: Infrastructure Configuration Validation",
+        "gap": "Trigger exists but needs automatic WebFetch enforcement",
+        "recommendation": "Auto-block infrastructure changes until WebFetch completes"
+      },
+      {
+        "pattern": "PM Agent documentation after implementation",
+        "should_trigger": "Agent Orchestration: Self-Improvement Layer",
+        "gap": "PM Agent activation after completion not automated",
+        "recommendation": "Add post-implementation hook to trigger PM Agent documentation"
+      }
+    ],
+
+    "unclear_specifications": [
+      {
+        "specification": "Complexity >0.8",
+        "issue": "No definition of how complexity is calculated",
+        "recommendation": "Define: (files × 0.3) + (dependencies × 0.2) + (cyclomatic_complexity × 0.5) / 100"
+      },
+      {
+        "specification": "Risk score >0.7",
+        "issue": "No definition of risk scoring",
+        "recommendation": "Define: production_env(0.4) + critical_files(0.3) + destructive_ops(0.3)"
+      },
+      {
+        "specification": "Context Retention: Maintain ≥90% understanding",
+        "issue": "No measurement mechanism for 'understanding'",
+        "recommendation": "Define understanding metrics: recall of key facts, consistency in reasoning, alignment with prior decisions"
+      }
+    ]
+  },
+
+  "integration_points": {
+    "mode_to_mcp_servers": {
+      "MODE_Brainstorming": ["Sequential (reasoning)", "Memory (context persistence)"],
+      "MODE_Business_Panel": ["Sequential (multi-expert coordination)", "Context7 (business frameworks)", "Magic (visualization)", "Playwright (testing)"],
+      "MODE_DeepResearch": ["Tavily (primary search)", "Playwright (complex extraction)", "Sequential (reasoning)", "Context7 (technical docs)", "Serena (memory)"],
+      "MODE_Introspection": ["Sequential (meta-analysis)", "All modes for quality improvement"],
+      "MODE_Orchestration": ["All MCP servers (tool selection optimization)"],
+      "MODE_Task_Management": ["Sequential (analysis)", "MultiEdit/Morphllm (implementation)", "Magic (UI)", "Playwright (testing)", "Context7 (docs)"],
+      "MODE_Token_Efficiency": ["All modes (compression optimization)"]
+    },
+
+    "mode_to_agents": {
+      "MODE_Brainstorming": ["planner", "researcher", "analyst"],
+      "MODE_Business_Panel": ["Analyzer", "Architect", "Mentor", "9 business experts"],
+      "MODE_DeepResearch": ["deep-research-agent", "researcher", "analyst"],
+      "MODE_Introspection": ["All agents for self-analysis"],
+      "MODE_Orchestration": ["Task agents", "All specialists based on need"],
+      "MODE_Task_Management": ["planner", "coordinator", "PM agent"],
+      "MODE_Token_Efficiency": ["All agents with compression"]
+    },
+
+    "cross_mode_interactions": {
+      "Brainstorming_to_TaskManagement": "Requirements discovery → Structured implementation plan",
+      "DeepResearch_to_Orchestration": "Research findings → Tool selection optimization",
+      "Introspection_to_All": "Meta-analysis improves all modes",
+      "TokenEfficiency_with_All": "Can be layered on any mode for compression",
+      "BusinessPanel_to_DeepResearch": "Strategic questions → Evidence gathering",
+      "TaskManagement_to_TokenEfficiency": "Long tasks benefit from compression"
+    }
+  },
+
+  "principles_integration": {
+    "core_directive": "Evidence > assumptions | Code > documentation | Efficiency > verbosity",
+
+    "philosophy_mapping_to_rules": {
+      "Task-First Approach": "Workflow Rules (Understand → Plan → Execute → Validate)",
+      "Evidence-Based Reasoning": "Professional Honesty, Failure Investigation, DeepResearch mode",
+      "Parallel Thinking": "Planning Efficiency, Tool Optimization, Orchestration mode",
+      "Context Awareness": "Task Management mode with memory, Session Lifecycle"
+    },
+
+    "SOLID_enforcement": {
+      "Single Responsibility": "Scope Discipline rule (Each component does ONE thing)",
+      "Open/Closed": "Code Organization rule (Pattern Following)",
+      "Liskov Substitution": "Safety Rules (Framework Respect)",
+      "Interface Segregation": "Implementation Completeness (No Mock Objects)",
+      "Dependency Inversion": "Safety Rules (Check package.json/deps)"
+    },
+
+    "core_patterns_enforcement": {
+      "DRY": "Tool Optimization (Batch Operations, Parallel Everything)",
+      "KISS": "Scope Discipline (Simple Solutions, Prefer simple evolving code)",
+      "YAGNI": "Scope Discipline (YAGNI Enforcement, No speculative features)"
+    },
+
+    "decision_framework_integration": {
+      "Data-Driven Choices": "DeepResearch mode (Measure First, Hypothesis Testing)",
+      "Trade-off Analysis": "Professional Honesty (Provide honest trade-offs)",
+      "Risk Management": "Git Workflow (Feature branches, Restore points), Safe Mode flag"
+    },
+
+    "quality_quadrants_to_rules": {
+      "Functional": "Implementation Completeness, Workflow Rules (Quality Checks)",
+      "Structural": "Code Organization, File Organization",
+      "Performance": "Tool Optimization, Orchestration mode, Planning Efficiency",
+      "Security": "Safety Rules, Git Workflow, Failure Investigation"
+    }
+  },
+
+  "recommendations": {
+    "immediate_improvements": [
+      "Add automatic git status check at session start (Git Workflow enforcement)",
+      "Add pre-commit hook for TODO detection in core functionality",
+      "Add context usage monitoring for auto-activation of token efficiency mode",
+      "Add post-implementation PM Agent auto-activation for documentation",
+      "Define complexity scoring algorithm for --delegate trigger",
+      "Define risk scoring algorithm for --validate trigger"
+    ],
+
+    "enhancement_opportunities": [
+      "Create automated scope drift detection comparing implementation to plan",
+      "Add NLP-based detection for marketing language (Professional Honesty enforcement)",
+      "Build resource usage monitor for --safe-mode auto-activation",
+      "Implement understanding metrics for Context Retention validation",
+      "Create pre-write directory structure checker (File Organization enforcement)",
+      "Add WebFetch auto-blocker for infrastructure files until docs consulted"
+    ],
+
+    "documentation_improvements": [
+      "Add explicit examples for each flag combination",
+      "Create decision trees for mode selection",
+      "Document cross-mode interaction patterns",
+      "Add troubleshooting guide for conflicting rules",
+      "Create quick reference card for auto-activation patterns"
+    ],
+
+    "testing_needs": [
+      "Test auto-activation patterns for each keyword trigger",
+      "Validate file type to specialist routing",
+      "Test complexity scoring edge cases",
+      "Validate parallel vs sequential decision logic",
+      "Test mode transitions and state preservation"
+    ]
+  },
+
+  "summary_statistics": {
+    "total_flags": 26,
+    "total_rules": 14,
+    "total_modes": 7,
+    "total_experts_business_panel": 9,
+    "auto_activation_patterns": 47,
+    "enforcement_gaps": 12,
+    "conflicts_identified": 3,
+    "integration_points": 23,
+    "symbol_systems": 3,
+    "abbreviation_categories": 3,
+    "priority_levels": {
+      "CRITICAL": 7,
+      "IMPORTANT": 9,
+      "RECOMMENDED": 10
+    }
+  }
+}

@@ -1,12 +1,14 @@
 # Evolve: Autonomous AI Development Framework
 
-**An integrated framework combining SuperClaude behavioral modes, CCPM project management, and Claude Flow orchestration to enable truly autonomous, systematic software development at scale.**
+**An integrated framework combining SuperClaude behavioral modes, CCPM project management, Claude Flow orchestration, Claude Squad session management, and Continuous Claude automation to enable truly autonomous, systematic software development at scale.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![SPARC Methodology](https://img.shields.io/badge/Methodology-SPARC-green.svg)](#sparc-methodology)
 [![Agents: 54+](https://img.shields.io/badge/Agents-54+-purple.svg)](#multi-agent-coordination)
+[![Claude Squad](https://img.shields.io/badge/Claude_Squad-Parallel_Sessions-orange.svg)](#-parallel-session-management-claude-squad)
+[![Continuous Claude](https://img.shields.io/badge/Continuous_Claude-Autonomous_PRs-teal.svg)](#-continuous-automation-continuous-claude)
 
-This project demonstrates advanced integration of three powerful frameworks to create a development environment where AI agents collaborate systematically, maintain perfect context across sessions, and deliver production-ready code through proven methodologies.
+This project demonstrates advanced integration of five powerful frameworks to create a development environment where AI agents collaborate systematically, maintain perfect context across sessions, and deliver production-ready code through proven methodologies.
 
 ## Why This Matters
 
@@ -52,6 +54,22 @@ Context-aware execution strategies:
 - **Task Management Mode**: Hierarchical organization with persistent memory
 - **Token Efficiency Mode**: Symbol-enhanced communication (30-50% reduction)
 
+### 🎛️ Parallel Session Management (Claude Squad)
+Terminal-based multi-agent session orchestration:
+- **Isolated Workspaces**: Each task runs in its own Git worktree—no conflicts
+- **Multi-Agent Support**: Works with Claude Code, Aider, Codex, Gemini, and more
+- **Background Execution**: Complete tasks in background with auto-accept mode
+- **Unified Interface**: Manage all instances and tasks from one terminal window
+- **Safe Review**: Review changes before applying, checkout before pushing
+
+### 🔄 Continuous Automation (Continuous Claude)
+Autonomous PR lifecycle management:
+- **Iterative Development**: Claude Code runs in persistent loops for complex multi-step projects
+- **PR Automation**: Auto-creates branches, commits, PRs, and handles CI validation
+- **Context Persistence**: Shared markdown notes maintain memory between iterations
+- **Flexible Controls**: Limit by iteration count, cost budget, or time duration
+- **Human-in-Loop**: Respects code reviews and CI checks while automating routine work
+
 ## Quick Start
 
 ### Prerequisites
@@ -74,6 +92,12 @@ npx claude-flow sparc modes  # Should list 5 SPARC phases
 
 # 4. Optional: Enhanced coordination
 claude mcp add ruv-swarm npx ruv-swarm mcp start
+
+# 5. Optional: Parallel session management
+brew install smtg-ai/tap/claude-squad  # or: go install github.com/smtg-ai/claude-squad@latest
+
+# 6. Optional: Continuous automation
+npm install -g continuous-claude
 ```
 
 ### First Feature Development
@@ -97,29 +121,30 @@ claude mcp add ruv-swarm npx ruv-swarm mcp start
 
 ## Framework Integration Architecture
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                     EVOLVE FRAMEWORK                         │
-├─────────────────────────────────────────────────────────────┤
-│                                                              │
-│  ┌──────────────┐  ┌──────────────┐  ┌─────────────────┐  │
-│  │ SuperClaude  │  │     CCPM     │  │  Claude Flow     │  │
-│  │              │  │              │  │                  │  │
-│  │ • Behavioral │  │ • PRD Mgmt   │  │ • SPARC Engine   │  │
-│  │   Modes      │  │ • Epic Sync  │  │ • 54+ Agents     │  │
-│  │ • Research   │  │ • Worktrees  │  │ • Coordination   │  │
-│  │ • Efficiency │  │ • GitHub     │  │ • Neural Nets    │  │
-│  └──────┬───────┘  └──────┬───────┘  └────────┬────────┘  │
-│         │                  │                    │           │
-│         └──────────────────┼────────────────────┘           │
-│                            ▼                                │
-│              ┌──────────────────────────┐                   │
-│              │   Claude Code Engine     │                   │
-│              │  • File Operations       │                   │
-│              │  • Git Management        │                   │
-│              │  • Task Execution        │                   │
-│              └──────────────────────────┘                   │
-└─────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart TB
+    subgraph EVOLVE["EVOLVE FRAMEWORK"]
+        subgraph Frameworks["Core Frameworks"]
+            SC["🧠 SuperClaude<br/>• Behavioral Modes<br/>• Research<br/>• Efficiency"]
+            CCPM["📋 CCPM<br/>• PRD Mgmt<br/>• Epic Sync<br/>• Worktrees<br/>• GitHub"]
+            CF["🤖 Claude Flow<br/>• SPARC Engine<br/>• 54+ Agents<br/>• Coordination<br/>• Neural Nets"]
+        end
+
+        subgraph Sessions["Session & Automation Layer"]
+            CS["🎛️ Claude Squad<br/>• Parallel Sessions<br/>• Isolated Worktrees<br/>• Multi-Agent TUI"]
+            CC["🔄 Continuous Claude<br/>• PR Automation<br/>• Iterative Loops<br/>• CI Integration"]
+        end
+
+        subgraph Engine["Execution Engine"]
+            CCE["⚙️ Claude Code Engine<br/>• File Operations<br/>• Git Management<br/>• Task Execution"]
+        end
+    end
+
+    SC --> CCE
+    CCPM --> CCE
+    CF --> CCE
+    CS --> CCE
+    CC --> CCE
 ```
 
 ## Documentation
@@ -147,7 +172,7 @@ claude mcp add ruv-swarm npx ruv-swarm mcp start
 
 ## Credits & Attribution
 
-This project integrates and extends three exceptional frameworks:
+This project integrates and extends five exceptional frameworks:
 
 ### Claude Flow
 **Creator**: [ruvnet](https://github.com/ruvnet)
@@ -158,6 +183,16 @@ This project integrates and extends three exceptional frameworks:
 **Creator**: [automazeio](https://github.com/automazeio)
 **Repository**: [github.com/automazeio/ccpm](https://github.com/automazeio/ccpm)
 **Contribution**: Project management system, GitHub synchronization, worktree workflows
+
+### Claude Squad
+**Creator**: [smtg-ai](https://github.com/smtg-ai)
+**Repository**: [github.com/smtg-ai/claude-squad](https://github.com/smtg-ai/claude-squad)
+**Contribution**: Parallel session management, isolated Git worktrees, multi-agent TUI orchestration
+
+### Continuous Claude
+**Creator**: [Anand Chowdhary](https://github.com/AnandChowdhary)
+**Repository**: [github.com/AnandChowdhary/continuous-claude](https://github.com/AnandChowdhary/continuous-claude)
+**Contribution**: Autonomous PR lifecycle, iterative development loops, CI integration automation
 
 ### SuperClaude Framework
 **Origin**: Community-developed behavioral modes and advanced patterns
@@ -186,6 +221,8 @@ This project is licensed under the MIT License - see [LICENSE](../LICENSE) for d
 **Note**: Individual frameworks retain their original licenses. Please review:
 - [Claude Flow License](https://github.com/ruvnet/claude-flow/blob/main/LICENSE)
 - [CCPM License](https://github.com/automazeio/ccpm/blob/main/LICENSE)
+- [Claude Squad License](https://github.com/smtg-ai/claude-squad/blob/main/LICENSE)
+- [Continuous Claude License](https://github.com/AnandChowdhary/continuous-claude/blob/main/LICENSE)
 
 ## Contributing
 
