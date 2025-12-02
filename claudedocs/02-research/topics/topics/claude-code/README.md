@@ -170,7 +170,7 @@ Research focused on maximizing Claude Code capabilities through frameworks (Supe
 
 **Documentation:**
 - `docs/SUPERCLAUDE-INSTALLATION.md`
-- `docs/CCPM-INSTALLATION.md`
+- `docs/installation.md`
 - `docs/guides/` (planned consolidation)
 
 ---

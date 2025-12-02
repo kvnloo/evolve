@@ -71,5 +71,5 @@ rm -rf /tmp/sc
 ## References
 
 - [SuperClaude Framework](https://github.com/SuperClaude-Org/SuperClaude_Framework)
-- [Official Documentation](https://superclaude.org/)
+- Official Documentation (coming soon)
 - [Installation Guide](https://github.com/SuperClaude-Org/SuperClaude_Framework/blob/master/docs/getting-started/installation.md)

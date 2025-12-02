@@ -266,7 +266,7 @@ author: Claude Code PM System
 - `.claude/rules/` - 11 rule files for standards and coordination
 
 ### Usage Documentation
-- `docs/CCPM-INSTALLATION.md` - Installation guide
+- `docs/installation.md` - Installation guide
 - `docs/HOOK-TESTING-GUIDE.md` - Hook testing guide
 - `discovery_mode_command.md` - Discovery mode documentation
 
