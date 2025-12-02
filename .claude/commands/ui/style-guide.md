@@ -1,5 +1,6 @@
 Help me generate a detailed style guide
 In style guide, you must include the following part:
+- Layout
 - Overview
 - Color Palette
 - Typography (Pay attention to font weight, font size and how different fonts have been used together in the project)
