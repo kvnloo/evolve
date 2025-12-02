@@ -101,23 +101,65 @@ Main configuration file loaded by Claude Code CLI:
 
 ```
 .claude/
-├── commands/              # Custom slash commands
-│   └── sc/                # SuperClaude command namespace
-│       ├── research.md
-│       ├── implement.md
-│       └── test.md
+├── agents/                # Specialized agent definitions (54+)
+│   ├── analysis/          # Code analysis agents
+│   ├── architecture/      # System design agents
+│   ├── consensus/         # Distributed consensus agents
+│   ├── core/              # Core agents (coder, reviewer, tester, etc.)
+│   ├── development/       # Development specialists
+│   ├── devops/            # CI/CD and infrastructure agents
+│   ├── flow-nexus/        # Cloud platform agents
+│   ├── github/            # GitHub integration agents
+│   ├── goal/              # Goal-oriented planning agents
+│   ├── hive-mind/         # Collective intelligence agents
+│   ├── optimization/      # Performance optimization agents
+│   ├── sparc/             # SPARC methodology agents
+│   ├── swarm/             # Swarm coordination agents
+│   └── testing/           # Testing specialists
+├── commands/              # Slash commands (214+ across 25 categories)
+│   ├── agents/            # Agent management commands
+│   ├── analysis/          # Analysis commands
+│   ├── automation/        # Workflow automation
+│   ├── consider/          # Decision framework commands
+│   ├── flow-nexus/        # Cloud platform commands
+│   ├── github/            # GitHub operations
+│   ├── hive-mind/         # Collective intelligence commands
+│   ├── hooks/             # Hook configuration commands
+│   ├── monitoring/        # System monitoring
+│   ├── optimization/      # Performance optimization
+│   ├── pair/              # Pair programming commands
+│   ├── pm/                # Project management (CCPM)
+│   ├── sc/                # SuperClaude meta commands
+│   ├── sparc/             # SPARC methodology commands
+│   ├── swarm/             # Swarm coordination commands
+│   ├── ui/                # UI/frontend commands
+│   └── workflows/         # Workflow templates
+├── context/               # Project context files
+├── helpers/               # Shell utilities
+├── prds/                  # Product requirements (CCPM)
+├── router/                # Command routing configuration
 ├── rules/                 # Operational rules
 │   ├── agent-coordination.md
-│   ├── path-standards.md
-│   └── github-operations.md
-├── helpers/               # Shell utilities
-│   ├── setup-mcp.sh
-│   ├── github-setup.sh
-│   └── checkpoint-manager.sh
-├── prds/                  # Product requirements
-├── epics/                 # Epic management (gitignored)
-├── context/               # Project context
-└── statusline/            # Status line config
+│   ├── command-routing.md
+│   ├── github-operations.md
+│   └── path-standards.md
+├── sessions/              # Session persistence
+├── skills/                # Reusable skill definitions
+│   ├── agent-sandboxes/   # E2B sandbox operations
+│   ├── create-agent-skills/
+│   ├── create-hooks/
+│   ├── create-meta-prompts/
+│   ├── create-plans/
+│   ├── create-slash-commands/
+│   ├── create-subagents/
+│   ├── debug-like-expert/
+│   └── expertise/         # Domain expertise (iOS, macOS)
+├── statusline/            # Status line config
+├── superclaude/           # SuperClaude framework files
+├── tools/                 # Custom tool definitions
+├── ccpm.config            # CCPM configuration
+├── settings.json          # Claude Code settings
+└── statusline-command.sh  # Status line shell script
 ```
 
 ### 2. SPARC Methodology Engine

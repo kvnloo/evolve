@@ -1,6 +1,6 @@
 # Dynamic Command Routing Rules
 
-This file defines intelligent routing logic for selecting optimal commands from **214+ commands across 25 categories**.
+This file defines intelligent routing logic for selecting optimal commands from **234 commands across 27 categories**.
 
 ## Smart Routing Configuration
 
@@ -104,11 +104,23 @@ CLASSIFICATION_TRIGGERS:
       prd_generation: true
       parallel_implementation: true
       quality_validation: true
+
+  decision_frameworks:
+    keywords: ["decide", "trade-off", "prioritize", "analyze decision", "first principles", "80/20", "root cause", "mental model"]
+    route_to: /consider:* commands
+
+  skill_management:
+    keywords: ["skill", "create skill", "audit skill", "heal skill", "skill authoring"]
+    route_to: /create-agent-skill OR /audit-skill OR /heal-skill
+
+  context_management:
+    keywords: ["context", "prime", "load context", "project context"]
+    route_to: /context:* commands
 ```
 
 ---
 
-## Complete Command Reference (214+ Commands)
+## Complete Command Reference (234 Commands)
 
 ### /sc:* - SuperClaude Commands (26 commands)
 Meta-routing and high-level operations.
@@ -141,6 +153,27 @@ Meta-routing and high-level operations.
 | `/sc:test` | Test execution | "run tests", "test coverage" |
 | `/sc:troubleshoot` | Debugging | "fix", "debug", "error", "broken" |
 | `/sc:workflow` | Workflow generation | "workflow", "process", "pipeline" |
+
+#### Root-Level Commands (15 commands)
+Direct commands without namespace prefix.
+
+| Command | Purpose | Use When |
+|---------|---------|----------|
+| `/create-plan` | Plan creation | "create plan", "plan project" |
+| `/create-prompt` | Prompt creation | "create prompt", "new prompt" |
+| `/create-hook` | Hook creation | "create hook", "new hook" |
+| `/create-subagent` | Subagent creation | "create agent", "new agent" |
+| `/create-agent-skill` | Skill creation | "create skill", "new skill" |
+| `/debug` | Debug mode | "debug", "investigate issue" |
+| `/run-plan` | Execute plan | "run plan", "execute plan" |
+| `/run-prompt` | Execute prompt | "run prompt" |
+| `/whats-next` | Next steps | "what's next", "continue work" |
+| `/check-todos` | Check todos | "check todos", "show todos" |
+| `/add-to-todos` | Add todo | "add todo" |
+| `/heal-skill` | Fix skills | "heal skill", "fix skill" |
+| `/audit-skill` | Audit skill | "audit skill" |
+| `/audit-slash-command` | Audit command | "audit command" |
+| `/audit-subagent` | Audit agent | "audit agent" |
 
 ---
 
@@ -522,6 +555,53 @@ System-level operations.
 
 ---
 
+### /consider:* - Decision Frameworks (12 commands)
+Mental models and decision-making frameworks.
+
+| Command | Purpose | Use When |
+|---------|---------|----------|
+| `/consider:first-principles` | Break down to fundamentals | "first principles", "fundamental" |
+| `/consider:second-order` | Consequences of consequences | "second order", "ripple effects" |
+| `/consider:opportunity-cost` | What you give up | "opportunity cost", "trade-off" |
+| `/consider:pareto` | 80/20 analysis | "pareto", "80/20" |
+| `/consider:eisenhower-matrix` | Urgent/important matrix | "eisenhower", "prioritize" |
+| `/consider:inversion` | Solve backwards | "inversion", "reverse" |
+| `/consider:occams-razor` | Simplest explanation | "occam", "simplest" |
+| `/consider:5-whys` | Root cause drilling | "5 whys", "root cause" |
+| `/consider:swot` | Strengths/weaknesses | "swot", "strengths" |
+| `/consider:10-10-10` | Time horizon decisions | "10-10-10", "time horizon" |
+| `/consider:one-thing` | Highest leverage action | "one thing", "focus" |
+| `/consider:via-negativa` | Improve by removing | "via negativa", "remove" |
+
+---
+
+### /context:* - Context Management (3 commands)
+Project context and priming.
+
+| Command | Purpose | Use When |
+|---------|---------|----------|
+| `/context:create` | Create context | "create context" |
+| `/context:update` | Update context | "update context" |
+| `/context:prime` | Prime context | "prime", "load context" |
+
+---
+
+### Skills Integration (8 skills)
+Skills are invoked via the Skill tool for specialized guidance.
+
+| Skill | Trigger Keywords | Purpose |
+|-------|-----------------|---------|
+| `agent-sandboxes` | "sandbox", "isolated", "e2b" | E2B sandbox operations |
+| `create-agent-skills` | "create skill", "skill authoring" | Skill creation guidance |
+| `create-hooks` | "create hook", "hook config" | Hook development |
+| `create-meta-prompts` | "meta prompt", "prompt pipeline" | Multi-stage prompts |
+| `create-plans` | "create plan", "project plan" | Hierarchical planning |
+| `create-slash-commands` | "create command", "slash command" | Command development |
+| `create-subagents` | "create agent", "subagent" | Agent configuration |
+| `debug-like-expert` | "deep debug", "root cause analysis" | Expert debugging methodology |
+
+---
+
 ## Routing Algorithm
 
 ```yaml
@@ -579,3 +659,9 @@ When uncertain which command to use:
 | "Check status" | `/monitoring:status` | `/swarm:swarm-status` |
 | "What's next" | `/pm:next` | `/pm:status` |
 | "Not sure..." | `/sc:brainstorm` | `/sparc:innovator` |
+| "First principles" | `/consider:first-principles` | `/consider:5-whys` |
+| "Trade-off analysis" | `/consider:opportunity-cost` | `/consider:swot` |
+| "Prioritize tasks" | `/consider:eisenhower-matrix` | `/consider:pareto` |
+| "Create skill" | `/create-agent-skill` | Skill tool |
+| "Create hook" | `/create-hook` | Skill tool |
+| "Load context" | `/context:prime` | `/sc:load` |

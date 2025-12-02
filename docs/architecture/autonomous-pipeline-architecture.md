@@ -47,6 +47,23 @@ This document defines a comprehensive autonomous pipeline that transforms **rese
 
 ---
 
+## C(RAID) Context
+
+This autonomous pipeline implements the **C(RAID) paradigm** - Continuous Research, Analysis, Integration, Deployment:
+
+| C(RAID) Phase | Pipeline Phase | Duration | Key Agents |
+|---------------|----------------|----------|------------|
+| **Continuous Research** | Phase 1: Concept Extraction | 3-5 min | researcher, deep-research-agent |
+| **Continuous Analysis** | Phase 2: PRD Generation | 15-20 min | specification, planner, goal-planner |
+| **Continuous Integration** | Phase 3-4: Decomposition + Implementation | 2-5 hours | coder, tester, task-orchestrator |
+| **Continuous Deployment** | Phase 5: Validation & Deployment | 45 min | production-validator, reviewer |
+
+The pipeline represents one complete C(RAID) cycle. Deployment metrics and user feedback trigger the next Research phase, creating a continuous improvement loop.
+
+> **See Also**: [The C(RAID) Paradigm](../paradigm/index.rst) for the full paradigm documentation.
+
+---
+
 ## 1. Pipeline Overview
 
 ### 1.1 Five-Phase Autonomous Workflow
