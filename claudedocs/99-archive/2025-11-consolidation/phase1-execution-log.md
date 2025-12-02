@@ -132,7 +132,7 @@ find . -type f \( -name "*.md" -o -name "*.sh" \) -print0 | \
 
 ### Technical Accuracy
 - ✅ Repository URL: https://github.com/kvnloo/evolve.git
-- ✅ Developer: Kevin Loo (kvnloo)
+- ✅ Developer: Kevin Rajan (kvnloo)
 - ✅ All external links functional
 - ✅ Framework metrics and capabilities accurate
 - ✅ No placeholder text remaining in key files
