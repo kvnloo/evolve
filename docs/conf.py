@@ -33,7 +33,8 @@ mermaid.initialize({
     startOnLoad: true,
     theme: 'dark',
     themeVariables: {
-        lineColor: '#8B949E',
+        lineColor: '#58A6FF',
+        defaultLinkColor: '#58A6FF',
         primaryTextColor: '#C9D1D9',
         primaryColor: '#238636',
         primaryBorderColor: '#30363D',
@@ -46,7 +47,8 @@ mermaid.initialize({
     },
     flowchart: {
         curve: 'basis',
-        useMaxWidth: true
+        useMaxWidth: true,
+        htmlLabels: true
     }
 });
 """
