@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 sphinx = "*"
 myst-parser = "*"
+sphinxcontrib-mermaid = "*"
 revitron-sphinx-theme = {git = "https://github.com/revitron/revitron-sphinx-theme.git", ref = "master"}
 linkify-it-py = "*"
 
