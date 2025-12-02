@@ -124,12 +124,12 @@ claude mcp add ruv-swarm npx ruv-swarm mcp start
 
 ## Documentation
 
-- **[CLAUDE.md](../CLAUDE.md)** - Main configuration and integration guide
-- **[Project Overview](../.claude/context/project-overview.md)** - Current capabilities and status
-- **[Project Vision](../.claude/context/project-vision.md)** - Long-term roadmap and aspirations
-- **[Agent Coordination](../.claude/rules/agent-coordination.md)** - Multi-agent workflow rules
-- **[Path Standards](../.claude/rules/path-standards.md)** - Privacy and portability guidelines
-- **[Research Documentation](../research/)** - Deep research on autonomous systems
+- **[CLAUDE.md](CLAUDE.md)** - Main configuration and integration guide
+- **[Project Overview](.claude/context/project-overview.md)** - Current capabilities and status
+- **[Project Vision](.claude/context/project-vision.md)** - Long-term roadmap and aspirations
+- **[Agent Coordination](.claude/rules/agent-coordination.md)** - Multi-agent workflow rules
+- **[Path Standards](.claude/rules/path-standards.md)** - Privacy and portability guidelines
+- **[Research Documentation](research/)** - Deep research on autonomous systems
 
 ## Performance Metrics
 

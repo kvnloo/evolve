@@ -998,7 +998,7 @@ Session 2: Refactor DB [epic-refactor]
 - Managing Without Worktrees: https://blog.gitbutler.com/parallel-claude-code
 
 **Statusline Configuration**:
-- How I'm Using Status Line: https://medium.com/@joe.njenga/how-im-using-claude-code-status-line-new-feature-to-keep-context-96a4adf21728
+- Status Line Official Docs: https://docs.anthropic.com/en/docs/claude-code/status-line
 - Custom Statusline Tutorial: https://1ar.io/p/custom-claude-code-statusline-track-context-and-current-directory/
 - Status Lines That Matter: https://ovidiueftimie.substack.com/p/claude-code-status-lines-that-actually
 

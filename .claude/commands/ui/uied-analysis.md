@@ -496,6 +496,6 @@ def build_hierarchy(elements):
 ## Resources
 
 - **UIED Repository**: https://github.com/MulongXie/UIED
-- **Research Paper**: [UIED: a hybrid tool for GUI element detection](https://dl.acm.org/doi/10.1145/3368089.3417940)
+- **Research Paper**: [UIED: a hybrid tool for GUI element detection](https://github.com/MulongXie/UIED#citation) (ACM FSE 2020)
 - **Google Cloud Vision**: https://cloud.google.com/vision (for OCR API key)
 - **PaddleOCR**: https://github.com/PaddlePaddle/PaddleOCR (free OCR alternative)

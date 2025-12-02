@@ -594,6 +594,6 @@ CREATE INDEX idx_instances_active ON instances(last_active);
 ## References
 
 - [VSCode Extension API](https://code.visualstudio.com/api)
-- [MCP Protocol Spec](https://spec.modelcontextprotocol.io/)
+- [MCP Protocol Spec](https://github.com/modelcontextprotocol/specification)
 - [rz1989s/claude-code-statusline](https://github.com/rz1989s/claude-code-statusline)
 - [Research: claude-code-statusline-research.md](../../research/findings/claude-code-statusline-research.md)

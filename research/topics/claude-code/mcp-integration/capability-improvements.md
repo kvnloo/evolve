@@ -811,7 +811,7 @@ Code generation leverages skill libraries storing proven patterns for authentica
 **Official documentation** provides authoritative references:
 
 - Anthropic Claude docs: https://docs.claude.com/
-- MCP specification: https://spec.modelcontextprotocol.io
+- MCP specification: https://github.com/modelcontextprotocol/specification
 - MCP documentation: https://modelcontextprotocol.io
 - Claude Agent SDK: https://github.com/anthropics/claude-agent-sdk-typescript
 - Anthropic multi-agent guide: https://www.anthropic.com/engineering/multi-agent-research-system
