@@ -10,8 +10,8 @@ from datetime import datetime
 # -- Project information -----------------------------------------------------
 
 project = 'Evolve'
-copyright = f'{datetime.now().year}, Kevin Loo'
-author = 'Kevin Loo'
+copyright = f'{datetime.now().year}, Kevin Rajan'
+author = 'Kevin Rajan'
 release = '1.0.0'
 
 # -- General configuration ---------------------------------------------------
@@ -68,8 +68,7 @@ html_theme_path = [revitron_sphinx_theme.get_html_theme_path()]
 
 # Theme options
 html_theme_options = {
-    'color_scheme': 'blue',
-    'style_nav_header_background': '#2980B9',
+    'color_scheme': 'dark',
     'collapse_navigation': False,
     'sticky_navigation': True,
     'navigation_depth': 4,
@@ -79,8 +78,9 @@ html_theme_options = {
     'github_banner': True,
 }
 
-# Landing page configuration
+# Landing page configuration and theme context
 html_context = {
+    'style': 'default',  # Required by revitron theme
     'landing_page': {
         'menu': [
             {'title': 'Quick Start', 'url': 'quick-start.html'},
