@@ -993,7 +993,7 @@ sphinx-apidoc -f -o docs/source/api your_package --separate
 8. **Write the Docs - Sphinx Introduction**: https://www.writethedocs.org/guide/tools/sphinx/
 
 ### Tutorials
-9. **Automatic Documentation with Sphinx**: https://medium.com/@cissyshu/a-step-by-step-guide-to-automatic-documentation-using-sphinx-a697dbbce0e7
+9. **Sphinx Autodoc Guide**: https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html
 10. **Sphinx-RTD Tutorial**: https://sphinx-rtd-tutorial.readthedocs.io/
 
 ---

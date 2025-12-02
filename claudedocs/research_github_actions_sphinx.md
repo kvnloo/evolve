@@ -554,7 +554,7 @@ concurrency:
 
 **Sources**:
 - [Middleware Technologies: Caching Python Dependencies](https://middlewaretechnologies.in/2023/08/how-to-cache-python-dependencies-to-speed-up-github-workflows.html)
-- [Towards Dev: Speed up GitHub Actions](https://towardsdev.com/speed-up-you-github-actions-by-caching-you-python-packages-install-31127de213ae)
+- [GitHub Actions Caching](https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows)
 
 ---
 
@@ -576,7 +576,7 @@ myst_parser
 sphinx-autodoc-typehints
 ```
 
-**Source**: [Stack Overflow](https://stackoverflow.com/questions/73532719/using-github-actions-to-deploy-sphinx-documentation)
+**Source**: [Sphinx RTD Theme Docs](https://sphinx-rtd-theme.readthedocs.io/en/stable/installing.html)
 
 ---
 
@@ -1147,7 +1147,7 @@ updates:
 ### Community Resources
 - [Stack Overflow: Sphinx + GitHub Actions](https://stackoverflow.com/questions/tagged/sphinx+github-actions)
 - [Sphinx Extensions List](https://www.sphinx-doc.org/en/master/usage/extensions/index.html)
-- [Awesome Sphinx](https://github.com/yoloseem/awesome-sphinx)
+- [Awesome Sphinx](https://github.com/yoloseem/awesome-sphinxdoc)
 
 ---
 

@@ -164,7 +164,7 @@ gh repo view kvnloo/evolve
 - `/pm:issue-start` - Begin work with specialized agent
 - `/pm:next` - Get next priority task
 
-See [CCPM Installation Summary](CCPM-INSTALLATION.md) for complete details.
+See the CCPM section above for complete details.
 
 ---
 

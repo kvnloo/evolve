@@ -457,7 +457,7 @@ Component Integration → Optimized Output
 
 **Full Documentation:**
 - [Complete Integration Plan](./clone-website-integration-plan.md)
-- [Current Command Implementation](./.claude/commands/ui/clone-website.md)
+- [Current Command Implementation](../../.claude/commands/ui/clone-website.md)
 - [Research Findings](../research/website-cloning-strategy-immersive-sites.md)
 
 **Key References:**

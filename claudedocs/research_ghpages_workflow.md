@@ -669,7 +669,7 @@ Then install in workflow:
     pip install -r docs/requirements.txt
 ```
 
-**Source:** [Stack Overflow - GitHub Actions Sphinx](https://stackoverflow.com/questions/73532719/using-github-actions-to-deploy-sphinx-documentation)
+**Source:** [Sphinx RTD Theme Installation](https://sphinx-rtd-theme.readthedocs.io/en/stable/installing.html)
 
 ---
 
