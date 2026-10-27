@@ -16,7 +16,7 @@ This project integrates and extends several open-source frameworks to create an 
 - Multi-agent coordination with Byzantine fault tolerance
 - Parallel execution optimization (2.8-4.4x speed improvement)
 - Neural training and pattern recognition (27+ models)
-- Performance metrics: 84.8% SWE-Bench solve rate, 32.3% token reduction
+- Performance metrics (upstream-reported for Claude Flow): 84.8% SWE-Bench solve rate, 32.3% token reduction
 
 ### CCPM (Claude Code Project Management)
 - **Author**: [Automaze.io](https://github.com/automazeio)

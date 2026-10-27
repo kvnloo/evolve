@@ -13,7 +13,7 @@ This project demonstrates advanced integration of five powerful frameworks to cr
 ## Why This Matters
 
 **Traditional AI development**: Ad-hoc prompts, lost context, inconsistent quality
-**Evolve**: Systematic methodology (SPARC) + coordinated agents (Claude Flow) + managed workflows (CCPM) = 2.8-4.4x faster development with 84.8% problem-solving accuracy
+**Evolve**: Systematic methodology (SPARC) + coordinated agents (Claude Flow) + managed workflows (CCPM). Integrates frameworks that report multi-agent speedups and high SWE-Bench solve rates (see [Performance Metrics](#performance-metrics); figures are upstream-attributed).
 
 The framework enables:
 - **Autonomous Development**: 54+ specialized agents coordinate to build features from specification to deployment
@@ -149,20 +149,21 @@ flowchart TB
 
 ## Documentation
 
-- **[CLAUDE.md](../CLAUDE.md)** - Main configuration and integration guide
-- **[Project Overview](../.claude/context/project-overview.md)** - Current capabilities and status
-- **[Project Vision](../.claude/context/project-vision.md)** - Long-term roadmap and aspirations
-- **[Agent Coordination](../.claude/rules/agent-coordination.md)** - Multi-agent workflow rules
-- **[Path Standards](../.claude/rules/path-standards.md)** - Privacy and portability guidelines
-- **[Research Documentation](../research/)** - Deep research on autonomous systems
+- **[CLAUDE.md](CLAUDE.md)** - Main configuration and integration guide
+- **[Project Overview](.claude/context/project-overview.md)** - Current capabilities and status
+- **[Project Vision](.claude/context/project-vision.md)** - Long-term roadmap and aspirations
+- **[Agent Coordination](.claude/rules/agent-coordination.md)** - Multi-agent workflow rules
+- **[Path Standards](.claude/rules/path-standards.md)** - Privacy and portability guidelines
+- **[Research Documentation](research/)** - Deep research on autonomous systems
+- **[Live docs site](https://kvnloo.github.io/evolve/)** - Sphinx documentation (GitHub Pages)
 
 ## Performance Metrics
 
-**Validated Performance** (from Claude Flow benchmarks):
-- **84.8% SWE-Bench solve rate** - Industry-leading code problem resolution
-- **32.3% token reduction** - Efficient coordination reduces API costs
-- **2.8-4.4x speed improvement** - Parallel agent execution
-- **27+ neural models** - Continuous learning and pattern optimization
+**Upstream metrics** (reported by [Claude Flow](https://github.com/ruvnet/claude-flow); not independently re-benchmarked in this repo):
+- **84.8% SWE-Bench solve rate** - As reported for Claude Flow multi-agent workflows
+- **32.3% token reduction** - Efficient coordination reduces API costs (upstream claim)
+- **2.8-4.4x speed improvement** - Parallel agent execution (upstream claim)
+- **27+ neural models** - Pattern learning features in Claude Flow
 
 **Framework Integration Benefits**:
 - Zero context loss across sessions (SuperClaude + Serena MCP)
@@ -216,7 +217,7 @@ This project demonstrates:
 
 ## License
 
-This project is licensed under the MIT License - see [LICENSE](../LICENSE) for details.
+This project is licensed under the MIT License - see [LICENSE](LICENSE) for details.
 
 **Note**: Individual frameworks retain their original licenses. Please review:
 - [Claude Flow License](https://github.com/ruvnet/claude-flow/blob/main/LICENSE)
@@ -231,7 +232,7 @@ Contributions welcome! This project follows:
 - **Agent Coordination Protocol** for multi-file changes
 - **Path Standards** for privacy and portability
 
-See [CONTRIBUTING.md](../CONTRIBUTING.md) for detailed guidelines.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 ## Links
 

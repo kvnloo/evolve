@@ -48,6 +48,47 @@ docs/.doctrees/
 Pipfile.lock
 *.pyc
 __pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+env/
+
+# Secrets and local environment (never commit)
+.env
+.env.*
+!.env.example
+!.env.template
+!.env.sample
+*.pem
+*.p12
+*.pfx
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+.secrets/
+credentials.json
+service-account*.json
+
+# Local private prompts and agent scratch
+.prompts/
+.local/
+
+# Internal audit dumps (regenerate; do not publish)
+claudedocs/broken-links-audit.md
+claudedocs/missing-files-report.md
+
+# Dependencies and OS junk
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
 
 # Cleanup 2025-11-28
 *.backup

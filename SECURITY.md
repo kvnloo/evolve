@@ -15,11 +15,13 @@ We release security updates for the following versions:
 
 **Please do not report security vulnerabilities through public GitHub issues.**
 
-Instead, please report security vulnerabilities by emailing:
+Instead, please report security vulnerabilities via one of:
 
-**[INSERT SECURITY EMAIL]**
+1. **[GitHub Private Vulnerability Reporting](https://github.com/kvnloo/evolve/security/advisories/new)** (preferred)
+2. Open a **draft security advisory** on the repository Security tab
+3. Contact the maintainer via GitHub: [@kvnloo](https://github.com/kvnloo)
 
-You should receive a response within 48 hours. If for some reason you do not, please follow up to ensure we received your original message.
+You should receive an initial response within 48 hours when possible. If you do not hear back, follow up on the same channel to ensure the report was received.
 
 ### What to Include
 
