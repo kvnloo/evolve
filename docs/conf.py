@@ -3,8 +3,6 @@
 # This configuration builds documentation from the existing markdown files
 # in the docs/ directory and subdirectories.
 
-import os
-import sys
 from datetime import datetime
 
 # -- Project information -----------------------------------------------------

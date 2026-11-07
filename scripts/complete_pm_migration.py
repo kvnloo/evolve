@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Complete PM Commands Migration to OpenCode format"""
 
-import os
 import re
 from pathlib import Path
 
